@@ -1,0 +1,21 @@
+{
+  "name": "belensantamarina",
+  "authors": [
+    "Andres Moritan <amoritan@me.com>"
+  ],
+  "description": "Belen Santamarina",
+  "main": "index.html",
+  "keywords": [
+    "artist", "visual artist"
+  ],
+  "license": "",
+  "homepage": "www.belensantamarina.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
