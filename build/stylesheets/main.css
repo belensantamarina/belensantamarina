@@ -3850,6 +3850,18 @@ Copyright (c) 2015 Daniel Eden
   overflow: visible;
   clip: auto; }
 
+/**
+ * Allows you to use retina images at various pixel densities.
+ * Examples:
+ *
+ *   @include retina(/images/mypic.jpg, 2);
+ *   @include retina(/images/mypic.jpg, 3, 100px 100px, left top no-repeat transparent);
+ *
+ * @param  {Value}  $path               The path to the file name minus extension.
+ * @param  {Number} $cap:    2          The highest pixel density level images exist for.
+ * @param  {Value}  $size:   auto auto  The intended width of the rendered image.
+ * @param  {Value}  $extras: null       Any other `background` values to be added.
+ */
 /* Animations */
 /* ==========================================================================
    1. Cross-site style
@@ -3860,6 +3872,9 @@ body {
   font-size: 1em;
   color: #252626;
   background: #fbfbfb; }
+
+.fp-tableCell {
+  vertical-align: bottom; }
 
 /* ==========================================================================
    2. Header style
@@ -3877,12 +3892,20 @@ header.main {
     font-size: 2em;
     font-weight: 300;
     text-transform: uppercase; }
+    @media screen and (max-width: 1024px) {
+      header.main h1 {
+        font-size: 1.5em;
+        float: none; } }
     header.main h1 a {
       color: #252626;
       text-decoration: none; }
   header.main nav.main {
     float: right;
     margin: 1.25em; }
+    @media screen and (max-width: 1024px) {
+      header.main nav.main {
+        display: none;
+        float: none; } }
     header.main nav.main ul {
       display: inline-block;
       list-style: none;
@@ -3922,3 +3945,92 @@ header.main {
     content: "";
     display: block;
     clear: both; }
+    @media screen and (max-width: 1024px) {
+      header.main::after {
+        content: "";
+        font: normal normal normal 14px/1 FontAwesome;
+        position: absolute;
+        padding: 1em;
+        right: 1em;
+        top: 1em;
+        z-index: 110;
+        cursor: pointer; } }
+
+/* ==========================================================================
+   2. Sections and sliders style
+   ========================================================================== */
+section .information-wrapper, section .photography-wrapper {
+  width: 50%;
+  height: 100%;
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    section .information-wrapper, section .photography-wrapper {
+      width: 100%;
+      height: auto;
+      float: none !important; } }
+
+section .information-wrapper {
+  float: left; }
+
+section .photography-wrapper {
+  float: right; }
+
+section .information, section .photography {
+  position: absolute;
+  bottom: 0; }
+  @media screen and (max-width: 768px) {
+    section .information, section .photography {
+      position: static;
+      bottom: auto; } }
+
+section .information {
+  margin: 1em 2em; }
+  section .information h2 {
+    display: none; }
+  section .information h3, section .information h4 {
+    margin: 0;
+    font-weight: 300;
+    text-transform: uppercase; }
+  section .information h3 {
+    color: #c3c3c3;
+    font-size: 2em; }
+  section .information h4 {
+    color: #4c4d4d;
+    font-size: 4em; }
+  section .information p {
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: 1.5em; }
+    section .information p a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #252626;
+      white-space: nowrap; }
+  @media screen and (max-width: 768px) {
+    section .information {
+      margin: 1em; }
+      section .information h3 {
+        font-size: 1.5em; }
+      section .information h4 {
+        font-size: 3em; }
+      section .information p {
+        font-size: 1em; } }
+
+section .photography img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto; }
+  @media screen and (max-width: 768px) {
+    section .photography img {
+      width: 50%; } }
+  @media screen and (max-width: 375px) {
+    section .photography img {
+      width: 75%; } }
+
+.section::after, .slide::after {
+  content: "";
+  display: block;
+  clear: both; }

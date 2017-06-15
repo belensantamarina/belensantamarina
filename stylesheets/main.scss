@@ -22,6 +22,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @import "../bower_components/fullpage.js/dist/jquery.fullpage";
 @import "../bower_components/animate.css/source/animate";
 @import "../bower_components/font-awesome/scss/font-awesome";
+@import "../bower_components/retinajs/dist/_retina.scss";
 
 /* Animations */
 
@@ -38,6 +39,9 @@ body {
   font-size: 1em;
   color: $black;
   background: $white;
+}
+.fp-tableCell {
+  vertical-align: bottom;
 }
 
 
@@ -58,6 +62,10 @@ header.main {
     font-size: 2em;
     font-weight: 300;
     text-transform: uppercase;
+    @media screen and (max-width: 1024px) {
+      font-size: 1.5em;
+      float: none;
+    }
     a {
       color: $black;
       text-decoration: none;
@@ -66,6 +74,10 @@ header.main {
   nav.main {
     float: right;
     margin: 1.25em;
+    @media screen and (max-width: 1024px) {
+      display: none;
+      float: none;
+    }
     ul {
       display: inline-block;
       list-style: none;
@@ -114,5 +126,115 @@ header.main {
     content: "";
     display: block;
     clear: both;
+    @media screen and (max-width: 1024px) {
+      content: $fa-var-bars;
+      font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome;
+      position: absolute;
+      padding: 1em;
+      right: 1em;
+      top: 1em;
+      z-index: 110;
+      cursor: pointer;
+    }
   }
 }
+
+
+
+
+/* ==========================================================================
+   2. Sections and sliders style
+   ========================================================================== */
+
+section {
+  .information-wrapper, .photography-wrapper {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      height: auto;
+      float: none !important;
+    }
+  }
+  .information-wrapper {
+    float: left;
+  }
+  .photography-wrapper {
+    float: right;
+  }
+  .information, .photography {
+    position: absolute;
+    bottom: 0;
+    @media screen and (max-width: 768px) {
+      position: static;
+      bottom: auto;
+    }
+  }
+  .information {
+    margin: 1em 2em;
+    h2 {
+      display: none;
+    }
+    h3, h4 {
+      margin: 0;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    h3 {
+      color: $light-gray;
+      font-size: 2em;
+    }
+    h4 {
+      color: $dark-gray;
+      font-size: 4em;
+    }
+    p {
+      font-size: 1.25em;
+      font-weight: 300;
+      line-height: 1.5em;
+      a {
+        text-decoration: none;
+        font-weight: 700;
+        color: $black;
+        white-space: nowrap;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      margin: 1em;
+      h3 {
+        font-size: 1.5em;
+      }
+      h4 {
+        font-size: 3em;
+      }
+      p {
+        font-size: 1em;
+      }
+    } 
+  }
+  .photography {
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      margin-left: auto;
+      @media screen and (max-width: 768px) {
+        width: 50%;
+      }
+      @media screen and (max-width: 375px) {
+        width: 75%;
+      }
+    }
+  }
+}
+.section, .slide {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+

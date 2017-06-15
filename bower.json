@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "fullpage.js": "^2.9.4",
-    "retinajs": "^2.1.1"
+    "retinajs": "^2.1.1",
+    "unsemantic": "^1.1.3"
   }
 }
