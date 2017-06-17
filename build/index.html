@@ -56,7 +56,12 @@
             	<h2>Obras</h2>
             	<h3>Escultura</h3>
             	<h4>Balance I</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#balance_one_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+            	<div class="images-wrapper" id="balance_one_gallery">
+              	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
+              	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
+              	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
+            	</div>
             </div>
           </div>
           <div class="photography-wrapper">
@@ -75,12 +80,15 @@
     	<section data-anchor="contact" class="section">Contacto</section>
   	</main>
   	
+  	<aside class="modal" id="modal_gallery">
+    	<a href="#" class="close" id="modal_close">&times;</a>
+    	<div class="fotorama" id="fotorama" data-auto="false" data-width="100%" data-ratio="4/3" data-maxheight="85%"></div>
+  	</aside>
+  	
   	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   	<script type="text/javascript" src="bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
-  	<!-- <script type="text/javascript" src="bower_components/fullpage.js/dist/jquery.fullpage.extensions.min.js"></script> -->
   	<script type="text/javascript" src="bower_components/retinajs/dist/retina.min.js"></script>
-  	
-  	<!-- <script type="text/javascript" src="javascripts/fullpage.fadingEffect.min.js"></script> -->
+  	<script type="text/javascript" src="bower_components/fotorama/fotorama.js"></script>
   	
 		<script type="text/javascript" src="javascripts/index.min.js"></script>
 	</body>

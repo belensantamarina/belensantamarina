@@ -23,6 +23,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @import "../bower_components/animate.css/source/animate";
 @import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/retinajs/dist/_retina.scss";
+@import "../bower_components/fotorama/fotorama";
 
 /* Animations */
 
@@ -173,7 +174,7 @@ section {
   }
   .information {
     margin: 1em 2em;
-    h2 {
+    h2, .images-wrapper {
       display: none;
     }
     h3, h4 {
@@ -235,6 +236,47 @@ section {
     content: "";
     display: block;
     clear: both;
+  }
+}
+
+
+
+
+/* ==========================================================================
+   2. Gallery/Modal style
+   ========================================================================== */
+
+aside.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; right: 0; left: 0;
+  width: 100%; min-height: 100%;
+  background-color: transparentize($black, 0.025);
+  transition: all .5s;
+  .close {
+    position: absolute;
+    top: 0; right: 0;
+    display: block;
+    color: $black;
+    background: $white;
+    padding: .25em .5em;
+    text-decoration: none;
+    font-size: 2em;
+  }
+  .fotorama {
+    margin-top: 5%;
+    opacity: 0;
+    .fotorama__caption {
+      text-align: center;
+      color: $black;
+      .fotorama__caption__wrap {
+        background: transparentize($white, 0.15)
+      }
+    }
+    .fotorama__dot {
+      border-color: $white;
+    }
   }
 }
 

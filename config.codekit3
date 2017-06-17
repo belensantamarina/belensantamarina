@@ -1608,6 +1608,87 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/bower_components\/fotorama\/.bower.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/.bower.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/fotorama\/bower.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/bower.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/fotorama\/example.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/example.html",
+		"oF": 0
+		},
+	"\/bower_components\/fotorama\/fotorama.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/fotorama.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/bower_components\/fotorama\/fotorama.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/fotorama.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/fotorama\/fotorama.png": {
+		"ft": 32768,
+		"iS": 3223,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/fotorama.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/bower_components\/fotorama\/fotorama@2x.png": {
+		"ft": 32768,
+		"iS": 7319,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/fotorama@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/bower_components\/fotorama\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/build\/bower_components\/fotorama\/README.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"\/bower_components\/fullpage.js\/.bower.json": {
 		"ft": 524288,
 		"oA": 2,
@@ -4391,6 +4472,26 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-balance_uno@2x.jpg": {
+		"ft": 16384,
+		"iS": 226429,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-balance_uno@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-balance_uno@3x.jpg": {
+		"ft": 16384,
+		"iS": 398266,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-balance_uno@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"\/index.html": {
