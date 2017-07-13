@@ -4434,61 +4434,241 @@
 		"oAP": "\/build\/images\/.keep",
 		"oF": 0
 		},
-	"\/images\/works-background-sculpture.jpg": {
+	"\/images\/works\/instalation-pixels.jpg": {
 		"ft": 16384,
-		"iS": 86337,
+		"iS": 98436,
 		"oA": 0,
-		"oAP": "\/build\/images\/works-background-sculpture.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/images\/works-background-sculpture@2x.jpg": {
-		"ft": 16384,
-		"iS": 222305,
-		"oA": 0,
-		"oAP": "\/build\/images\/works-background-sculpture@2x.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/images\/works-background-sculpture@3x.jpg": {
-		"ft": 16384,
-		"iS": 422991,
-		"oA": 0,
-		"oAP": "\/build\/images\/works-background-sculpture@3x.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/images\/works\/sculpture-balance_uno.jpg": {
-		"ft": 16384,
-		"iS": 91346,
-		"oA": 0,
-		"oAP": "\/build\/images\/works\/sculpture-balance_uno.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/images\/works\/sculpture-balance_uno@2x.jpg": {
-		"ft": 16384,
-		"iS": 226429,
-		"oA": 0,
-		"oAP": "\/build\/images\/works\/sculpture-balance_uno@2x.jpg",
+		"oAP": "\/build\/images\/works\/instalation-pixels.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/images\/works\/sculpture-balance_uno@3x.jpg": {
+	"\/images\/works\/instalation-pixels@2x.jpg": {
 		"ft": 16384,
-		"iS": 398266,
+		"iS": 227804,
 		"oA": 0,
-		"oAP": "\/build\/images\/works\/sculpture-balance_uno@3x.jpg",
+		"oAP": "\/build\/images\/works\/instalation-pixels@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/instalation-pixels@3x.jpg": {
+		"ft": 16384,
+		"iS": 407309,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/instalation-pixels@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/mural-espejismo.jpg": {
+		"ft": 16384,
+		"iS": 216263,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/mural-espejismo.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/mural-espejismo@2x.jpg": {
+		"ft": 16384,
+		"iS": 487751,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/mural-espejismo@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/mural-espejismo@3x.jpg": {
+		"ft": 16384,
+		"iS": 860838,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/mural-espejismo@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/painting-restrospectiva_365.jpg": {
+		"ft": 16384,
+		"iS": 235488,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/painting-restrospectiva_365.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/painting-restrospectiva_365@2x.jpg": {
+		"ft": 16384,
+		"iS": 572637,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/painting-restrospectiva_365@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/painting-restrospectiva_365@3x.jpg": {
+		"ft": 16384,
+		"iS": 1044496,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/painting-restrospectiva_365@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/painting-the_big_picture.jpg": {
+		"ft": 16384,
+		"iS": 368796,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/painting-the_big_picture.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/painting-the_big_picture@2x.jpg": {
+		"ft": 16384,
+		"iS": 810307,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/painting-the_big_picture@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/painting-the_big_picture@3x.jpg": {
+		"ft": 16384,
+		"iS": 1420132,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/painting-the_big_picture@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-365_geometrical_days.jpg": {
+		"ft": 16384,
+		"iS": 112170,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-365_geometrical_days.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-365_geometrical_days@2x.jpg": {
+		"ft": 16384,
+		"iS": 264157,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-365_geometrical_days@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-365_geometrical_days@3x.jpg": {
+		"ft": 16384,
+		"iS": 463484,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-365_geometrical_days@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-balance_i.jpg": {
+		"ft": 16384,
+		"iS": 93828,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-balance_i.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-balance_i@2x.jpg": {
+		"ft": 16384,
+		"iS": 226449,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-balance_i@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-balance_i@3x.jpg": {
+		"ft": 16384,
+		"iS": 398326,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-balance_i@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-candy_ball.jpg": {
+		"ft": 16384,
+		"iS": 230494,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-candy_ball.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-candy_ball@2x.jpg": {
+		"ft": 16384,
+		"iS": 485844,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-candy_ball@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-candy_ball@3x.jpg": {
+		"ft": 16384,
+		"iS": 847594,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-candy_ball@3x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-geometriq.jpg": {
+		"ft": 16384,
+		"iS": 181363,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-geometriq.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-geometriq@2x.jpg": {
+		"ft": 16384,
+		"iS": 437895,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-geometriq@2x.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/works\/sculpture-geometriq@3x.jpg": {
+		"ft": 16384,
+		"iS": 777339,
+		"oA": 0,
+		"oAP": "\/build\/images\/works\/sculpture-geometriq@3x.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

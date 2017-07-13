@@ -4531,6 +4531,9 @@ section .information-wrapper {
 section .photography-wrapper {
   float: right; }
 
+section .gallery-wrapper {
+  display: none; }
+
 section .information, section .photography {
   position: absolute;
   bottom: 0; }
@@ -4541,7 +4544,7 @@ section .information, section .photography {
 
 section .information {
   margin: 1em 2em; }
-  section .information h2, section .information .images-wrapper {
+  section .information h2 {
     display: none; }
   section .information h3, section .information h4 {
     margin: 0;
@@ -4582,9 +4585,6 @@ section .photography img {
   @media screen and (max-width: 768px) {
     section .photography img {
       width: 50%; } }
-  @media screen and (max-width: 375px) {
-    section .photography img {
-      width: 75%; } }
 
 .section::after, .slide::after {
   content: "";
@@ -4610,10 +4610,13 @@ aside.modal {
     top: 0;
     right: 0;
     display: block;
+    width: 1.5em;
+    height: 1.5em;
     color: #252626;
     background: #fbfbfb;
-    padding: .25em .5em;
     text-decoration: none;
+    text-align: center;
+    line-height: 1.5em;
     font-size: 2em; }
   aside.modal .fotorama {
     margin-top: 5%;
@@ -4625,3 +4628,6 @@ aside.modal {
         background: rgba(251, 251, 251, 0.85); }
     aside.modal .fotorama .fotorama__dot {
       border-color: #fbfbfb; }
+    @media screen and (max-width: 768px) {
+      aside.modal .fotorama {
+        margin-top: 20%; } }
