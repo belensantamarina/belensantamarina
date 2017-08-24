@@ -1500,7 +1500,8 @@ section .information_wrapper {
   section .information_wrapper p {
     font-size: .85em;
     font-weight: 300;
-    line-height: 1.5em; }
+    line-height: 1.5em;
+    margin-bottom: .5em; }
     section .information_wrapper p a {
       text-decoration: none;
       font-weight: 700;
@@ -1515,7 +1516,11 @@ section .information_wrapper {
       section .information_wrapper p {
         font-size: 1.25em; } }
     section .information_wrapper p:last-child {
-      padding-bottom: 1em; }
+      font-size: .75em;
+      margin: 0 0 3em 0; }
+      @media (min-width: 1024px) {
+        section .information_wrapper p:last-child {
+          font-size: 1em; } }
   section .information_wrapper.mirrored {
     text-align: right;
     padding: 0 2em 1em 0;
@@ -1525,6 +1530,14 @@ section .information_wrapper {
 #biography {
   background: rgba(37, 38, 38, 0.05);
   margin-bottom: 0; }
+  #biography p {
+    font-size: .75em; }
+    @media (min-width: 768px) {
+      #biography p {
+        font-size: 1em; } }
+    @media (min-width: 1024px) {
+      #biography p {
+        font-size: 1.15em; } }
   #biography video {
     position: absolute;
     top: 0;
@@ -1532,6 +1545,43 @@ section .information_wrapper {
     height: 100%;
     width: auto;
     z-index: -1; }
+
+/* === Section: Quote === */
+#quote {
+  background: #252626;
+  margin-bottom: 0;
+  height: 200vh; }
+  @media (min-width: 375px) {
+    #quote {
+      height: 150vh; } }
+  #quote .information_wrapper {
+    justify-content: flex-start;
+    padding-top: 4em; }
+    @media (min-width: 768px) {
+      #quote .information_wrapper {
+        margin: 0 auto; } }
+    #quote .information_wrapper h3 {
+      color: #fbfbfb; }
+    #quote .information_wrapper p {
+      color: #fbfbfb;
+      font-size: .85em; }
+      @media (min-width: 768px) {
+        #quote .information_wrapper p {
+          font-size: 1em; } }
+      @media (min-width: 1024px) {
+        #quote .information_wrapper p {
+          font-size: 1.15em; } }
+    #quote .information_wrapper strong {
+      text-align: right;
+      color: #fbfbfb;
+      margin-top: 2em;
+      font-size: 1em; }
+      @media (min-width: 768px) {
+        #quote .information_wrapper strong {
+          font-size: 1.15em; } }
+      @media (min-width: 1024px) {
+        #quote .information_wrapper strong {
+          font-size: 1.25em; } }
 
 /* === Section: Contact === */
 #contact {

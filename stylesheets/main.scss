@@ -287,6 +287,7 @@ section {
       font-size: .85em;
       font-weight: 300;
       line-height: 1.5em;
+      margin-bottom: .5em;
       a {
         text-decoration: none;
         font-weight: 700;
@@ -303,7 +304,11 @@ section {
         font-size: 1.25em;
       }
       &:last-child {
-        padding-bottom: 1em;
+        font-size: .75em;
+        margin: 0 0 3em 0;
+        @media (min-width: 1024px) {
+          font-size: 1em;
+        }
       }
     }
     &.mirrored {
@@ -318,12 +323,63 @@ section {
 #biography {
   background: transparentize($black,.95);
   margin-bottom: 0;
+  p {
+    font-size: .75em;
+    @media (min-width: 768px) {
+      font-size: 1em;
+    }
+    @media (min-width: 1024px) {
+      font-size: 1.15em;
+    }
+  }
   video {
     position: absolute;
     top: 0; left: 0;
     height: 100%;
     width: auto;
     z-index: -1;
+  }
+}
+
+/* === Section: Quote === */
+#quote {
+  background: $black;
+  margin-bottom: 0;
+  height: 200vh;
+  @media (min-width: 375px) {
+    height: 150vh;
+  }
+  .information_wrapper {
+    justify-content: flex-start;
+    padding-top: 4em;
+    @media (min-width: 768px) {
+      margin: 0 auto;
+    }
+    h3 {
+      color: $white;
+    }
+    p {
+      color: $white;
+      font-size: .85em;
+      @media (min-width: 768px) {
+        font-size: 1em;
+      }
+      @media (min-width: 1024px) {
+        font-size: 1.15em;
+      }
+    }
+    strong {
+      text-align: right;
+      color: $white;
+      margin-top: 2em;
+      font-size: 1em;
+      @media (min-width: 768px) {
+        font-size: 1.15em;
+      }
+      @media (min-width: 1024px) {
+        font-size: 1.25em;
+      }
+    }
   }
 }
 
