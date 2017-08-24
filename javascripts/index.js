@@ -1,4 +1,4 @@
-/* globals Vue, axios */
+/* globals Vue, axios, ga */
 /* exported app, scroll */
 
 var app = new Vue({
@@ -147,6 +147,7 @@ var app = new Vue({
         })
         .then(function (response) {
           window.console.log(response);
+          ga('send', 'event', 'contact', 'submitted');
           that.contact.status = 'success';
           that.contact.submit = 'Enviado :)';
           window.alert('¡Muchas gracias por ponerse en contacto! Su mensaje fue enviado con éxito, le responderemos a la brevedad.');
@@ -155,7 +156,7 @@ var app = new Vue({
           that.contact.message = '';
         })
         .catch(function (error) {
-          window.console.log(error);
+          ga('send', 'event', 'contact', 'failed', error);
           that.contact.status = 'error';
           that.contact.submit = 'No enviado :(';
           window.alert('Ha ocurrido un error al enviar su mensaje, vuelva a intentarlo en unos momentos.');
