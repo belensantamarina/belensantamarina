@@ -5,7 +5,7 @@
   	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
   	<meta name="viewport" content="width=device-width, initial-scale=1" />
   	
-  	<link rel="stylesheet" href="stylesheets/main.css" type="text/css" />
+  	<link rel="stylesheet" href="./stylesheets/main.css" type="text/css" />
   	
   	<!-- <link rel="apple-touch-icon-precomposed" sizes="180x180" href="images/favicon/apple-touch-icon-180x180.png" />
   	<link rel="mask-icon" href="images/favicon/favicon-mask.svg" color="#e287e2" />
@@ -20,7 +20,7 @@
     <link rel="manifest" href="manifest.json" /> -->
   	
 		<title>Belen Santamarina</title>
-		<meta name="description" content="Visual Artist & Geometry Fanatic from Buenos Aires, Argentina." />
+		<meta name="description" content="Visual Artist & Geometry Fanatic from Buenos Aires, Argentina" />
 		
 		<!-- <meta property="og:url" content="https://www.belensantamarina.com" />
     <meta property="og:type" content="website" />
@@ -29,220 +29,77 @@
     <meta property="og:image" content="https://www.belensantamarina.com/images/og-image.png" />
     <meta property="og:locale" content="es_LA" />
     <meta property="fb:app_id" content="1505765556114571" /> -->
+
+    <script type="text/javascript" defer src="/bower_components/Font-Awesome-Pro/js/packs/brands.js"></script>
+    <script type="text/javascript" defer src="/bower_components/Font-Awesome-Pro/js/fontawesome.js"></script>
 	</head>
 	<body>
+
+    <div id="app">
   	
-  	<header class="main">
-    	<h1><a href="/">Belen Santamarina</a></h1>
-    	<nav class="main">
-      	<ul id="fullpage_menu">
-        	<li><a href="#works" data-menuanchor="works">Obras</a></li>
-        	<li><a href="#exhibitions" data-menuanchor="exhibitions">Exhibiciones</a></li>
-        	<li><a href="#biography" data-menuanchor="biography">Biografía</a></li>
-        	<li><a href="#contact" data-menuanchor="contact">Contacto</a></li>
-      	</ul>
-      	<ul class="language">
-        	<li><a href="#" lang="es"><abbr title="Español">ESP</abbr></a></li>
-        	<li><a href="#" lang="en"><abbr title="English">ENG</abbr></a></li>
-      	</ul>
-    	</nav>
-  	</header>
+    	<header class="main" :class="{ active: menu.active }">
+      	<h1><a href="/">Belen Santamarina</a></h1>
+      	<nav class="main">
+        	<ul>
+          	<li v-for="item in menu.items"><a :href="'#' + item.id">{{ item.name }}</a></li>
+            <li><a href="https://www.instagram.com/belenlsantamarina/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/belenlsantamarina/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="language">
+              <a href="#" lang="es"><abbr title="Español">ESP</abbr></a>
+              <a href="#" lang="en"><abbr title="English">ENG</abbr></a>
+            </li>
+        	</ul>
+      	</nav>
+        <button class="nav" @click="menu.active = !menu.active">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path id="top_bar" fill="#252626" d="M442,114 L6,114 C2.6862915,114 4.05812251e-16,111.313708 0,108 L0,84 C-4.05812251e-16,80.6862915 2.6862915,78 6,78 L442,78 C445.313708,78 448,80.6862915 448,84 L448,108 C448,111.313708 445.313708,114 442,114 Z" />
+            <path id="middle_bar" fill="#252626" d="M442,274 L6,274 C2.6862915,274 4.05812251e-16,271.313708 0,268 L0,244 C-4.05812251e-16,240.686292 2.6862915,238 6,238 L442,238 C445.313708,238 448,240.686292 448,244 L448,268 C448,271.313708 445.313708,274 442,274 Z" />
+            <path id="bottom_bar" fill="#252626" d="M442,434 L6,434 C2.6862915,434 4.05812251e-16,431.313708 0,428 L0,404 C-4.05812251e-16,400.686292 2.6862915,398 6,398 L442,398 C445.313708,398 448,400.686292 448,404 L448,428 C448,431.313708 445.313708,434 442,434 Z" />
+          </svg>
+        </button>
+    	</header>
+    	
+    	<main class="parallax">
+      	<section v-for="work in works" class="parallax__group" :class="{ conected: work.conected }">
+          <div v-for="(cover, index) in work.cover" class="parallax__layer" :class="[ 'parallax__layer--back_' + index, cover.align ]" :style="{ backgroundImage: 'url(' + cover.src + ')'}"></div>
+          <div class="parallax__layer parallax__layer--base">
+            <div class="information_wrapper" :class="{ mirrored: work.mirrored }">
+            	<h3>{{ work.category }}</h3>
+            	<h4>{{ work.name }}</h4>
+            	<p v-html="work.description"></p>
+            </div>
+          </div>
+        </section>
+        <section class="parallax__group" id="biography">
+          <div class="parallax__layer parallax__layer--base">
+            <div class="information_wrapper mirrored">
+              <h2>Biografía</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra vehicula velit tincidunt facilisis. Phasellus aliquam varius mollis. Phasellus rhoncus neque nec tempor pulvinar. <strong>Vivamus nunc tortor, sollicitudin vel interdum nec, vulputate eu turpis.</strong></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra vehicula velit tincidunt facilisis. <em>Phasellus aliquam varius mollis.</em> Phasellus rhoncus neque nec tempor pulvinar. Vivamus nunc tortor, sollicitudin vel interdum nec, vulputate eu turpis.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra vehicula velit tincidunt facilisis. Phasellus aliquam varius mollis. Phasellus rhoncus neque nec tempor pulvinar.</p>
+            </div>
+            <video src="/images/biography.mp4" poster="/images/biography.jpg" width="1920" height="1080" autoplay="autoplay" loop="loop" muted="muted"></video>
+          </div>
+        </section>
+        <section class="parallax__group" id="contact">
+          <div class="parallax__layer parallax__layer--base">
+            <div class="information_wrapper">
+              <h2>Contacto</h2>
+              <form @submit.prevent="send_message">
+                <input type="text" v-model="contact.name" required="required" placeholder="Nombre" />
+                <input type="email" v-model="contact.email" required="required" placeholder="Correo electrónico" />
+                <textarea  v-model="contact.message" required="required" placeholder="Mensaje..."></textarea>
+                <input type="submit" v-model="contact.submit" :class="contact.status" />
+              </form>
+            </div>
+          </div>
+        </section>
+    	</main>
+
+    </div>
   	
-  	<main id="fullpage">
-    	<section data-anchor="works" class="section">
-      	
-      	<!-- Escultura: Balance I -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Escultura</h3>
-            	<h4>Balance I</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#balance_i_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/sculpture-balance_i.jpg" alt="Balance I" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="balance_i_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Escultura: 365 Geometrical Days -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Escultura</h3>
-            	<h4>365 Geometrical Days</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#365_gd_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/sculpture-365_geometrical_days.jpg" alt="365 Geometrical Days" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="365_gd_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Escultura: Geometric -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Escultura</h3>
-            	<h4>Geometriq</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#geometriq_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/sculpture-geometriq.jpg" alt="Geometriq" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="geometriq_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Escultura: Candy Ball -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Escultura</h3>
-            	<h4>Candy Ball</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#candy_ball_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/sculpture-candy_ball.jpg" alt="Candy Ball" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="candy_ball_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Painting: Restrospectiva 365 Geometrical Days -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Pintura · Dibujo</h3>
-            	<h4>Retrospectiva 365</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#retrospective_365_geometrical_days_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/painting-restrospectiva_365.jpg" alt="Retrospectiva 365" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="retrospective_365_geometrical_days_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Painting: The Big Picture -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Pintura</h3>
-            	<h4>The Big Picture</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#the_big_picture_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/painting-the_big_picture.jpg" alt="The Big Picture" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="the_big_picture_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Instalation: Pixels -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Instalación</h3>
-            	<h4>Pixels</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#pixels_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/instalation-pixels.jpg" alt="Pixels" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="pixels_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-      	<!-- Mural: Espejismo -->
-      	<div class="slide">
-          <div class="information-wrapper">
-            <div class="information">
-            	<h2>Obras</h2>
-            	<h3>Mural</h3>
-            	<h4>Espejismo</h4>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat purus sed tortor faucibus, vitae fringilla metus luctus. Donec dapibus felis in magna lobortis placerat. Mauris quis dictum metus. <a href="#espejismo_gallery" class="open-modal">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-            </div>
-          </div>
-          <div class="photography-wrapper">
-            <div class="photography">
-              <img src="images/works/mural-espejismo.jpg" alt="Espejismo" width="800" height="768" data-rjs="3" />
-            </div>
-          </div>
-          <div class="gallery-wrapper" id="espejismo_gallery">
-          	<img src="//via.placeholder.com/800x600" alt="Foto 1" width="800" height="600" data-caption="Foto 1" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 2" width="800" height="600" data-caption="Foto 2" />
-          	<img src="//via.placeholder.com/800x600" alt="Foto 3" width="800" height="600" data-caption="Foto 3" />
-        	</div>
-      	</div>
-      	
-    	</section>
-    	<section data-anchor="exhibitions" class="section">Exhibiciones</section>
-    	<section data-anchor="biography" class="section">Biografía</section>
-    	<section data-anchor="contact" class="section">Contacto</section>
-  	</main>
-  	
-  	<aside class="modal" id="modal_gallery">
-    	<a href="#" class="close" id="modal_close">&times;</a>
-    	<div class="fotorama" id="fotorama" data-auto="false" data-width="100%" data-ratio="4/3" data-maxheight="85%"></div>
-  	</aside>
-  	
-  	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-  	<script type="text/javascript" src="bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
-  	<script type="text/javascript" src="bower_components/retinajs/dist/retina.min.js"></script>
-  	<script type="text/javascript" src="bower_components/fotorama/fotorama.js"></script>
-  	
-		<script type="text/javascript" src="javascripts/index.min.js"></script>
+    <script type="text/javascript" src="/bower_components/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="/bower_components/axios/dist/axios.min.js"></script>
+		<script type="text/javascript" src="/javascripts/index.min.js"></script>
 	</body>
 </html>
