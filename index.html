@@ -31,32 +31,27 @@
     <meta property="fb:app_id" content="1505765556114571" /> -->
 
     <script type="text/javascript" defer src="/bower_components/Font-Awesome-Pro/js/packs/brands.js"></script>
+    <script type="text/javascript" defer src="/bower_components/Font-Awesome-Pro/js/packs/light.js"></script>
     <script type="text/javascript" defer src="/bower_components/Font-Awesome-Pro/js/fontawesome.js"></script>
 	</head>
 	<body>
 
     <div id="app">
   	
-    	<header class="main" :class="{ active: menu.active }">
+    	<header class="main">
       	<h1><a href="/">Belen Santamarina</a></h1>
       	<nav class="main">
         	<ul>
           	<li v-for="item in menu.items"><a :href="'#' + item.id">{{ item.name }}</a></li>
-            <li><a href="https://www.instagram.com/belenlsantamarina/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com/belenlsantamarina/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="language">
+            <li class="icon"><a href="https://www.instagram.com/belenlsantamarina/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li class="icon"><a href="https://www.facebook.com/belenlsantamarina/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="icon contact"><a href="#contact"><i class="fal fa-envelope"></i></a></li>
+            <!-- <li class="language">
               <a href="#" lang="es"><abbr title="Español">ESP</abbr></a>
               <a href="#" lang="en"><abbr title="English">ENG</abbr></a>
-            </li>
+            </li> -->
         	</ul>
       	</nav>
-        <button class="nav" @click="menu.active = !menu.active">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path id="top_bar" fill="#252626" d="M442,114 L6,114 C2.6862915,114 4.05812251e-16,111.313708 0,108 L0,84 C-4.05812251e-16,80.6862915 2.6862915,78 6,78 L442,78 C445.313708,78 448,80.6862915 448,84 L448,108 C448,111.313708 445.313708,114 442,114 Z" />
-            <path id="middle_bar" fill="#252626" d="M442,274 L6,274 C2.6862915,274 4.05812251e-16,271.313708 0,268 L0,244 C-4.05812251e-16,240.686292 2.6862915,238 6,238 L442,238 C445.313708,238 448,240.686292 448,244 L448,268 C448,271.313708 445.313708,274 442,274 Z" />
-            <path id="bottom_bar" fill="#252626" d="M442,434 L6,434 C2.6862915,434 4.05812251e-16,431.313708 0,428 L0,404 C-4.05812251e-16,400.686292 2.6862915,398 6,398 L442,398 C445.313708,398 448,400.686292 448,404 L448,428 C448,431.313708 445.313708,434 442,434 Z" />
-          </svg>
-        </button>
     	</header>
     	
     	<main class="parallax">
