@@ -25,9 +25,9 @@ var app = new Vue({
         ]
       },
       {
-        name: 'Retrospectiva',
-        category: '365 Geometrical Days',
-        description: '<strong>2017</strong> 365 Geometrical Days es una obra que abarca el recorrido de un año completo de producción artística realizada y compartida cada día. Casi un año después de haber terminado este recorrido, surgió la posibilidad de exponer 365 Geometrical Days. Para esta muestra retrospectiva se expusieron las micro-esculturas, fotografías, dibujos y pinturas que fueron creadas en torno a 365 Geometrical Days, en relación al camino recorrido y a lo aprendido al transitar el mismo.',
+        name: '365 Geometrical Days',
+        category: 'Retrospectiva',
+        description: '<strong>2017</strong> Casi un año después de haber finalizado el proyecto 365 Geometrical Days y en forma de retrospectiva del camino recorrido se desarrollan una serie de obras que incluyen micro-esculturas, dibujos y pinturas creadas en torno a las experiencias vividas en torno a la exposición de la obra.',
         details: '',
         cover: [
           { src: '/images/works/365-retrospective/0.png', align: 'right' },
@@ -61,7 +61,7 @@ var app = new Vue({
       {
         name: 'Balance I y II',
         category: 'Escultura',
-        description: '<strong>2016</strong> Cada cúpula, dentro de su fragilidad, guarda un significado único e inalterable al paso del tiempo. A través de estas esculturas busco generar un alfabeto visual que al conjugar las pequeñas piezas que las componen, plasmen un poema visual.',
+        description: '<strong>2016</strong> Cada cúpula, dentro de su fragilidad, guarda un significado único e inalterable al paso del tiempo. A través de estas esculturas se busca generar un alfabeto que al conjugar las pequeñas piezas que las componen, plasman un poema visual.',
         details: '<em>Materiales: Madera, cartón, pintura acrílica, laca sintética.</em> <em>Medidas: Cada una de 12 x 18 x 12 cm.</em>',
         cover: [
           { src: '/images/works/balance/0.png', align: 'right' },
@@ -71,7 +71,7 @@ var app = new Vue({
       {
         name: '365 Geometrical Days',
         category: 'Obra Temporal',
-        description: '<strong>2015 - 2016</strong> Un proyecto que nació con la idea de crear y compartir una pequeña pieza de arte todos los días durante un año. El proyecto nace el 1 de agosto del año 2015, finaliza el 31 de julio del 2016 y comprende 365 mini-esculturas. Cada una de ellas corresponde a un día específico del año en el cual fue creada.',
+        description: '<strong>2015 - 2016</strong> El proyecto nace el 1 de agosto de 2015 con la idea de crear una pequeña pieza de arte todos los días durante un año. La obra está comprendida por la creación y difusión de 365 micro-esculturas, cada una de ellas correspondiendo al día específico en el cual fue concebida.',
         details: '',
         cover: [
           { src: '/images/works/365-geometrical-days/0.png', align: 'right' },
@@ -83,7 +83,7 @@ var app = new Vue({
       {
         name: '',
         category: '',
-        description: 'El proyectó se compone de dos secciones, la primera de ellas esta materializada en las esculturas que se exponen en tres cuadros de gran tamaño, cada uno de ellos contiene 100 micro-esculturas, exponiendo un total de 300 mini-esculturas. La segunda sección del proyecto es la fotografía. Cada una de las piezas fue fotografiada el mismo día en que fue realizada con la idea de compartirla a través de las redes sociales. Utilicé Instagram como plataforma de difusión del proyecto complementando la narrativa de cada una de las piezas y aprovechando la literalidad que planteaban las esculturas para compartir las fotografías de forma creativa. A través de este proyecto me interesa investigar distintas interacciones que surgen en el espectador al momento del encuentro con las obras.',
+        description: 'Acompañando la creación de las piezas y complementando a la narrativa del proyecto, cada micro-escultura fue fotografiada en su propio escenario y difundida a través de redes sociales logrando de esta forma generar una mirada lúdica y literal en torno a cada una de las creaciones.',
         details: '',
         cover: [
           { src: '/images/works/365-geometrical-days/3.png', align: 'left' },
