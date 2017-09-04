@@ -1,4 +1,4 @@
-/* globals Vue, axios, ga */
+/* globals Vue, AWS, ga */
 /* exported app, scroll */
 
 var app = new Vue({
@@ -150,35 +150,54 @@ var app = new Vue({
       if (that.contact_form_valid) {
         that.contact.status = 'loading';
         that.contact.submit = 'Enviando...';
-        axios.post('/contact.php', {
-          name: that.contact.name,
-          email: that.contact.email,
-          message: that.contact.message
-        })
-        .then(function (response) {
-          window.console.log(response);
-          ga('send', 'event', 'contact', 'submitted');
-          that.contact.status = 'success';
-          that.contact.submit = 'Enviado :)';
-          window.alert('¡Muchas gracias por ponerse en contacto! Su mensaje fue enviado con éxito, le responderemos a la brevedad.');
-          that.contact.name = '';
-          that.contact.email = '';
-          that.contact.message = '';
-        })
-        .catch(function (error) {
-          ga('send', 'event', 'contact', 'failed', error);
-          that.contact.status = 'error';
-          that.contact.submit = 'No enviado :(';
-          window.alert('Ha ocurrido un error al enviar su mensaje, vuelva a intentarlo en unos momentos.');
+        var ses = new AWS.SES();
+        var params = {
+          Destination: {
+            BccAddresses: [], 
+            CcAddresses: [], 
+            ToAddresses: ['belenls@me.com']
+          }, 
+          Message: {
+            Body: {
+              Text: {
+                Charset: 'UTF-8', 
+                Data: that.contact.message
+              }
+            }, 
+            Subject: {
+              Charset: 'UTF-8', 
+              Data: 'Nuevo mensaje de ' + that.contact.name
+            }
+          }, 
+          ReplyToAddresses: [that.contact.email], 
+          Source: 'no-reply@belensantamarina.com'
+        };
+        ses.sendEmail(params, function(error, response) {
+          if (error) {
+            window.console.log(error, error.stack);
+            that.contact.status = 'error';
+            that.contact.submit = 'No enviado :(';
+            ga('send', 'event', 'contact', 'failed', error);
+            window.alert('Ha ocurrido un error al enviar su mensaje, vuelva a intentarlo en unos momentos.');
+          } else {
+            window.console.log(response);
+            that.contact.status = 'success';
+            that.contact.submit = 'Enviado :)';
+            ga('send', 'event', 'contact', 'submitted');
+            window.alert('¡Muchas gracias por ponerse en contacto! Su mensaje fue enviado con éxito, le responderemos a la brevedad.');
+            that.contact.name = '';
+            that.contact.email = '';
+            that.contact.message = '';
+          }
         });
-        window.setTimeOut(function() {
+        window.setTimeout(function() {
           that.contact.status = '';
           that.contact.submit = 'Enviar';
         }, 5000);
       } else {
         window.alert('Por favor, revise que los datos del mensaje estén completos y su dirección de correo electrónico sea correcta.');
       }
-    }
+    } 
   },
   created: function() {
     AWS.config.region = 'us-east-1';
