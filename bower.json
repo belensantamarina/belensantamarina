@@ -24,6 +24,7 @@
     "animate.css": "sass",
     "vue": "^2.4.2",
     "Font-Awesome-Pro": "https://github.com/FortAwesome/Font-Awesome-Pro.git#^5.0.0-beta4",
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "aws-sdk": "aws-sdk-js#^2.108.0"
   }
 }

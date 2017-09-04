@@ -179,5 +179,11 @@ var app = new Vue({
         window.alert('Por favor, revise que los datos del mensaje estén completos y su dirección de correo electrónico sea correcta.');
       }
     }
+  },
+  created: function() {
+    AWS.config.region = 'us-east-1';
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+      IdentityPoolId: 'us-east-1:1e3e1fef-3194-4a27-bf81-9df77e534655',
+    });
   }
 });
