@@ -5,30 +5,82 @@ publish_mode: "editorial_workflow"
 media_folder: "static/media"
 public_folder: "./media"
 collections:
-  - name: "work"
-    label: "Work"
+  - name: "english_work"
+    label: "Work (English)"
     folder: "content/work"
     create: true
-    slug: "{{name}}"
+    slug: "{{id}}"
+    identifier_field: id
     extension: "json"
+    filter:
+      field: "language"
+      value: "en-GB"
     fields:
+      - label: "ID"
+        name: "id"
+        widget: "string"
       - label: "Name"
         name: "name"
         widget: "string"
       - label: "Body"
         name: "body"
         widget: "markdown"
-      - label: "Photo"
-        name: "photo"
-        widget: "image"
-        allow_multiple: true
-        media_library:
-          config:
-            multiple: true
-      - label: "Video"
-        name: "video"
+      - label: "Gallery"
+        name: "galley"
         widget: "file"
-        allow_multiple: true
+        required: false
         media_library:
-          config:
-            multiple: true
+          allow_multiple: true
+  - name: "spanish_work"
+    label: "Trabajo (Español)"
+    folder: "content/work"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    extension: "json"
+    filter:
+      field: "language"
+      value: "es-AR"
+    fields:
+      - label: "ID"
+        name: "id"
+        widget: "string"
+      - label: "Nombre"
+        name: "name"
+        widget: "string"
+      - label: "Cuerpo"
+        name: "body"
+        widget: "markdown"
+      - label: "Galería"
+        name: "galley"
+        widget: "file"
+        required: false
+        media_library:
+          allow_multiple: true
+  - name: "menu"
+    label: "Menu"
+    files:
+      - name: "english_menu"
+        label: "Menu (English)"
+        file: "content/english_menu.json"
+        extension: "json"
+        fields:
+          - name: "english_menu_item"
+            label: "Item (English)"
+            widget: "relation"
+            collection: "english_work"
+            value_field: "id"
+            search_fields: ["name"]
+            display_fields: ["name"]
+      - name: "spanish_menu"
+        label: "Menú (Español)"
+        file: "content/spanish_menu.json"
+        extension: "json"
+        fields:
+          - name: "spanish_menu_item"
+            label: "Ítem (Español)"
+            widget: "relation"
+            collection: "spanish_work"
+            value_field: "id"
+            search_fields: ["name"]
+            display_fields: ["name"]
