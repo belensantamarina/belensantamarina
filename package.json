@@ -4,10 +4,11 @@
   "description": "Belen Santamarina",
   "main": "script.js",
   "scripts": {
-    "start": "npm run build:js -- -w & npm run build:css -- -w & serve .",
-    "build": "npm run build:js && npm run build:css && npm run build:css:autoprefixer",
-    "build:js": "babel script.js -o script.min.js",
-    "build:css": "postcss --no-map --use autoprefixer postcss-nested --parser postcss-scss style.scss -o style.min.css"
+    "start": "npm run build:js -- -w & npm run build:css -- -w & serve build",
+    "build": "npm run build:js && npm run build:css && npm run build:html",
+    "build:js": "babel script.js -o build/script.min.js",
+    "build:css": "postcss --no-map --use autoprefixer postcss-nested --parser postcss-scss style.scss -o build/style.min.css",
+    "build:html": "mustache content.json index.html > build/index.html"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@babel/preset-env": "^7.14.5",
     "autoprefixer": "^10.2.6",
     "babel-preset-minify": "^0.5.1",
+    "mustache": "^4.2.0",
     "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
     "postcss-nested": "^5.0.5",
