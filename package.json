@@ -5,10 +5,12 @@
   "main": "script.js",
   "scripts": {
     "start": "npm run build:js -- -w & npm run build:css -- -w & serve build",
-    "build": "npm run build:js && npm run build:css && npm run build:html",
+    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:static",
     "build:js": "babel script.js -o build/script.min.js",
     "build:css": "postcss --no-map --use autoprefixer postcss-nested --parser postcss-scss style.scss -o build/style.min.css",
-    "build:html": "mustache content.json index.html > build/index.html"
+    "build:html": "mustache content.json index.html > build/index.html",
+    "build:static": "cp -rf static/* build",
+    "publish": "npm run build && cp -rf build/* docs && git add docs/* && git commit"
   },
   "repository": {
     "type": "git",
