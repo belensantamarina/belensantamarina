@@ -1,0 +1,44 @@
+{
+  "name": "belensantamarina",
+  "version": "3.0.0",
+  "description": "Belen Santamarina",
+  "main": "script.js",
+  "scripts": {
+    "start": "npm run build:js -- -w & npm run build:css -- -w & serve build",
+    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:static",
+    "build:js": "babel script.js -o build/script.min.js",
+    "build:css": "postcss --no-map --use autoprefixer postcss-nested --parser postcss-scss style.scss -o build/style.min.css",
+    "build:html": "mustache content.json index.html > build/index.html",
+    "build:static": "cp -rf static/* build",
+    "publish": "npm run build && cp -rf build/* docs && git add docs/* && git commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belenls/belenls.github.io.git"
+  },
+  "author": "Andres Moritan <amoritan@me.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/belenls/belenls.github.io/issues"
+  },
+  "homepage": "https://belensantamarina.com",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "autoprefixer": "^10.2.6",
+    "babel-preset-minify": "^0.5.1",
+    "mustache": "^4.2.0",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "postcss-nested": "^5.0.5",
+    "postcss-scss": "^4.0.0",
+    "serve": "^12.0.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "babel-preset-minify"
+    ]
+  }
+}
