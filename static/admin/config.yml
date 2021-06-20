@@ -16,9 +16,6 @@ collections:
       field: "language"
       value: "en-GB"
     fields:
-      - label: "ID"
-        name: "id"
-        widget: "string"
       - label: "Name"
         name: "name"
         widget: "string"
@@ -30,7 +27,11 @@ collections:
         widget: "file"
         required: false
         media_library:
-          allow_multiple: true
+          config:
+            multiple: true
+      - label: "ID"
+        name: "id"
+        widget: "string"
   - name: "spanish_work"
     label: "Trabajo (Español)"
     folder: "content/work"
@@ -42,9 +43,6 @@ collections:
       field: "language"
       value: "es-AR"
     fields:
-      - label: "ID"
-        name: "id"
-        widget: "string"
       - label: "Nombre"
         name: "name"
         widget: "string"
@@ -56,7 +54,11 @@ collections:
         widget: "file"
         required: false
         media_library:
-          allow_multiple: true
+          config:
+            multiple: true
+      - label: "ID"
+        name: "id"
+        widget: "string"
   - name: "menu"
     label: "Menu"
     files:
@@ -65,22 +67,24 @@ collections:
         file: "content/english_menu.json"
         extension: "json"
         fields:
-          - name: "english_menu_item"
-            label: "Item (English)"
+          - name: "items"
+            label: "Items (English)"
             widget: "relation"
             collection: "english_work"
             value_field: "id"
             search_fields: ["name"]
             display_fields: ["name"]
+            multiple: true
       - name: "spanish_menu"
         label: "Menú (Español)"
         file: "content/spanish_menu.json"
         extension: "json"
         fields:
-          - name: "spanish_menu_item"
-            label: "Ítem (Español)"
+          - name: "items"
+            label: "Ítems (Español)"
             widget: "relation"
             collection: "spanish_work"
             value_field: "id"
             search_fields: ["name"]
             display_fields: ["name"]
+            multiple: true
