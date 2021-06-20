@@ -24,11 +24,12 @@ collections:
         widget: "markdown"
       - label: "Gallery"
         name: "galley"
-        widget: "file"
+        widget: "list"
         required: false
-        media_library:
-          config:
-            multiple: true
+        field:
+          label: "File"
+          name: "file"
+          widget: "file"
       - label: "ID"
         name: "id"
         widget: "string"
@@ -49,42 +50,49 @@ collections:
       - label: "Cuerpo"
         name: "body"
         widget: "markdown"
-      - label: "Galería"
+      - label: "Gallery"
         name: "galley"
-        widget: "file"
+        widget: "list"
         required: false
-        media_library:
-          config:
-            multiple: true
+        field:
+          label: "Archivo"
+          name: "file"
+          widget: "file"
       - label: "ID"
         name: "id"
         widget: "string"
-  - name: "menu"
-    label: "Menu"
+  - label: "Menu"
+    name: "menu"
     files:
       - name: "english_menu"
         label: "Menu (English)"
         file: "content/english_menu.json"
         extension: "json"
         fields:
-          - name: "items"
-            label: "Items (English)"
-            widget: "relation"
-            collection: "english_work"
-            value_field: "id"
-            search_fields: ["name"]
-            display_fields: ["name"]
-            multiple: true
+          - label: "Items (English)"
+            name: "items"
+            widget: "list"
+            field:
+              label: "Item (English)"
+              name: "item"
+              widget: "relation"
+              collection: "english_work"
+              value_field: "id"
+              search_fields: ["name"]
+              display_fields: ["name"]
       - name: "spanish_menu"
         label: "Menú (Español)"
         file: "content/spanish_menu.json"
         extension: "json"
         fields:
-          - name: "items"
-            label: "Ítems (Español)"
-            widget: "relation"
-            collection: "spanish_work"
-            value_field: "id"
-            search_fields: ["name"]
-            display_fields: ["name"]
-            multiple: true
+          - label: "Ítems (Español)"
+            name: "items"
+            widget: "list"
+            field:
+              label: "Ítem (Español)"
+              name: "item"
+              widget: "relation"
+              collection: "spanish_work"
+              value_field: "id"
+              search_fields: ["name"]
+              display_fields: ["name"]
