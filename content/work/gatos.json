@@ -1,0 +1,10 @@
+{
+  "name": "Gatos",
+  "body": "Los **gatos** son geniales!",
+  "galley": [
+    "media/cat-1.jpeg",
+    "media/cat-2.jpeg",
+    "media/cat-3.jpeg"
+  ],
+  "id": "gatos"
+}
