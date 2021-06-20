@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 3em;
+}
+
+header h1 {
+		font-size: 1em;
+		margin: 1em;
+		font-family: 'novel-mono-pro', monospace;
+		font-weight: 400;
+	}
+
+header button#nav {
+		display: block;
+		font-size: 1em;
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+		        appearance: none;
+		background: url('./assets/menu-icon.svg') no-repeat center;
+		background-size: .75em;
+		border: none;
+		width: 3em;
+		height: 3em;
+		padding: 0;
+		text-indent: -1000em;
+		cursor: pointer;
+		transition: all .25s;
+	}
+
+header button#nav:hover {
+			transform: rotate(5deg);
+		}
+
+header button#nav.active {
+			transform: rotate(90deg);
+		}
+
+header button#nav.active:hover {
+			transform: rotate(85deg);
+		}
