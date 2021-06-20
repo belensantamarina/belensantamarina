@@ -1,17 +1,34 @@
 backend:
-  name: git-gateway
-  branch: main
-publish_mode: editorial_workflow
+  name: "git-gateway"
+  branch: "main"
+publish_mode: "editorial_workflow"
 media_folder: "static/media"
 public_folder: "./media"
 collections:
-  - name: "works"
-    label: "Works" # Used in the UI
-    folder: "content/works" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Photo", name: "photo", widget: "image", media_library: {config: {multiple: true}}}
-      - {label: "Video", name: "video", widget: "file", media_library: {config: {multiple: true}}}
+  - name: "work"
+    label: "Work"
+    folder: "content/work"
+    create: true
+    slug: "{{name}}"
+    extension: "json"
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - label: "Photo"
+        name: "photo"
+        widget: "image"
+        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
+      - label: "Video"
+        name: "video"
+        widget: "file"
+        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
