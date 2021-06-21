@@ -5,7 +5,9 @@ const readDirectory = (directoryPath) =>
     const fullDirectoryPath = `${process.cwd()}/${directoryPath}`;
     fs.readdir(fullDirectoryPath, (directoryError, directoryFiles) => {
       if (directoryError) {
-        reject(new ReferenceError(`Directory not found on ${fullDirectoryPath}`));
+        reject(
+          new ReferenceError(`Directory not found on ${fullDirectoryPath}`)
+        );
       }
       resolve(directoryFiles);
     });
