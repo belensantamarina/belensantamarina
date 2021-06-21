@@ -1,41 +1,41 @@
 body {
-	margin: 0;
+  margin: 0;
 }
 
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3em;
 
-	h1 {
-		font-size: 1em;
-		margin: 1em;
-		font-family: 'novel-mono-pro', monospace;
-		font-weight: 400;
-	}
+  h1 {
+    font-size: 1em;
+    margin: 1em;
+    font-family: 'novel-mono-pro', monospace;
+    font-weight: 400;
+  }
 
-	button#nav {
-		display: block;
-		font-size: 1em;
-		appearance: none;
-		background: url('./assets/menu-icon.svg') no-repeat center;
-		background-size: .75em;
-		border: none;
-		width: 3em;
-		height: 3em;
-		padding: 0;
-		text-indent: -1000em;
-		cursor: pointer;
-		transition: all .25s;
-		&:hover {
-			transform: rotate(5deg);
-		}
-		&.active {
-			transform: rotate(90deg);
-		}
-		&.active:hover {
-			transform: rotate(85deg);
-		}
-	}
+  button#nav {
+    display: block;
+    font-size: 1em;
+    appearance: none;
+    background: url('./assets/menu-icon.svg') no-repeat center;
+    background-size: 0.75em;
+    border: none;
+    width: 3em;
+    height: 3em;
+    padding: 0;
+    text-indent: -1000em;
+    cursor: pointer;
+    transition: all 0.25s;
+    &:hover {
+      transform: rotate(5deg);
+    }
+    &.active {
+      transform: rotate(90deg);
+    }
+    &.active:hover {
+      transform: rotate(85deg);
+    }
+  }
 }
