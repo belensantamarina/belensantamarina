@@ -70,6 +70,9 @@ collections:
         label: "Menu (English)"
         file: "content/english_menu.json"
         extension: "json"
+        filter:
+          field: "language"
+          value: "en-GB"
         fields:
           - name: "items"
             label: "Items"
@@ -79,13 +82,20 @@ collections:
               label: "Item"
               widget: "relation"
               collection: "english_work"
-              value_field: "{{slug}}"
+              value_field: "{{name}}|{{slug}}"
               search_fields: ["name"]
               display_fields: ["name"]
+          - name: "language"
+            label: "Language"
+            widget: "hidden"
+            default: "en-GB"
       - name: "spanish_menu"
         label: "Menú (Español)"
         file: "content/spanish_menu.json"
         extension: "json"
+        filter:
+          field: "language"
+          value: "es-AR"
         fields:
           - name: "items"
             label: "Ítems"
@@ -95,6 +105,49 @@ collections:
               label: "Ítem"
               widget: "relation"
               collection: "spanish_work"
-              value_field: "{{slug}}"
+              value_field: "{{name}}|{{slug}}"
               search_fields: ["name"]
               display_fields: ["name"]
+          - name: "language"
+            label: "Lenguaje"
+            widget: "hidden"
+            default: "es-AR"
+  - name: "constants"
+    label: "Constants"
+    files:
+      - name: "english_constants"
+        label: "Constants (English)"
+        file: "content/english_constants.json"
+        extension: "json"
+        filter:
+          field: "language"
+          value: "en-GB"
+        fields:
+          - name: "title"
+            label: "Title"
+            widget: "string"
+          - name: "description"
+            label: "Description"
+            widget: "string"
+          - name: "language"
+            label: "Language"
+            widget: "hidden"
+            default: "en-GB"
+      - name: "spanish_constants"
+        label: "Constantes (Español)"
+        file: "content/spanish_constants.json"
+        extension: "json"
+        filter:
+          field: "language"
+          value: "es-AR"
+        fields:
+          - name: "title"
+            label: "Título"
+            widget: "string"
+          - name: "description"
+            label: "Descripción"
+            widget: "string"
+          - name: "language"
+            label: "Lenguaje"
+            widget: "hidden"
+            default: "es-AR"
