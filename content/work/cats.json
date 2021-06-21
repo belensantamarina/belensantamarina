@@ -1,0 +1,10 @@
+{
+  "language": "en-GB",
+  "name": "Cats",
+  "body": "Cats are **awesome**!",
+  "galley": [
+    "media/cat-1.jpeg",
+    "media/cat-2.jpeg",
+    "media/cat-3.jpeg"
+  ]
+}
