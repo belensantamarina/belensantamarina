@@ -35,7 +35,7 @@ collections:
         default: "en-GB"
   - name: "spanish_work"
     label: "Trabajo (Español)"
-    folder: "content/work"
+    folder: "content/trabajo"
     create: true
     slug: "{{slug}}"
     identifier_field: name
