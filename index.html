@@ -25,6 +25,18 @@
       </ul>
     </nav>
 
+    <main>
+      {{#name}}
+      <h2>{{name}}</h2>
+      {{/name}} {{#gallery}}
+      <section>
+        {{#gallery_items}}
+        <img src="/{{{file}}}" alt="{{description}}" />
+        {{/gallery_items}}
+      </section>
+      {{/gallery}} {{{body}}}
+    </main>
+
     <script type="text/javascript" src="/script.min.js"></script>
   </body>
 </html>

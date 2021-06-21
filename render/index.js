@@ -1,6 +1,14 @@
 const mustache = require('mustache');
+const showdown = require('showdown');
 
-const { readDirectory, readFile, writeFile } = require('./utils/filesHandler');
+const {
+  readFile,
+  writeFile,
+  readDirectory,
+  prepareDirectory,
+} = require('./utils/filesHandler');
+
+const showdownConverter = new showdown.Converter();
 
 const render = async () => {
   let baseTemplate = await readFile('index.html');
@@ -12,14 +20,31 @@ const render = async () => {
     reference: itemString.split('|')[1],
   }));
 
-  templateData = {
+  const websiteData = {
     ...websiteConstants,
     nav_items: navItems,
   };
 
-  const templateOutput = mustache.render(baseTemplate, templateData);
+  let workFiles = await readDirectory('content/work');
+  await prepareDirectory('build/work');
+  for (let fileName of workFiles) {
+    let pageConstants = await readFile(`content/work/${fileName}`, true);
 
-  writeFile('build/index.html', templateOutput);
+    const pageBody = showdownConverter.makeHtml(pageConstants.body);
+    const pageData = {
+      ...websiteData,
+      body: pageBody,
+      name: pageConstants.name,
+      gallery: pageConstants.gallery.length > 0,
+      gallery_items: pageConstants.gallery,
+    };
+
+    const pageOutput = mustache.render(baseTemplate, pageData);
+    writeFile(`build/work/${fileName.replace('json', 'html')}`, pageOutput);
+  }
+
+  const homeOutput = mustache.render(baseTemplate, websiteData);
+  writeFile('build/index.html', homeOutput);
 };
 
 render();
