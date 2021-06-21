@@ -1,127 +1,133 @@
 backend:
-  name: "git-gateway"
-  branch: "main"
-publish_mode: "editorial_workflow"
-media_folder: "static/media"
-public_folder: "./media"
+  name: 'git-gateway'
+  branch: 'main'
+publish_mode: 'editorial_workflow'
+media_folder: 'static/media'
+public_folder: './media'
 collections:
-  - name: "english_work"
-    label: "Work (English)"
-    folder: "content/work"
+  - name: 'english_work'
+    label: 'Work (English)'
+    folder: 'content/work'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     identifier_field: name
-    extension: "json"
+    extension: 'json'
     filter:
-      field: "language"
-      value: "en-GB"
+      field: 'language'
+      value: 'en-GB'
     fields:
-      - name: "name"
-        label: "Name"
-        widget: "string"
-      - name: "body"
-        label: "Body"
-        widget: "markdown"
-      - name: "galley"
-        label: "Gallery"
-        widget: "list"
+      - name: 'name'
+        label: 'Name'
+        widget: 'string'
+      - name: 'body'
+        label: 'Body'
+        widget: 'markdown'
+      - name: 'gallery'
+        label: 'Gallery'
+        widget: 'list'
         required: false
-        field:
-          name: "file"
-          label: "File"
-          widget: "file"
-      - name: "language"
-        widget: "hidden"
-        default: "en-GB"
-  - name: "spanish_work"
-    label: "Trabajo (Español)"
-    folder: "content/work"
+        fields:
+          - name: 'file'
+            label: 'File'
+            widget: 'file'
+          - name: 'description'
+            label: 'Description'
+            widget: 'text'
+      - name: 'language'
+        widget: 'hidden'
+        default: 'en-GB'
+  - name: 'spanish_work'
+    label: 'Trabajo (Español)'
+    folder: 'content/trabajo'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     identifier_field: name
-    extension: "json"
+    extension: 'json'
     filter:
-      field: "language"
-      value: "es-AR"
+      field: 'language'
+      value: 'es-AR'
     fields:
-      - name: "name"
-        label: "Nombre"
-        widget: "string"
-      - name: "body"
-        label: "Cuerpo"
-        widget: "markdown"
-      - name: "galley"
-        label: "Gallery"
-        widget: "list"
+      - name: 'name'
+        label: 'Nombre'
+        widget: 'string'
+      - name: 'body'
+        label: 'Cuerpo'
+        widget: 'markdown'
+      - name: 'gallery'
+        label: 'Gallery'
+        widget: 'list'
         required: false
-        field:
-          name: "file"
-          label: "Archivo"
-          widget: "file"
-      - name: "language"
-        widget: "hidden"
-        default: "es-AR"
-  - name: "menu"
-    label: "Menu"
+        fields:
+          - name: 'file'
+            label: 'Archivo'
+            widget: 'file'
+          - name: 'description'
+            label: 'Descripción'
+            widget: 'text'
+      - name: 'language'
+        widget: 'hidden'
+        default: 'es-AR'
+  - name: 'menu'
+    label: 'Menu'
     files:
-      - name: "english_menu"
-        label: "Menu (English)"
-        file: "content/english_menu.json"
-        extension: "json"
+      - name: 'english_menu'
+        label: 'Menu (English)'
+        file: 'content/english_menu.json'
+        extension: 'json'
         fields:
-          - name: "items"
-            label: "Items"
-            widget: "list"
+          - name: 'items'
+            label: 'Items'
+            widget: 'list'
             field:
-              name: "item"
-              label: "Item"
-              widget: "relation"
-              collection: "english_work"
-              value_field: "{{name}}|{{slug}}"
-              search_fields: ["name"]
-              display_fields: ["name"]
-          - name: "language"
-            widget: "hidden"
-            default: "en-GB"
-      - name: "spanish_menu"
-        label: "Menú (Español)"
-        file: "content/spanish_menu.json"
-        extension: "json"
+              name: 'item'
+              label: 'Item'
+              widget: 'relation'
+              collection: 'english_work'
+              value_field: '{{name}}|{{slug}}'
+              search_fields: ['name']
+              display_fields: ['name']
+          - name: 'language'
+            widget: 'hidden'
+            default: 'en-GB'
+      - name: 'spanish_menu'
+        label: 'Menú (Español)'
+        file: 'content/spanish_menu.json'
+        extension: 'json'
         fields:
-          - name: "items"
-            label: "Ítems"
-            widget: "list"
+          - name: 'items'
+            label: 'Ítems'
+            widget: 'list'
             field:
-              name: "item"
-              label: "Ítem"
-              widget: "relation"
-              collection: "spanish_work"
-              value_field: "{{name}}|{{slug}}"
-              search_fields: ["name"]
-              display_fields: ["name"]
-          - name: "language"
-            widget: "hidden"
-            default: "es-AR"
-  - name: "constants"
-    label: "Constants"
+              name: 'item'
+              label: 'Ítem'
+              widget: 'relation'
+              collection: 'spanish_work'
+              value_field: '{{name}}|{{slug}}'
+              search_fields: ['name']
+              display_fields: ['name']
+          - name: 'language'
+            widget: 'hidden'
+            default: 'es-AR'
+  - name: 'constants'
+    label: 'Constants'
     files:
-      - name: "english_constants"
-        label: "Constants (English)"
-        file: "content/english_constants.json"
-        extension: "json"
+      - name: 'english_constants'
+        label: 'Constants (English)'
+        file: 'content/english_constants.json'
+        extension: 'json'
         fields:
-          - name: "language"
-            widget: "hidden"
-            default: "en-GB"
-          - name: "title"
-            label: "Title"
-            widget: "string"
-          - name: "description"
-            label: "Description"
-            widget: "text"
-          - name: "i18n_string_language"
-            widget: "hidden"
-            default: "English"
-          - name: "i18n_string_menu"
-            widget: "hidden"
-            default: "Menu"
+          - name: 'language'
+            widget: 'hidden'
+            default: 'en-GB'
+          - name: 'title'
+            label: 'Title'
+            widget: 'string'
+          - name: 'description'
+            label: 'Description'
+            widget: 'text'
+          - name: 'i18n_string_language'
+            widget: 'hidden'
+            default: 'English'
+          - name: 'i18n_string_menu'
+            widget: 'hidden'
+            default: 'Menu'
