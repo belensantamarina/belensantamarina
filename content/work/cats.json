@@ -2,9 +2,9 @@
   "language": "en-GB",
   "name": "Cats",
   "body": "Cats are **awesome**!",
-  "galley": [
-    "media/cat-1.jpeg",
-    "media/cat-2.jpeg",
-    "media/cat-3.jpeg"
+  "gallery": [
+    {"file": "media/cat-1.jpeg", "description": "Cat"},
+    {"file": "media/cat-2.jpeg", "description": "Cat"},
+    {"file": "media/cat-3.jpeg", "description": "Cat"}
   ]
 }

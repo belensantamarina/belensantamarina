@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="{{language}}">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="{{description}}" />
-		<link rel="stylesheet" type="text/css" href="./style.min.css" />
-		<link rel="stylesheet" type="text/css" href="//use.typekit.net/krp0vnd.css" />
-		<title>{{title}}</title>
-	</head>
-	<body>
-		<header>
-			<h1>{{title}}</h1>
-			<button id="nav">{{i18n_string_menu}}</button>
-		</header>
-		<nav></nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" type="text/css" href="/style.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//use.typekit.net/krp0vnd.css"
+    />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{title}}</h1>
+      <button id="nav">{{i18n_string_menu}}</button>
+    </header>
+    <nav>
+      <ul>
+        {{#nav_items}}
+        <li><a href="/work/{{reference}}.html">{{name}}</a></li>
+        {{/nav_items}}
+      </ul>
+    </nav>
 
-		<script type="text/javascript" src="./script.min.js"></script>
-	</body>
+    <main>
+      {{#name}}
+      <h2>{{name}}</h2>
+      {{/name}} {{#gallery}}
+      <section>
+        {{#gallery_items}}
+        <img src="/{{{file}}}" alt="{{description}}" />
+        {{/gallery_items}}
+      </section>
+      {{/gallery}} {{{body}}}
+    </main>
+
+    <script type="text/javascript" src="/script.min.js"></script>
+  </body>
 </html>
