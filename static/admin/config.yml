@@ -9,75 +9,77 @@ collections:
     label: "Work (English)"
     folder: "content/work"
     create: true
-    slug: "{{id}}"
-    identifier_field: id
+    slug: "{{slug}}"
+    identifier_field: name
     extension: "json"
     filter:
       field: "language"
       value: "en-GB"
     fields:
-      - label: "Name"
-        name: "name"
+      - name: "name"
+        label: "Name"
         widget: "string"
-      - label: "Body"
-        name: "body"
+      - name: "body"
+        label: "Body"
         widget: "markdown"
-      - label: "Gallery"
-        name: "galley"
+      - name: "galley"
+        label: "Gallery"
         widget: "list"
         required: false
         field:
-          label: "File"
           name: "file"
+          label: "File"
           widget: "file"
-      - label: "ID"
-        name: "id"
-        widget: "string"
+      - name: "language"
+        label: "Language"
+        widget: "hidden"
+        default: "en-GB"
   - name: "spanish_work"
     label: "Trabajo (Español)"
     folder: "content/work"
     create: true
-    slug: "{{id}}"
-    identifier_field: id
+    slug: "{{slug}}"
+    identifier_field: name
     extension: "json"
     filter:
       field: "language"
       value: "es-AR"
     fields:
-      - label: "Nombre"
-        name: "name"
+      - name: "name"
+        label: "Nombre"
         widget: "string"
-      - label: "Cuerpo"
-        name: "body"
+      - name: "body"
+        label: "Cuerpo"
         widget: "markdown"
-      - label: "Gallery"
-        name: "galley"
+      - name: "galley"
+        label: "Gallery"
         widget: "list"
         required: false
         field:
-          label: "Archivo"
           name: "file"
+          label: "Archivo"
           widget: "file"
-      - label: "ID"
-        name: "id"
-        widget: "string"
-  - label: "Menu"
-    name: "menu"
+      - name: "language"
+        label: "Lenguaje"
+        widget: "hidden"
+        default: "es-AR"
+  - name: "menu"
+    label: "Menu"
     files:
       - name: "english_menu"
         label: "Menu (English)"
         file: "content/english_menu.json"
         extension: "json"
         fields:
-          - label: "Items (English)"
-            name: "items"
+          - name: "items"
+            label: "Items"
             widget: "list"
             field:
-              label: "Item (English)"
               name: "item"
+              label: "Item"
               widget: "relation"
               collection: "english_work"
-              value_field: "id"
+              value_field: "{{slug}}"
               search_fields: ["name"]
               display_fields: ["name"]
       - name: "spanish_menu"
@@ -85,14 +87,14 @@ collections:
         file: "content/spanish_menu.json"
         extension: "json"
         fields:
-          - label: "Ítems (Español)"
-            name: "items"
+          - name: "items"
+            label: "Ítems"
             widget: "list"
             field:
-              label: "Ítem (Español)"
               name: "item"
+              label: "Ítem"
               widget: "relation"
               collection: "spanish_work"
-              value_field: "id"
+              value_field: "{{slug}}"
               search_fields: ["name"]
               display_fields: ["name"]
