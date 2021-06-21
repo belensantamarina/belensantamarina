@@ -1,18 +1,5 @@
 const fs = require('fs');
 
-const readDirectory = (directoryPath) =>
-  new Promise((resolve, reject) => {
-    const fullDirectoryPath = `${process.cwd()}/${directoryPath}`;
-    fs.readdir(fullDirectoryPath, (directoryError, directoryFiles) => {
-      if (directoryError) {
-        reject(
-          new ReferenceError(`Directory not found on ${fullDirectoryPath}`)
-        );
-      }
-      resolve(directoryFiles);
-    });
-  });
-
 const readFile = (filePath, parseFile = false) =>
   new Promise((resolve, reject) => {
     const fullFilePath = `${process.cwd()}/${filePath}`;
@@ -43,4 +30,31 @@ const writeFile = (filePath, fileContent) =>
     });
   });
 
-module.exports = { readDirectory, readFile, writeFile };
+const readDirectory = (directoryPath) =>
+  new Promise((resolve, reject) => {
+    const fullDirectoryPath = `${process.cwd()}/${directoryPath}`;
+    fs.readdir(fullDirectoryPath, (directoryError, directoryFiles) => {
+      if (directoryError) {
+        reject(
+          new ReferenceError(`Directory not found on ${fullDirectoryPath}`)
+        );
+      }
+      resolve(directoryFiles);
+    });
+  });
+
+const prepareDirectory = (directoryPath) =>
+  new Promise((resolve, reject) => {
+    const fullDirectoryPath = `${process.cwd()}/${directoryPath}`;
+    fs.stat(fullDirectoryPath, (directoryError) => {
+      if (directoryError) {
+        fs.mkdir(fullDirectoryPath, () => {
+          resolve();
+        });
+      } else {
+        resolve();
+      }
+    });
+  });
+
+module.exports = { readFile, writeFile, readDirectory, prepareDirectory };
