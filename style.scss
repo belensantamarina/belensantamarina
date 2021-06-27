@@ -144,6 +144,9 @@ main {
           height: 100%;
           object-fit: cover;
           cursor: pointer;
+          &.active {
+            opacity: 0.5;
+          }
         }
       }
     }

@@ -43,7 +43,9 @@
         <div id="img" aria-hidden="true"></div>
         <ul>
           {{#gallery_items}}
-          <li><img src="/{{{file}}}" alt="{{description}}" /></li>
+          <li>
+            <img src="/{{{file}}}" alt="{{description}}" data-id="{{id}}" />
+          </li>
           {{/gallery_items}}
         </ul>
       </section>
