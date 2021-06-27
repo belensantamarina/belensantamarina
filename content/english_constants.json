@@ -3,5 +3,26 @@
   "title": "Belen Santamarina",
   "description": "Belen Santamarina, visual artist from Buenos Aires.",
   "i18n_string_language": "English",
-  "i18n_string_menu": "Menu"
+  "i18n_string_menu": "Menu",
+  "menu": [
+    "Cats|cats"
+  ],
+  "gallery": [
+    {
+      "file": "media/cat-1.jpeg",
+      "description": "Cat A"
+    },
+    {
+      "file": "media/cat-2.jpeg",
+      "description": "Cat B"
+    },
+    {
+      "file": "media/cat-3.jpeg",
+      "description": "Cat C"
+    },
+    {
+      "file": "media/dog-1.jpeg",
+      "description": "Dog"
+    }
+  ]
 }
