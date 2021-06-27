@@ -44,7 +44,13 @@
         <ul class="{{gallery_nav}}">
           {{#gallery_items}}
           <li>
-            <img src="/{{{file}}}" alt="{{description}}" data-id="{{id}}" />
+            <img
+              src="/{{{file}}}"
+              alt="{{description}}"
+              data-id="{{id}}"
+              loading="lazy"
+              decoding="async"
+            />
           </li>
           {{/gallery_items}}
         </ul>
