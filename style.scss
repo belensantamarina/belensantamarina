@@ -9,7 +9,7 @@ header {
   align-items: flex-start;
   font-size: 1.25em;
   position: relative;
-  z-index: 3;
+  z-index: 5;
   &.active {
     justify-content: flex-end;
 
@@ -66,7 +66,7 @@ nav {
   background: black;
   color: white;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   overflow-y: scroll;
   transition: all 0.25s;
   inset: 0;
@@ -131,6 +131,11 @@ main {
       flex-wrap: wrap;
       margin: 0.25rem 1rem 0 1rem;
       padding: 0;
+      &.hidden {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+      }
 
       li {
         width: 4em;

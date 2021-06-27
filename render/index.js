@@ -13,15 +13,18 @@ const showdownConverter = new showdown.Converter();
 const render = async () => {
   let baseTemplate = await readFile('index.html');
   let websiteConstants = await readFile('content/english_constants.json', true);
-  let websiteMenu = await readFile('content/english_menu.json', true);
 
-  const navItems = websiteMenu.items.map((itemString) => ({
+  const navItems = websiteConstants.menu.map((itemString) => ({
     name: itemString.split('|')[0],
     reference: itemString.split('|')[1],
   }));
 
   const websiteData = {
-    ...websiteConstants,
+    language: websiteConstants.language,
+    title: websiteConstants.title,
+    description: websiteConstants.description,
+    i18n_string_language: websiteConstants.i18n_string_language,
+    i18n_string_menu: websiteConstants.i18n_string_menu,
     nav_items: navItems,
   };
 
@@ -48,7 +51,21 @@ const render = async () => {
     writeFile(`build/work/${fileName.replace('json', 'html')}`, pageOutput);
   }
 
-  const homeOutput = mustache.render(baseTemplate, websiteData);
+  const homeGalleryItems = websiteConstants.gallery.map(
+    (galleryItem, index) => ({
+      id: index,
+      ...galleryItem,
+    })
+  );
+
+  const homeData = {
+    ...websiteData,
+    gallery: websiteConstants.gallery.length > 0,
+    gallery_items: homeGalleryItems,
+    gallery_nav: 'hidden',
+  };
+
+  const homeOutput = mustache.render(baseTemplate, homeData);
   writeFile('build/index.html', homeOutput);
 };
 
