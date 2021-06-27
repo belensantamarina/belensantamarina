@@ -1,6 +1,7 @@
 {
   "language": "en-GB",
   "name": "Dogs",
+  "description": "All about Dogs",
   "body": "Dogs are **awesome** too!",
   "gallery": [
     {
