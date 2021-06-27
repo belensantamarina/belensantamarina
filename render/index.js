@@ -30,13 +30,18 @@ const render = async () => {
   for (let fileName of workFiles) {
     let pageConstants = await readFile(`content/work/${fileName}`, true);
 
+    const galleryItems = pageConstants.gallery.map((galleryItem, index) => ({
+      id: index,
+      ...galleryItem,
+    }));
+
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
     const pageData = {
       ...websiteData,
       body: pageBody,
       name: pageConstants.name,
       gallery: pageConstants.gallery.length > 0,
-      gallery_items: pageConstants.gallery,
+      gallery_items: galleryItems,
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);
