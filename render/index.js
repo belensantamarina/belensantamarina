@@ -46,6 +46,7 @@ const render = async () => {
     const pageData = {
       ...websiteData,
       html_title: `${websiteData.title}: ${pageConstants.name}`,
+      description: pageConstants.description,
       body: pageBody,
       name: pageConstants.name,
       gallery: pageConstants.gallery.length > 0,

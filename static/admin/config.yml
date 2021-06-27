@@ -19,6 +19,9 @@ collections:
       - name: 'name'
         label: 'Name'
         widget: 'string'
+      - name: 'description'
+        label: 'Description'
+        widget: 'text'
       - name: 'body'
         label: 'Body'
         widget: 'markdown'
@@ -36,37 +39,6 @@ collections:
       - name: 'language'
         widget: 'hidden'
         default: 'en-GB'
-  - name: 'spanish_work'
-    label: 'Trabajo (Español)'
-    folder: 'content/trabajo'
-    create: true
-    slug: '{{slug}}'
-    identifier_field: name
-    extension: 'json'
-    filter:
-      field: 'language'
-      value: 'es-AR'
-    fields:
-      - name: 'name'
-        label: 'Nombre'
-        widget: 'string'
-      - name: 'body'
-        label: 'Cuerpo'
-        widget: 'markdown'
-      - name: 'gallery'
-        label: 'Gallery'
-        widget: 'list'
-        required: false
-        fields:
-          - name: 'file'
-            label: 'Archivo'
-            widget: 'file'
-          - name: 'description'
-            label: 'Descripción'
-            widget: 'text'
-      - name: 'language'
-        widget: 'hidden'
-        default: 'es-AR'
   - name: 'constants'
     label: 'Constants'
     files:

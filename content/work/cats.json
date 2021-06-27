@@ -1,6 +1,7 @@
 {
   "language": "en-GB",
   "name": "Cats",
+  "description": "All about Cats",
   "body": "Cats are **awesome**!",
   "gallery": [
     {"file": "media/cat-1.jpeg", "description": "Cat"},
