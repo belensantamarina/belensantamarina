@@ -5,7 +5,8 @@
   "i18n_string_language": "English",
   "i18n_string_menu": "Menu",
   "menu": [
-    "Cats|cats"
+    "Cats|cats",
+    "Dogs|dogs"
   ],
   "gallery": [
     {
