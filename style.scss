@@ -6,7 +6,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 3em;
+  font-size: 1.25em;
 
   h1 {
     font-size: 1em;
@@ -19,7 +19,7 @@ header {
     display: block;
     font-size: 1em;
     appearance: none;
-    background: url('./assets/menu-icon.svg') no-repeat center;
+    background: url('/assets/menu-icon.svg') no-repeat center;
     background-size: 0.75em;
     border: none;
     width: 3em;
