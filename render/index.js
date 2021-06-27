@@ -23,6 +23,7 @@ const render = async () => {
     language: websiteConstants.language,
     title: websiteConstants.title,
     html_title: websiteConstants.title,
+    footer: websiteConstants.footer,
     description: websiteConstants.description,
     i18n_string_language: websiteConstants.i18n_string_language,
     i18n_string_menu: websiteConstants.i18n_string_menu,
