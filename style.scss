@@ -1,41 +1,100 @@
 body {
   margin: 0;
+  font-family: 'novel-mono-pro', monospace;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 1.25em;
+  position: relative;
+  z-index: 3;
+  &.active {
+    h1 {
+      opacity: 0;
+    }
+    button#nav {
+      background: black;
+      fill: white;
+      &:hover {
+        background: white;
+        fill: black;
+      }
+    }
+  }
 
   h1 {
     font-size: 1em;
-    margin: 1em;
-    font-family: 'novel-mono-pro', monospace;
+    margin: 1rem;
     font-weight: 400;
   }
 
   button#nav {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1em;
     appearance: none;
-    background: url('/assets/menu-icon.svg') no-repeat center;
-    background-size: 0.75em;
+    background: none;
     border: none;
-    width: 3em;
-    height: 3em;
+    fill: black;
+    width: 3.5rem;
+    height: 3.5rem;
     padding: 0;
-    text-indent: -1000em;
     cursor: pointer;
-    transition: all 0.25s;
+    svg {
+      width: 0.8em;
+      height: 0.8em;
+    }
     &:hover {
-      transform: rotate(5deg);
+      background: black;
+      fill: white;
     }
-    &.active {
-      transform: rotate(90deg);
-    }
-    &.active:hover {
-      transform: rotate(85deg);
+  }
+}
+
+nav {
+  display: none;
+  opacity: 0;
+  background: black;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  overflow-y: scroll;
+  transition: all 0.25s;
+  inset: 0;
+  padding-top: 4rem;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 1em;
+    list-style: none;
+
+    li {
+      font-size: 1.25em;
+      margin: 0.5rem 0;
+
+      a {
+        display: block;
+        padding: 0.25rem 0;
+        color: white;
+        text-decoration: none;
+        line-height: 1.25em;
+        &::before {
+          content: '*';
+          margin-right: 0.75em;
+          vertical-align: middle;
+          text-decoration: none;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
