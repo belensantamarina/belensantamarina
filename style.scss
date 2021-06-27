@@ -1,6 +1,10 @@
 body {
   margin: 0;
   font-family: 'novel-mono-pro', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 header {
@@ -111,7 +115,7 @@ main {
   h2 {
     font-size: 1.75em;
     font-weight: 600;
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
   }
 
   p {
@@ -156,4 +160,10 @@ main {
       }
     }
   }
+}
+
+footer {
+  font-size: 0.75em;
+  font-weight: 300;
+  margin: auto 1rem 1rem 1rem;
 }
