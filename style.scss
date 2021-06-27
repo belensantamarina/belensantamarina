@@ -6,6 +6,12 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
 }
+a {
+  color: black;
+}
+strong {
+  font-weight: 600;
+}
 
 header {
   display: flex;

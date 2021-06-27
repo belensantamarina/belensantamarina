@@ -19,11 +19,13 @@ const render = async () => {
     reference: itemString.split('|')[1],
   }));
 
+  const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
+
   const websiteData = {
     language: websiteConstants.language,
     title: websiteConstants.title,
     html_title: websiteConstants.title,
-    footer: websiteConstants.footer,
+    footer: websiteFooter,
     description: websiteConstants.description,
     i18n_string_language: websiteConstants.i18n_string_language,
     i18n_string_menu: websiteConstants.i18n_string_menu,
