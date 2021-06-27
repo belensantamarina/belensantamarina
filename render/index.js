@@ -22,6 +22,7 @@ const render = async () => {
   const websiteData = {
     language: websiteConstants.language,
     title: websiteConstants.title,
+    html_title: websiteConstants.title,
     description: websiteConstants.description,
     i18n_string_language: websiteConstants.i18n_string_language,
     i18n_string_menu: websiteConstants.i18n_string_menu,
@@ -41,6 +42,7 @@ const render = async () => {
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
     const pageData = {
       ...websiteData,
+      html_title: `${websiteData.title}: ${pageConstants.name}`,
       body: pageBody,
       name: pageConstants.name,
       gallery: pageConstants.gallery.length > 0,
