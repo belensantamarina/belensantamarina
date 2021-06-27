@@ -5,6 +5,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 a {
   color: black;
@@ -116,12 +117,10 @@ nav {
 }
 
 main {
-  margin: 1rem 0;
-
   h2 {
     font-size: 1.75em;
     font-weight: 600;
-    margin: 0 1rem 1rem 1rem;
+    margin: 1rem;
   }
 
   p {
@@ -172,4 +171,7 @@ footer {
   font-size: 0.75em;
   font-weight: 300;
   margin: auto 1rem 1rem 1rem;
+  p {
+    margin: 0;
+  }
 }
