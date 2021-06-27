@@ -16,7 +16,7 @@ const render = async () => {
 
   const navItems = websiteConstants.menu.map((itemString) => ({
     name: itemString.split('|')[0],
-    reference: itemString.split('|')[1],
+    reference: `/work/${itemString.split('|')[1]}.html`,
   }));
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
