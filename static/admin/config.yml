@@ -67,47 +67,6 @@ collections:
       - name: 'language'
         widget: 'hidden'
         default: 'es-AR'
-  - name: 'menu'
-    label: 'Menu'
-    files:
-      - name: 'english_menu'
-        label: 'Menu (English)'
-        file: 'content/english_menu.json'
-        extension: 'json'
-        fields:
-          - name: 'items'
-            label: 'Items'
-            widget: 'list'
-            field:
-              name: 'item'
-              label: 'Item'
-              widget: 'relation'
-              collection: 'english_work'
-              value_field: '{{name}}|{{slug}}'
-              search_fields: ['name']
-              display_fields: ['name']
-          - name: 'language'
-            widget: 'hidden'
-            default: 'en-GB'
-      - name: 'spanish_menu'
-        label: 'Menú (Español)'
-        file: 'content/spanish_menu.json'
-        extension: 'json'
-        fields:
-          - name: 'items'
-            label: 'Ítems'
-            widget: 'list'
-            field:
-              name: 'item'
-              label: 'Ítem'
-              widget: 'relation'
-              collection: 'spanish_work'
-              value_field: '{{name}}|{{slug}}'
-              search_fields: ['name']
-              display_fields: ['name']
-          - name: 'language'
-            widget: 'hidden'
-            default: 'es-AR'
   - name: 'constants'
     label: 'Constants'
     files:
@@ -131,3 +90,24 @@ collections:
           - name: 'i18n_string_menu'
             widget: 'hidden'
             default: 'Menu'
+          - name: 'menu'
+            label: 'Menu'
+            widget: 'list'
+            field:
+              name: 'item'
+              label: 'Item'
+              widget: 'relation'
+              collection: 'english_work'
+              value_field: '{{name}}|{{slug}}'
+              search_fields: ['name']
+              display_fields: ['name']
+          - name: 'gallery'
+            label: 'Gallery'
+            widget: 'list'
+            fields:
+              - name: 'file'
+                label: 'File'
+                widget: 'file'
+              - name: 'description'
+                label: 'Description'
+                widget: 'text'
