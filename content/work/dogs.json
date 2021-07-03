@@ -5,7 +5,7 @@
   "body": "Dogs are **awesome** too!",
   "gallery": [
     {
-      "file": "media/dog-1.jpeg",
+      "file": "dog-1.jpeg",
       "description": "Dog"
     }
   ]

@@ -4,8 +4,8 @@
   "description": "All about Cats",
   "body": "Cats are **awesome**!",
   "gallery": [
-    {"file": "media/cat-1.jpeg", "description": "Cat"},
-    {"file": "media/cat-2.jpeg", "description": "Cat"},
-    {"file": "media/cat-3.jpeg", "description": "Cat"}
+    {"file": "cat-1.jpeg", "description": "Cat"},
+    {"file": "cat-2.jpeg", "description": "Cat"},
+    {"file": "cat-3.jpeg", "description": "Cat"}
   ]
 }
