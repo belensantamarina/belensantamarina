@@ -4,7 +4,7 @@ const TARGET_SIZES = ['1280', '640', '320'];
 
 const optimize = async () => {
   shell.exec(
-    'git diff-tree --no-commit-id --name-only -r ${{ github.sha }}| xargs',
+    'git diff-tree --no-commit-id --name-only -r $GITHUB_SHA| xargs',
     (code, stdout, stderr) => {
       if (code != 0 || stderr) return;
 
