@@ -15,7 +15,6 @@ const optimize = async () => {
       shell.exec('echo $GITHUB_SHA');
       console.log('stdout', stdout)
       console.log('modifiedMediaFiles', modifiedMediaFiles);
-      console.log('modifiedMediaFiles (B)', stdout.split(' '));
 
       for (let modifiedMediaFile of modifiedMediaFiles) {
         console.log(`Processing ${modifiedMediaFile}`);
