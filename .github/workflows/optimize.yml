@@ -25,7 +25,7 @@ jobs:
         run: sudo apt install imagemagick
 
       - name: Optimize media
-        run: bin/optimize
+        run: bin/optimize commit
 
       - name: Commit changes
         run: |
