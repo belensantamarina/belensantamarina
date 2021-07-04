@@ -10,7 +10,7 @@ on:
       - 'content/media/*.gif'
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,9 +22,17 @@ jobs:
       - name: Install ImageMagick
         run: sudo apt install imagemagick
 
+  process:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
       - name: Optimize media
         run: bin/optimize
 
+  save:
+    needs: [process]
+    runs-on: ubuntu-latest
+    steps:
       - name: Commit changes
         run: |
           git config --global user.name "${{ github.actor }}"
