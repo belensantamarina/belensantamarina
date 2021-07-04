@@ -1,7 +1,7 @@
 name: Optimize media assets
 
 on:
-  pull_request:
+  push:
     branches: [main]
 
 jobs:
@@ -12,12 +12,18 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.2.0
         with:
-          cache: 'npm'
+          cache: npm
       - run: npm install
       - name: Install ImageMagick
         run: sudo apt install imagemagick
 
       - name: Optimize media assets
-        env:
-          GITHUB_SHA: ${{ github.sha }}
         run: bin/optimize
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add --all
+          git commit -m "Automated media assets optimization"
+          git push
