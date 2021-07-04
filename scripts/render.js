@@ -25,7 +25,7 @@ const parseGalleryItem = (galleryItem) => {
   };
 };
 
-const render = async ({ language, index, route }) => {
+const render = async ({ language, index, route, link, abbreviation }) => {
   let baseTemplate = await readFile('index.html');
   let websiteConstants = await readFile(
     `content/${language}_constants.json`,
@@ -38,6 +38,7 @@ const render = async ({ language, index, route }) => {
   }));
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
+  const otherLanguage = LANGUAGES.find((element) => element.language !== language);
 
   const websiteData = {
     language: websiteConstants.language,
@@ -45,9 +46,14 @@ const render = async ({ language, index, route }) => {
     html_title: websiteConstants.title,
     footer: websiteFooter,
     description: websiteConstants.description,
-    i18n_string_language: websiteConstants.i18n_string_language,
-    i18n_string_menu: websiteConstants.i18n_string_menu,
     nav_items: navItems,
+    i18n_string_menu: websiteConstants.i18n_string_menu,
+    i18n_string_current_language: link,
+    current_language_abbr: abbreviation,
+    other_language_abbr: otherLanguage.abbreviation,
+    other_language_index: otherLanguage.index,
+    i18n_string_other_language: otherLanguage.link,
+    other_language: otherLanguage.code,
   };
 
   let workFiles = await readDirectory(`content/${route}`);
