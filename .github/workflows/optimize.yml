@@ -12,5 +12,5 @@ jobs:
 
       - name: Get changed files
         id: getfile
-        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}| xargs"
+        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}| xargs
 
