@@ -3,4 +3,4 @@ const args = require('args');
 
 const { optimizeLastCommit, optimizeAll } = require('../scripts/optimize');
 
-args.command('commit', 'Optimize media from current commit', optimizeLastCommit()).command('all', 'Optimize all existing media', optimizeAll())
+args.command('commit', 'Optimize media from current commit', optimizeLastCommit());
