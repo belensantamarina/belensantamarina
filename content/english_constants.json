@@ -4,7 +4,8 @@
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "i18n_string_menu": "Menu",
   "menu": [
-    "Migran-t|migran-t"
+    "Migran-t|migran-t",
+    "My desire is a ghost|my-desire-is-a-ghost"
   ],
   "gallery": [
     {
