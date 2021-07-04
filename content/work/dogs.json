@@ -7,6 +7,10 @@
     {
       "file": "dog-1.jpeg",
       "description": "Dog"
+    },
+    {
+      "file": "fox.jpeg",
+      "description": "Not a dog"
     }
   ]
 }
