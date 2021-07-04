@@ -21,9 +21,16 @@ if (galleryContainer) {
   const imageContainer = document.getElementById('img');
 
   const selectImage = (imageElement) => {
-    imageContainer.style.backgroundImage = `url('${imageElement.getAttribute(
-      'src'
-    )}')`;
+    const thumbnailSource = imageElement.getAttribute('src');
+    const containerSource = thumbnailSource
+      .replace('thumbnail', window.innerWidth >= 1024 ? 'large' : 'small')
+      .replace(
+        '.jpg',
+        window.devicePixelRatio !== 1
+          ? `@${window.devicePixelRatio}x.jpg`
+          : '.jpg'
+      );
+    imageContainer.style.backgroundImage = `url('${containerSource}')`;
     imageContainer.dataset.selected = imageElement.dataset.id;
 
     galleryContainer.querySelector('img.active')?.classList.toggle('active');
