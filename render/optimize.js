@@ -9,10 +9,11 @@ const optimize = async () => {
       if (code != 0 || stderr) return;
 
       const modifiedMediaFiles = stdout
-        .split(' ')
+        .split('\n')
         .filter((filePath) => filePath.includes('content/media')); // Filtering only the modified media files
 
       for (let modifiedMediaFile of modifiedMediaFiles) {
+        console.log(`Processing ${modifiedMediaFile}`);
         const modifiedMediaFileName = modifiedMediaFile
           .split('/')
           .pop()
@@ -20,7 +21,7 @@ const optimize = async () => {
           .shift(); // Getting the file name without the extension
         for (let targetSize of TARGET_SIZES) {
           console.log(
-            `Processing static/media/${targetSize}/${modifiedMediaFileName}.jpg`
+            `- static/media/${targetSize}/${modifiedMediaFileName}.jpg`
           );
           shell.exec(
             `convert -strip -resize x${targetSize}^ -quality 80 -density 72 -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${modifiedMediaFile} static/media/${targetSize}/${modifiedMediaFileName}.jpg`
