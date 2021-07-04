@@ -30,7 +30,7 @@
     <nav>
       <ul>
         {{#nav_items}}
-        <li><a href="{{reference}}">{{name}}</a></li>
+        <li><a href="{{{reference}}}">{{name}}</a></li>
         {{/nav_items}}
       </ul>
     </nav>
@@ -45,7 +45,7 @@
           {{#gallery_items}}
           <li>
             <img
-              src="/{{{file}}}"
+              src="{{{file}}}"
               alt="{{description}}"
               data-id="{{id}}"
               loading="lazy"
