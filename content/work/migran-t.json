@@ -2,5 +2,11 @@
   "language": "en-GB",
   "name": "Migran-t",
   "description": "fight",
-  "body": "fghj"
+  "body": "fghj",
+  "gallery": [
+    {
+      "file": "migran-t-2.jpg",
+      "description": "Lala"
+    }
+  ]
 }
