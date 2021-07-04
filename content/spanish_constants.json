@@ -1,9 +1,62 @@
 {
   "language": "es-AR",
   "title": "Belen Santamarina",
-  "description": "Belen Santamarina, artista visual de Buenos Aires.",
+  "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "i18n_string_menu": "Menú",
   "menu": [],
-  "gallery": [],
+  "gallery": [
+    {
+      "file": "ghost.jpg",
+      "description": "Bombacha blanca bordada con cabello humano tendida en el jardín. Pertenece a la obra Mi deseo es un fantasma."
+    },
+    {
+      "description": "Detalle de la sábana bordada con cabello humano. Pertenece a la obra Migran-t. La imagen muestra el bordado del mapa de la Argentina al lado del mapa del Reino Unido con la leyenda \"Ni acá ni allá\" en Español e Inglés.",
+      "file": "migran-t-2.jpg"
+    },
+    {
+      "file": "migran-t.jpg",
+      "description": "Migran-t, Primera Piel: Nostalgia. Sábana de Primark bordada con cabello humano. 150 x 200 cm."
+    },
+    {
+      "file": "sowing.jpg",
+      "description": "2018. Siembra. Performance, 15 minutos. URRA (Tiara, Buenos Aires, Argentina)"
+    },
+    {
+      "file": "cn1.jpg",
+      "description": "Conserva Nº1, Septiembre 2018, Universidad de Santa Fé (UNL). Colectivo Triangular. Performance y acción colectiva. Recolección de objetos entre la comunidad y excavación en la tierra en el Parque Federal para posterior entierro de los objetos. "
+    },
+    {
+      "file": "cn1-2.png",
+      "description": "Conserva Nº1, Septiembre 2018, Universidad de Santa Fé (UNL). Colectivo Triangular. Performance y acción colectiva. Recolección de objetos entre la comunidad y excavación en la tierra en el Parque Federal para posterior entierro de los objetos. "
+    },
+    {
+      "file": "cn2.jpg",
+      "description": "Vista general de la muestra Conserva Nº2 del Colectivo Triangular en Fundación Cazadores. \nColectivo Triangular está conformado por Regina Calcaterra, Leonardo Vallejo y Belén Santamarina.\nEl proyecto investiga a la Semilla desde un contexto biológico, antropológico, histórico, social, económico y político como plataforma para imaginar el futuro."
+    },
+    {
+      "file": "cn2-2.jpg",
+      "description": "MES (Máquina Expendedora de Semillas), 2019. Conserva Nº2 (Capital Semilla) · Colectivo Triangular | Ph. Martina Mordeau."
+    },
+    {
+      "file": "cn2-3.jpg",
+      "description": "Traductor de Cronologías, 2019. Conserva Nº2 (Capital Semilla) · Colectivo Triangular | Ph. Martina Mordeau."
+    },
+    {
+      "file": "letters-to.jpeg",
+      "description": "Recetas para la distancia. instalación y experiencia colectiva. La transcripción de las cartas en formato pasta se sella y se exhibe en un armario, esperando ser comidas, compartidas, desechadas."
+    },
+    {
+      "file": "consacrated-1.jpg",
+      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#5, Conexión. MARQ (Museo de Arquitectura), Buenos Aires, Argentina.\nTubos de PVC. 26 x 50 cm"
+    },
+    {
+      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#4 · De a dos. Centro Cultural San Martín, Buenos Aires, Argentina.\nMadera, pintura de pizarra, tiza, hilo, tela, papel. 40 x 125 cm.",
+      "file": "consacrated-2.jpeg"
+    },
+    {
+      "file": "ghost-2.jpg",
+      "description": "Mi deseo es un fantasma (Autorretrato). Fotografía editada digitalmente y sublimada sobre papel, bombacha bordada, cabello."
+    }
+  ],
   "footer": "Contacto: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina."
 }
