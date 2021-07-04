@@ -1,6 +1,6 @@
 const shell = require('shelljs');
 
-const TARGET_SIZES = ['1280', '640', '320'];
+const { PICTURE_SIZES } = require('./utils/constants');
 
 const optimize = async () => {
   shell.exec(
@@ -17,19 +17,19 @@ const optimize = async () => {
 
       console.log(`Processing ${modifiedMediaInfo.path}`);
 
-      if (modifiedMediaInfo.action === 'delete') {
-        for (let targetSize of TARGET_SIZES) {
-          const optimizedFilePath = `static/media/${targetSize}/${modifiedMediaInfo.name}.jpg`;
-          console.log(`- Deleting ${optimizedFilePath}`);
-          shell.exec(`rm -f ${optimizedFilePath}`);
-        }
-      } else {
-        for (let targetSize of TARGET_SIZES) {
-          const optimizedFilePath = `static/media/${targetSize}/${modifiedMediaInfo.name}.jpg`;
-          console.log(`- Creating ${optimizedFilePath}`);
-          shell.exec(
-            `convert -strip -resize x${targetSize}^ -quality 80 -density 72 -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${modifiedMediaInfo.path} ${optimizedFilePath}`
-          );
+      for (let pictureSize of Object.keys(PICTURE_SIZES)) {
+        for (let resolution of PICTURE_SIZES[pictureSize]) {
+          const destinationPath = `static/media/${pictureSize}/${modifiedMediaInfo.name}${resolution.tag}.jpg`;
+
+          if (modifiedMediaInfo.action === 'delete') {
+            console.log(`- Deleting ${destinationPath}`);
+            shell.exec(`rm -f ${destinationPath}`);
+          } else {
+            console.log(`- Creating ${destinationPath}`);
+            shell.exec(
+              `convert -strip -resize x${resolution.size}^ -quality 80 -density ${resolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${modifiedMediaInfo.path} ${destinationPath}`
+            );
+          }
         }
       }
     }
