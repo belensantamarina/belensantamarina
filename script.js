@@ -16,20 +16,23 @@ navButton.addEventListener('click', () => {
 /*						GALLERY						*/
 /********************************/
 
+const getContainerSourceAddress = (thumbnailSourceAddress) =>
+  thumbnailSourceAddress
+    .replace('thumbnail', window.innerWidth >= 1024 ? 'large' : 'small')
+    .replace(
+      '.jpg',
+      window.devicePixelRatio !== 1
+        ? `@${window.devicePixelRatio}x.jpg`
+        : '.jpg'
+    );
+
 const galleryContainer = document.getElementById('gallery');
 if (galleryContainer) {
   const imageContainer = document.getElementById('img');
 
   const selectImage = (imageElement) => {
     const thumbnailSource = imageElement.getAttribute('src');
-    const containerSource = thumbnailSource
-      .replace('thumbnail', window.innerWidth >= 1024 ? 'large' : 'small')
-      .replace(
-        '.jpg',
-        window.devicePixelRatio !== 1
-          ? `@${window.devicePixelRatio}x.jpg`
-          : '.jpg'
-      );
+    const containerSource = getContainerSourceAddress(thumbnailSource);
     imageContainer.style.backgroundImage = `url('${containerSource}')`;
     imageContainer.dataset.selected = imageElement.dataset.id;
 
@@ -48,6 +51,13 @@ if (galleryContainer) {
   }, 3000);
 
   imageElements.forEach((imageElement) => {
+    // Pre-fetch container-size assets
+    const tempImageElement = new Image();
+    tempImageElement.src = getContainerSourceAddress(
+      imageElement.getAttribute('src')
+    );
+
+    // Enable interactive navigation
     imageElement.addEventListener('click', (event) => {
       selectImage(event.target);
       clearInterval(autoPlayInterval);
