@@ -45,8 +45,9 @@
           {{#gallery_items}}
           <li>
             <img
-              src="{{{file}}}"
+              src="{{{source}}}"
               alt="{{description}}"
+              srcset="{{{source_set}}}"
               data-id="{{id}}"
               loading="lazy"
               decoding="async"
