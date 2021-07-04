@@ -10,19 +10,19 @@
   ],
   "gallery": [
     {
-      "file": "media/cat-1.jpeg",
+      "file": "cat-1.jpeg",
       "description": "Cat A"
     },
     {
-      "file": "media/cat-2.jpeg",
+      "file": "cat-2.jpeg",
       "description": "Cat B"
     },
     {
-      "file": "media/cat-3.jpeg",
+      "file": "cat-3.jpeg",
       "description": "Cat C"
     },
     {
-      "file": "media/dog-1.jpeg",
+      "file": "dog-1.jpeg",
       "description": "Dog"
     }
   ],
