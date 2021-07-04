@@ -3,7 +3,6 @@ const shell = require('shelljs');
 const TARGET_SIZES = ['1280', '640', '320'];
 
 const optimize = async () => {
-  shell.exec('echo $GITHUB_SHA');
   shell.exec(
     'git diff-tree --no-commit-id --name-only -r $GITHUB_SHA| xargs',
     (code, stdout, stderr) => {
@@ -12,6 +11,8 @@ const optimize = async () => {
       const modifiedMediaFiles = stdout
         .split('\n')
         .filter((filePath) => filePath.includes('content/media')); // Filtering only the modified media files
+
+      console.log(modifiedMediaFiles);
 
       for (let modifiedMediaFile of modifiedMediaFiles) {
         console.log(`Processing ${modifiedMediaFile}`);
