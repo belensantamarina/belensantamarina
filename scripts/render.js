@@ -7,7 +7,7 @@ const {
   readDirectory,
   prepareDirectory,
 } = require('./utils/filesHandler');
-const { PICTURE_SIZES } = require('./utils/constants');
+const { LANGUAGES, PICTURE_SIZES } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
 
@@ -25,13 +25,13 @@ const parseGalleryItem = (galleryItem) => {
   };
 };
 
-const render = async () => {
+const render = async ({language, index, route}) => {
   let baseTemplate = await readFile('index.html');
-  let websiteConstants = await readFile('content/english_constants.json', true);
+  let websiteConstants = await readFile(`content/${language}_constants.json`, true);
 
   const navItems = websiteConstants.menu.map((itemString) => ({
     name: itemString.split('|')[0],
-    reference: `/work/${itemString.split('|')[1]}.html`,
+    reference: `/${route}/${itemString.split('|')[1]}.html`,
   }));
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
@@ -47,10 +47,10 @@ const render = async () => {
     nav_items: navItems,
   };
 
-  let workFiles = await readDirectory('content/work');
-  await prepareDirectory('build/work');
+  let workFiles = await readDirectory(`content/${route}`);
+  await prepareDirectory(`build/${route}`);
   for (let fileName of workFiles) {
-    let pageConstants = await readFile(`content/work/${fileName}`, true);
+    let pageConstants = await readFile(`content/${route}/${fileName}`, true);
 
     const galleryItems = pageConstants.gallery.map((galleryItem, index) => ({
       ...parseGalleryItem(galleryItem),
@@ -69,7 +69,7 @@ const render = async () => {
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);
-    writeFile(`build/work/${fileName.replace('json', 'html')}`, pageOutput);
+    writeFile(`build/${route}/${fileName.replace('json', 'html')}`, pageOutput);
   }
 
   const homeGalleryItems = websiteConstants.gallery.map(
@@ -87,7 +87,9 @@ const render = async () => {
   };
 
   const homeOutput = mustache.render(baseTemplate, homeData);
-  writeFile('build/index.html', homeOutput);
+  writeFile(`build/${index}`, homeOutput);
 };
 
-render();
+LANGUAGES.forEach((language) => {
+
+});
