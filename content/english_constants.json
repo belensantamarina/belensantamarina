@@ -1,10 +1,19 @@
 {
   "language": "en-GB",
   "title": "Belen Santamarina",
-  "description": "Belen Santamarina, visual artist from Buenos Aires.",
+  "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "i18n_string_language": "English",
   "i18n_string_menu": "Menu",
   "menu": [],
-  "gallery": [],
+  "gallery": [
+    {
+      "file": "ghost.jpg",
+      "description": "White panties embroidered with human hair lying on the rope in the garden. Belonging to the work My desire is a ghost."
+    },
+    {
+      "file": "migran-t-2.jpg",
+      "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish."
+    }
+  ],
   "footer": "Contact: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina."
 }
