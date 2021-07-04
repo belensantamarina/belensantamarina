@@ -4,31 +4,31 @@ const TARGET_SIZES = ['1280', '640', '320'];
 
 const optimize = async () => {
   shell.exec(
-    'git diff-tree --no-commit-id --name-only -r $GITHUB_SHA| xargs',
+    'git diff-tree --no-commit-id --summary -r $GITHUB_SHA',
     (code, stdout, stderr) => {
       if (code != 0 || stderr) return;
 
-      const modifiedMediaFiles = stdout
-        .split('\n')
-        .filter((filePath) => filePath.includes('content/media')); // Filtering only the modified media files
+      const modifiedMedia = stdout.split('\n')[0].split(' ');
+      const modifiedMediaInfo = {
+        action: modifiedMedia[1],
+        path: modifiedMedia[4],
+        name: modifiedMedia[4].split('/').pop().split('.').shift(),
+      };
 
-      shell.exec('echo $GITHUB_SHA');
-      console.log('stdout', stdout)
-      console.log('modifiedMediaFiles', modifiedMediaFiles);
+      console.log(`Processing ${modifiedMediaInfo.path}`);
 
-      for (let modifiedMediaFile of modifiedMediaFiles) {
-        console.log(`Processing ${modifiedMediaFile}`);
-        const modifiedMediaFileName = modifiedMediaFile
-          .split('/')
-          .pop()
-          .split('.')
-          .shift(); // Getting the file name without the extension
+      if (modifiedMediaInfo.action === 'delete') {
         for (let targetSize of TARGET_SIZES) {
-          console.log(
-            `- static/media/${targetSize}/${modifiedMediaFileName}.jpg`
-          );
+          const optimizedFilePath = `static/media/${targetSize}/${modifiedMediaInfo.name}.jpg`;
+          console.log(`- Deleting ${optimizedFilePath}`);
+          shell.exec(`rm -f ${optimizedFilePath}`);
+        }
+      } else {
+        for (let targetSize of TARGET_SIZES) {
+          const optimizedFilePath = `static/media/${targetSize}/${modifiedMediaInfo.name}.jpg`;
+          console.log(`- Creating ${optimizedFilePath}`);
           shell.exec(
-            `convert -strip -resize x${targetSize}^ -quality 80 -density 72 -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${modifiedMediaFile} static/media/${targetSize}/${modifiedMediaFileName}.jpg`
+            `convert -strip -resize x${targetSize}^ -quality 80 -density 72 -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${modifiedMediaInfo.path} ${optimizedFilePath}`
           );
         }
       }
