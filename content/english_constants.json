@@ -4,27 +4,7 @@
   "description": "Belen Santamarina, visual artist from Buenos Aires.",
   "i18n_string_language": "English",
   "i18n_string_menu": "Menu",
-  "menu": [
-    "Cats|cats",
-    "Dogs|dogs"
-  ],
-  "gallery": [
-    {
-      "file": "cat-1.jpeg",
-      "description": "Cat A"
-    },
-    {
-      "file": "cat-2.jpeg",
-      "description": "Cat B"
-    },
-    {
-      "file": "cat-3.jpeg",
-      "description": "Cat C"
-    },
-    {
-      "file": "dog-1.jpeg",
-      "description": "Dog"
-    }
-  ],
+  "menu": [],
+  "gallery": [],
   "footer": "Contact: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina."
 }
