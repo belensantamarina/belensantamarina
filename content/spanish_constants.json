@@ -4,7 +4,8 @@
   "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "i18n_string_menu": "Menú",
   "menu": [
-    "Migran-t|migran-t"
+    "Migran-t|migran-t",
+    "Mi deseo es un fantasma|mi-deseo-es-un-fantasma"
   ],
   "gallery": [
     {
