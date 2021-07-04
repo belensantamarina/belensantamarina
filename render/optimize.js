@@ -12,7 +12,10 @@ const optimize = async () => {
         .split('\n')
         .filter((filePath) => filePath.includes('content/media')); // Filtering only the modified media files
 
-      console.log(modifiedMediaFiles);
+      shell.exec('echo $GITHUB_SHA');
+      console.log('stdout', stdout)
+      console.log('modifiedMediaFiles', modifiedMediaFiles);
+      console.log('modifiedMediaFiles (B)', stdout.split(' '));
 
       for (let modifiedMediaFile of modifiedMediaFiles) {
         console.log(`Processing ${modifiedMediaFile}`);
