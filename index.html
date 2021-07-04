@@ -28,10 +28,18 @@
       </button>
     </header>
     <nav>
+      <aside>
+        <a href="#" title="{{i18n_string_current_language}}">{{current_language_abbr}}</a>
+        <a href="{{{other_language_index}}}" title="{{i18n_string_other_language}}" lang="{{other_language}}">{{other_language_abbr}}</a>
+      </aside>
       <ul>
         {{#nav_items}}
         <li><a href="{{{reference}}}">{{name}}</a></li>
         {{/nav_items}}
+        <li><a href="{{{reference}}}">{{name}}</a></li>
+        <li><a href="{{{reference}}}">{{name}}</a></li>
+        <li><a href="{{{reference}}}">{{name}}</a></li>
+        <li><a href="{{{reference}}}">{{name}}</a></li>
       </ul>
     </nav>
 
