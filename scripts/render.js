@@ -25,9 +25,12 @@ const parseGalleryItem = (galleryItem) => {
   };
 };
 
-const render = async ({language, index, route}) => {
+const render = async ({ language, index, route }) => {
   let baseTemplate = await readFile('index.html');
-  let websiteConstants = await readFile(`content/${language}_constants.json`, true);
+  let websiteConstants = await readFile(
+    `content/${language}_constants.json`,
+    true
+  );
 
   const navItems = websiteConstants.menu.map((itemString) => ({
     name: itemString.split('|')[0],
@@ -91,5 +94,5 @@ const render = async ({language, index, route}) => {
 };
 
 LANGUAGES.forEach((language) => {
-
+  render(language);
 });

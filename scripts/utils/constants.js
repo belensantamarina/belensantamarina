@@ -1,6 +1,6 @@
 const LANGUAGES = [
-	{ language: 'english', index: 'index.html', route: 'work' },
-	{ language: 'spanish', index: 'index.es.html', route: 'obra' }
+  { language: 'english', index: 'index.html', route: 'work' },
+  { language: 'spanish', index: 'index.es.html', route: 'obra' },
 ];
 
 const PICTURE_SIZES = {
