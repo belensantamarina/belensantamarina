@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'content/media/**'
+      - 'content/media/*.png'
+      - 'content/media/*.jpeg'
+      - 'content/media/*.jpg'
+      - 'content/media/*.gif'
 
 jobs:
   build:
