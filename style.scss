@@ -23,7 +23,9 @@ header {
   position: relative;
   z-index: 5;
   &.active {
+    width: 50%;
     justify-content: flex-end;
+    align-self: flex-end;
 
     h1 {
       display: none;
@@ -82,10 +84,35 @@ nav {
   overflow-y: scroll;
   transition: all 0.25s;
   inset: 0;
-  padding-top: 4rem;
+  padding-top: 1rem;
   &.active {
     display: block;
     opacity: 1;
+  }
+
+  aside {
+    padding: 0 1rem;
+    margin: 0 0 2rem 0;
+    position: relative;
+    z-index: 10;
+    &::before {
+      content: '[';
+    }
+    &::after {
+      content: ']';
+    }
+
+    a {
+      color: white;
+      cursor: pointer;
+      &:first-child {
+        text-decoration: none;
+        cursor: default;
+        &::after {
+          content: ' -';
+        }
+      }
+    }
   }
 
   ul {
