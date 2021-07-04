@@ -38,7 +38,9 @@ const render = async ({ language, index, route, link, abbreviation }) => {
   }));
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
-  const otherLanguage = LANGUAGES.find((element) => element.language !== language);
+  const otherLanguage = LANGUAGES.find(
+    (element) => element.language !== language
+  );
 
   const websiteData = {
     language: websiteConstants.language,
