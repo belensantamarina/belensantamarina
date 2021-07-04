@@ -18,4 +18,6 @@ jobs:
         run: sudo apt install imagemagick
 
       - name: Optimize media assets
+        env:
+          GITHUB_SHA: ${{ github.sha }}
         run: bin/optimize
