@@ -7,8 +7,23 @@ const {
   readDirectory,
   prepareDirectory,
 } = require('./utils/filesHandler');
+const { PICTURE_SIZES } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
+
+const parseGalleryItem = (galleryItem) => {
+  const fileName = galleryItem.file.split('.')[0];
+  const sourceSet = PICTURE_SIZES.thumbnail.map(({ tag }) =>
+    tag
+      ? `/media/thumbnail/${fileName}${tag}.jpg ${tag.replace('@', '')}`
+      : `/media/thumbnail/${fileName}.jpg`
+  );
+  return {
+    source_set: sourceSet,
+    source: sourceSet[0],
+    description: galleryItem.description,
+  };
+};
 
 const render = async () => {
   let baseTemplate = await readFile('index.html');
@@ -38,8 +53,8 @@ const render = async () => {
     let pageConstants = await readFile(`content/work/${fileName}`, true);
 
     const galleryItems = pageConstants.gallery.map((galleryItem, index) => ({
+      ...parseGalleryItem(galleryItem),
       id: index,
-      ...galleryItem,
     }));
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
@@ -59,8 +74,8 @@ const render = async () => {
 
   const homeGalleryItems = websiteConstants.gallery.map(
     (galleryItem, index) => ({
+      ...parseGalleryItem(galleryItem),
       id: index,
-      ...galleryItem,
     })
   );
 
