@@ -1,7 +1,7 @@
 const shell = require('shelljs');
 
 const { readDirectory } = require('./utils/filesHandler');
-const { PICTURE_SIZES } = require('./utils/constants');
+const { PICTURE_SIZES, IMAGE_EXTENSIONS } = require('./utils/constants');
 
 const optimizeMedia = (mediaInfo) => {
   console.log(`Processing ${mediaInfo.path}`);
@@ -29,14 +29,23 @@ const optimizeLastCommit = () => {
     (code, stdout, stderr) => {
       if (code != 0 || stderr) return;
 
-      const modifiedMedia = stdout.split('\n')[0].split(' ');
-      const modifiedMediaInfo = {
-        action: modifiedMedia[1],
-        path: modifiedMedia[4],
-        name: modifiedMedia[4].split('/').pop().split('.').shift(),
-      };
+      const modifiedMediaList = stdout
+        .split('\n')
+        .filter((modifiedMediaItem) =>
+          IMAGE_EXTENSIONS.some((imageExtension) =>
+            modifiedMediaItem.toLowerCase().includes(imageExtension)
+          )
+        );
+      for (let modifiedMediaItem of modifiedMediaList) {
+        const modifiedMedia = modifiedMediaItem.split(' ');
+        const modifiedMediaInfo = {
+          action: modifiedMedia[1],
+          path: modifiedMedia[4],
+          name: modifiedMedia[4].split('/').pop().split('.').shift(),
+        };
 
-      optimizeMedia(modifiedMediaInfo);
+        optimizeMedia(modifiedMediaInfo);
+      }
     }
   );
 };
