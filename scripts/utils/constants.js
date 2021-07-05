@@ -38,4 +38,6 @@ const PICTURE_SIZES = {
   ],
 };
 
-module.exports = { LANGUAGES, PICTURE_SIZES };
+const IMAGE_EXTENSIONS = ['.png', '.jpeg', '.jpg', '.gif'];
+
+module.exports = { LANGUAGES, PICTURE_SIZES, IMAGE_EXTENSIONS };
