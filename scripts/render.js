@@ -58,6 +58,7 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     current_language_abbr: abbreviation,
     other_language_abbr: otherLanguage.abbreviation,
     other_language_index: otherLanguage.index,
+    current_language_index: index,
     i18n_string_other_language: otherLanguage.link,
     other_language: otherLanguage.code,
   };
@@ -67,10 +68,12 @@ const render = async ({ language, index, route, link, abbreviation }) => {
   for (let fileName of workFiles) {
     let pageConstants = await readFile(`content/${route}/${fileName}`, true);
 
-    const galleryItems = pageConstants.gallery.map((galleryItem, index) => ({
-      ...parseGalleryItem(galleryItem),
-      id: index,
-    }));
+    const galleryItems = pageConstants.gallery.map(
+      (galleryItem, galleryItemIndex) => ({
+        ...parseGalleryItem(galleryItem),
+        id: galleryItemIndex,
+      })
+    );
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
     const pageData = {
@@ -89,9 +92,9 @@ const render = async ({ language, index, route, link, abbreviation }) => {
   }
 
   const homeGalleryItems = websiteConstants.gallery.map(
-    (galleryItem, index) => ({
+    (galleryItem, galleryItemIndex) => ({
       ...parseGalleryItem(galleryItem),
-      id: index,
+      id: galleryItemIndex,
     })
   );
 
@@ -102,7 +105,7 @@ const render = async ({ language, index, route, link, abbreviation }) => {
   };
 
   const homeOutput = mustache.render(baseTemplate, homeData);
-  writeFile(`build/${index}`, homeOutput);
+  writeFile(`build${index}`, homeOutput);
 };
 
 LANGUAGES.forEach((language) => {
