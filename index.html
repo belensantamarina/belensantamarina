@@ -50,19 +50,21 @@
       {{#name}}
       <h2>{{name}}</h2>
       {{/name}} {{#gallery}}
-      <section id="gallery">
-        <div id="img" aria-hidden="true"></div>
-        <ul class="{{gallery_nav}}">
+      <section id="gallery" data-nav="{{gallery_with_nav}}">
+        <ul>
           {{#gallery_items}}
-          <li>
-            <img
-              src="{{{source}}}"
-              alt="{{description}}"
-              srcset="{{{source_set}}}"
-              data-id="{{id}}"
-              loading="lazy"
-              decoding="async"
-            />
+          <li data-id="{{id}}">
+            {{#work_link}}<a href="{{{work_link}}}"
+              >{{/work_link}}
+              <img
+                src="{{{source}}}"
+                alt="{{description}}"
+                srcset="{{{source_set}}}"
+                loading="lazy"
+                decoding="async"
+              />
+              {{#work_link}}</a
+            >{{/work_link}}
           </li>
           {{/gallery_items}}
         </ul>

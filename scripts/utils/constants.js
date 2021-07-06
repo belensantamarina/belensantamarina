@@ -1,7 +1,7 @@
 const LANGUAGES = [
   {
     language: 'english',
-    index: 'index.html',
+    index: '/index.html',
     route: 'work',
     link: 'Website in English',
     abbreviation: 'ENG',
@@ -9,7 +9,7 @@ const LANGUAGES = [
   },
   {
     language: 'spanish',
-    index: 'index.es.html',
+    index: '/index.es.html',
     route: 'obra',
     link: 'Sitio web en español',
     abbreviation: 'ESP',
@@ -17,27 +17,11 @@ const LANGUAGES = [
   },
 ];
 
-const PICTURE_SIZES = {
-  thumbnail: [
-    { tag: '', size: 40, density: 72 },
-    { tag: '@1.5x', size: 60, density: 96 },
-    { tag: '@2x', size: 80, density: 150 },
-    { tag: '@3x', size: 120, density: 300 },
-  ],
-  small: [
-    { tag: '', size: 320, density: 72 },
-    { tag: '@1.5x', size: 480, density: 96 },
-    { tag: '@2x', size: 640, density: 150 },
-    { tag: '@3x', size: 960, density: 300 },
-  ],
-  large: [
-    { tag: '', size: 480, density: 72 },
-    { tag: '@1.5x', size: 720, density: 96 },
-    { tag: '@2x', size: 960, density: 150 },
-    { tag: '@3x', size: 1440, density: 300 },
-  ],
-};
+const IMAGE_RESOLUTIONS = [
+  { tag: '', size: 480, density: 72 },
+  { tag: '@1.5x', size: 720, density: 96 },
+  { tag: '@2x', size: 960, density: 150 },
+  { tag: '@3x', size: 1440, density: 300 },
+];
 
-const IMAGE_EXTENSIONS = ['.png', '.jpeg', '.jpg', '.gif'];
-
-module.exports = { LANGUAGES, PICTURE_SIZES, IMAGE_EXTENSIONS };
+module.exports = { LANGUAGES, IMAGE_RESOLUTIONS };
