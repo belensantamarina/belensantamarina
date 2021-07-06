@@ -51,15 +51,13 @@
       <h2>{{name}}</h2>
       {{/name}} {{#gallery}}
       <section id="gallery">
-        <div id="img" aria-hidden="true"></div>
-        <ul class="{{gallery_nav}}">
+        <ul>
           {{#gallery_items}}
-          <li>
+          <li data-id="{{id}}">
             <img
               src="{{{source}}}"
               alt="{{description}}"
               srcset="{{{source_set}}}"
-              data-id="{{id}}"
               loading="lazy"
               decoding="async"
             />
