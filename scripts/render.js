@@ -7,25 +7,29 @@ const {
   readDirectory,
   prepareDirectory,
 } = require('./utils/filesHandler');
-const { LANGUAGES, PICTURE_SIZES } = require('./utils/constants');
+const { LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
 
-const parseGalleryItem = (galleryItem) => {
-  const fileName = galleryItem.file.split('.')[0];
-  const sourceSet = PICTURE_SIZES.thumbnail.map(({ tag }) =>
-    tag
-      ? `/media/thumbnail/${fileName}${tag}.jpg ${tag.replace('@', '')}`
-      : `/media/thumbnail/${fileName}.jpg`
-  );
-  return {
-    source_set: sourceSet,
-    source: sourceSet[0],
-    description: galleryItem.description,
-  };
-};
-
 const render = async ({ language, index, route, link, abbreviation }) => {
+  const parseGalleryItem = (galleryItem) => {
+    const fileName = galleryItem.file.split('.')[0];
+    const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
+      tag
+        ? `/media/${fileName}${tag}.jpg ${tag.replace('@', '')}`
+        : `/media/${fileName}.jpg`
+    );
+    let galleryItemResult = {
+      source_set: sourceSet,
+      source: sourceSet[0],
+      description: galleryItem.description,
+    };
+    if (galleryItem.work) {
+      galleryItemResult.work_link = `/${route}/${galleryItem.work}.html`;
+    }
+    return galleryItemResult;
+  };
+
   let baseTemplate = await readFile('index.html');
   let websiteConstants = await readFile(
     `content/${language}_constants.json`,
@@ -77,6 +81,7 @@ const render = async ({ language, index, route, link, abbreviation }) => {
       name: pageConstants.name,
       gallery: pageConstants.gallery.length > 0,
       gallery_items: galleryItems,
+      gallery_with_nav: true,
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);
@@ -94,7 +99,6 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     ...websiteData,
     gallery: websiteConstants.gallery.length > 0,
     gallery_items: homeGalleryItems,
-    gallery_nav: 'hidden',
   };
 
   const homeOutput = mustache.render(baseTemplate, homeData);
