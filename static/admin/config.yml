@@ -117,6 +117,13 @@ collections:
               - name: 'description'
                 label: 'Description'
                 widget: 'text'
+              - name: 'link'
+                label: 'Link'
+                widget: 'relation'
+                collection: 'english_work'
+                value_field: '{{name}}|{{slug}}'
+                search_fields: ['name']
+                display_fields: ['name']
       - name: 'spanish_constants'
         label: 'Constantes (Español)'
         file: 'content/spanish_constants.json'
@@ -158,3 +165,10 @@ collections:
               - name: 'description'
                 label: 'Descripción'
                 widget: 'text'
+              - name: 'link'
+                label: 'Enlace'
+                widget: 'relation'
+                collection: 'spanish_work'
+                value_field: '{{name}}|{{slug}}'
+                search_fields: ['name']
+                display_fields: ['name']
