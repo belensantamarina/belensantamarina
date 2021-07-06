@@ -54,13 +54,17 @@
         <ul>
           {{#gallery_items}}
           <li data-id="{{id}}">
-            <img
-              src="{{{source}}}"
-              alt="{{description}}"
-              srcset="{{{source_set}}}"
-              loading="lazy"
-              decoding="async"
-            />
+            {{#work_link}}<a href="{{{work_link}}}"
+              >{{/work_link}}
+              <img
+                src="{{{source}}}"
+                alt="{{description}}"
+                srcset="{{{source_set}}}"
+                loading="lazy"
+                decoding="async"
+              />
+              {{#work_link}}</a
+            >{{/work_link}}
           </li>
           {{/gallery_items}}
         </ul>
