@@ -182,16 +182,14 @@ main {
 
       li {
         position: absolute;
-        display: flex;
+        display: none;
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
-        opacity: 0;
         transition: opacity 0.25s;
         &.active {
-          opacity: 1;
-          z-index: 2;
+          display: flex;
         }
 
         a {
