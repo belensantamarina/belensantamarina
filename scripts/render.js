@@ -7,16 +7,16 @@ const {
   readDirectory,
   prepareDirectory,
 } = require('./utils/filesHandler');
-const { LANGUAGES, PICTURE_SIZES } = require('./utils/constants');
+const { LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
 
 const parseGalleryItem = (galleryItem) => {
   const fileName = galleryItem.file.split('.')[0];
-  const sourceSet = PICTURE_SIZES.thumbnail.map(({ tag }) =>
+  const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
     tag
-      ? `/media/thumbnail/${fileName}${tag}.jpg ${tag.replace('@', '')}`
-      : `/media/thumbnail/${fileName}.jpg`
+      ? `/media/${fileName}${tag}.jpg ${tag.replace('@', '')}`
+      : `/media/${fileName}.jpg`
   );
   return {
     source_set: sourceSet,
