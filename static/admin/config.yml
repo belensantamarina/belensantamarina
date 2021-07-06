@@ -117,11 +117,11 @@ collections:
               - name: 'description'
                 label: 'Description'
                 widget: 'text'
-              - name: 'link'
-                label: 'Link'
+              - name: 'work'
+                label: 'Work'
                 widget: 'relation'
                 collection: 'english_work'
-                value_field: '{{name}}|{{slug}}'
+                value_field: '{{slug}}'
                 search_fields: ['name']
                 display_fields: ['name']
       - name: 'spanish_constants'
@@ -165,10 +165,10 @@ collections:
               - name: 'description'
                 label: 'Descripción'
                 widget: 'text'
-              - name: 'link'
-                label: 'Enlace'
+              - name: 'work'
+                label: 'Obra'
                 widget: 'relation'
                 collection: 'spanish_work'
-                value_field: '{{name}}|{{slug}}'
+                value_field: '{{slug}}'
                 search_fields: ['name']
                 display_fields: ['name']
