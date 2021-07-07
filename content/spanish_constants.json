@@ -12,6 +12,10 @@
     "Memoria de la acción|memoria-de-la-accion",
     "Consagrada|consagrada"
   ],
+  "secondary_menu": [
+    "Migran-t|migran-t",
+    "Mi deseo es un fantasma|mi-deseo-es-un-fantasma"
+  ],
   "gallery": [
     {
       "file": "ghost-1.jpg",

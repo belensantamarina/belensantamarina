@@ -107,6 +107,17 @@ collections:
               value_field: '{{name}}|{{slug}}'
               search_fields: ['name']
               display_fields: ['name']
+          - name: 'secondary_menu'
+            label: 'Secondary Menu'
+            widget: 'list'
+            field:
+              name: 'item'
+              label: 'Item'
+              widget: 'relation'
+              collection: 'english_work'
+              value_field: '{{name}}|{{slug}}'
+              search_fields: ['name']
+              display_fields: ['name']
           - name: 'gallery'
             label: 'Gallery'
             widget: 'list'
@@ -147,6 +158,17 @@ collections:
             default: 'Menú'
           - name: 'menu'
             label: 'Menú'
+            widget: 'list'
+            field:
+              name: 'item'
+              label: 'Ítem'
+              widget: 'relation'
+              collection: 'spanish_work'
+              value_field: '{{name}}|{{slug}}'
+              search_fields: ['name']
+              display_fields: ['name']
+          - name: 'secondary_menu'
+            label: 'Menú Secundario'
             widget: 'list'
             field:
               name: 'item'
