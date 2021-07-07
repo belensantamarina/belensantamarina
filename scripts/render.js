@@ -30,16 +30,19 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     return galleryItemResult;
   };
 
+  const parseMenuItem = (itemString) => ({
+    name: itemString.split('|')[0],
+    reference: `/${route}/${itemString.split('|')[1]}.html`,
+  });
+
   let baseTemplate = await readFile('index.html');
   let websiteConstants = await readFile(
     `content/${language}_constants.json`,
     true
   );
 
-  const navItems = websiteConstants.menu.map((itemString) => ({
-    name: itemString.split('|')[0],
-    reference: `/${route}/${itemString.split('|')[1]}.html`,
-  }));
+  const navItems = websiteConstants.menu.map(parseMenuItem);
+  const secondaryNavItems = websiteConstants.secondary_menu.map(parseMenuItem);
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
   const otherLanguage = LANGUAGES.find(
@@ -53,6 +56,7 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     footer: websiteFooter,
     description: websiteConstants.description,
     nav_items: navItems,
+    secondary_nav_items: secondaryNavItems,
     i18n_string_menu: websiteConstants.i18n_string_menu,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
