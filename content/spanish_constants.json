@@ -9,7 +9,8 @@
     "Conserva Nº2 - Capital Semilla|conserva-n2-capital-semilla",
     "Siembra|siembra",
     "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
-    "Memoria de la acción|memoria-de-la-accion"
+    "Memoria de la acción|memoria-de-la-accion",
+    "Consagrada|consagrada"
   ],
   "gallery": [
     {
@@ -63,11 +64,13 @@
     },
     {
       "file": "consacrated-1.jpg",
-      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#5, Conexión. MARQ (Museo de Arquitectura), Buenos Aires, Argentina.\nTubos de PVC. 26 x 50 cm"
+      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#5, Conexión. MARQ (Museo de Arquitectura), Buenos Aires, Argentina.\nTubos de PVC. 26 x 50 cm",
+      "work": "consagrada"
     },
     {
       "file": "consacrated-2.jpg",
-      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#4 · De a dos. Centro Cultural San Martín, Buenos Aires, Argentina.\nMadera, pintura de pizarra, tiza, hilo, tela, papel. 40 x 125 cm."
+      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#4 · De a dos. Centro Cultural San Martín, Buenos Aires, Argentina.\nMadera, pintura de pizarra, tiza, hilo, tela, papel. 40 x 125 cm.",
+      "work": "consagrada"
     },
     {
       "file": "ghost-2.jpg",
