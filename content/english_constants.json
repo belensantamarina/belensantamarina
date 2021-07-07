@@ -9,7 +9,8 @@
     "Conserve Nº2 - Seed Capital|conserve-n2-seed-capital",
     "Sowing|sowing",
     "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
-    "Memory of the action|memory-of-the-action"
+    "Memory of the action|memory-of-the-action",
+    "Consecrated|consecrated"
   ],
   "gallery": [
     {
@@ -59,15 +60,18 @@
     },
     {
       "file": "letters-to-1.jpg",
-      "description": "Recipes for distance. installation and collective experience. The transcription of the letters in pasta format are sealed and displayed in a cupboard, waiting to be eaten, shared, thrown away."
+      "description": "Recipes for distance. installation and collective experience. The transcription of the letters in pasta format are sealed and displayed in a cupboard, waiting to be eaten, shared, thrown away.",
+      "work": ""
     },
     {
       "file": "consacrated-1.jpg",
-      "description": "Consecrated, September - November 2017.  \nIntervention n#5, Connection. MARQ (Architecture Museum), City of Buenos Aires, Argentina.\nPVC tubes. 26 x 50 cm"
+      "description": "Consecrated, September - November 2017.  \nIntervention n#5, Connection. MARQ (Architecture Museum), City of Buenos Aires, Argentina.\nPVC tubes. 26 x 50 cm",
+      "work": "consecrated"
     },
     {
       "file": "consacrated-2.jpg",
-      "description": "Consecrated, September - November 2017.  \nIntervention n#4 · In pairs. San Martín Cultural Centre, City of Buenos Aires, Argentina.\nWood, blackboard paint, chalk, rag, string, paper. 40 x 125 cm."
+      "description": "Consecrated, September - November 2017.  \nIntervention n#4 · In pairs. San Martín Cultural Centre, City of Buenos Aires, Argentina.\nWood, blackboard paint, chalk, rag, string, paper. 40 x 125 cm.",
+      "work": "consecrated"
     },
     {
       "file": "ghost-2.jpg",
