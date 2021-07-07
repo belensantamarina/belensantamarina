@@ -6,7 +6,7 @@
   "menu": [
     "Migran-t|migran-t",
     "Mi deseo es un fantasma|mi-deseo-es-un-fantasma",
-    "Conserva Nº2 - Capital Semilla|conserva-n2-capital-semilla",
+    "Conserva Nº2: Capital Semilla|conserva-n2-capital-semilla",
     "Siembra|siembra",
     "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
     "Memoria de la acción|memoria-de-la-accion",
@@ -18,66 +18,66 @@
   ],
   "gallery": [
     {
-      "file": "ghost-1.jpg",
+      "file": "ghost_1.jpg",
       "description": "Bombacha blanca bordada con cabello humano tendida en el jardín. Pertenece a la obra Mi deseo es un fantasma.",
       "work": "mi-deseo-es-un-fantasma"
     },
     {
-      "file": "migran-t-2.jpg",
+      "file": "migran-t_2.jpg",
       "description": "Detalle de la sábana bordada con cabello humano. Pertenece a la obra Migran-t. La imagen muestra el bordado del mapa de la Argentina al lado del mapa del Reino Unido con la leyenda \"Ni acá ni allá\" en Español e Inglés.",
       "work": "migran-t"
     },
     {
-      "file": "migran-t-1.jpg",
+      "file": "migran-t_1.jpg",
       "description": "Migran-t, Primera Piel: Nostalgia. Sábana de Primark bordada con cabello humano. 150 x 200 cm.",
       "work": "migran-t"
     },
     {
-      "file": "sowing-1.jpg",
+      "file": "sowing_1.jpg",
       "description": "2018. Siembra. Performance, 15 minutos. URRA (Tiara, Buenos Aires, Argentina)",
       "work": "siembra"
     },
     {
-      "file": "conserve-n1-1.jpg",
+      "file": "conserve-n1_1.jpg",
       "description": "Conserva Nº1, Septiembre 2018, Universidad de Santa Fé (UNL). Colectivo Triangular. Performance y acción colectiva. Recolección de objetos entre la comunidad y excavación en la tierra en el Parque Federal para posterior entierro de los objetos.",
       "work": "conserva-n1-2018-2048"
     },
     {
-      "file": "conserve-n1-2.jpg",
+      "file": "conserve-n1_2.jpg",
       "description": "Conserva Nº1, Septiembre 2018, Universidad de Santa Fé (UNL). Colectivo Triangular. Performance y acción colectiva. Recolección de objetos entre la comunidad y excavación en la tierra en el Parque Federal para posterior entierro de los objetos.",
       "work": "conserva-n1-2018-2048"
     },
     {
-      "file": "conserve-n2-1.jpg",
+      "file": "conserve-n2_1.jpg",
       "description": "Vista general de la muestra Conserva Nº2 del Colectivo Triangular en Fundación Cazadores. \nColectivo Triangular está conformado por Regina Calcaterra, Leonardo Vallejo y Belén Santamarina.\nEl proyecto investiga a la Semilla desde un contexto biológico, antropológico, histórico, social, económico y político como plataforma para imaginar el futuro.",
       "work": "conserva-n2-capital-semilla"
     },
     {
-      "file": "conserve-n2-2.jpg",
+      "file": "conserve-n2_2.jpg",
       "description": "MES (Máquina Expendedora de Semillas), 2019. Conserva Nº2 (Capital Semilla) · Colectivo Triangular | Ph. Martina Mordeau.",
       "work": "conserva-n2-capital-semilla"
     },
     {
-      "file": "conserve-n2-3.jpg",
+      "file": "conserve-n2_3.jpg",
       "description": "Traductor de Cronologías, 2019. Conserva Nº2 (Capital Semilla) · Colectivo Triangular | Ph. Martina Mordeau.",
       "work": "conserva-n2-capital-semilla"
     },
     {
-      "file": "letters-to-1.jpg",
+      "file": "letters-to_1.jpg",
       "description": "Recetas para la distancia. instalación y experiencia colectiva. La transcripción de las cartas en formato pasta se sella y se exhibe en un armario, esperando ser comidas, compartidas, desechadas."
     },
     {
-      "file": "consacrated-1.jpg",
+      "file": "consecrated_1.jpg",
       "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#5, Conexión. MARQ (Museo de Arquitectura), Buenos Aires, Argentina.\nTubos de PVC. 26 x 50 cm",
       "work": "consagrada"
     },
     {
-      "file": "consacrated-2.jpg",
+      "file": "consecrated_2.jpg",
       "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#4 · De a dos. Centro Cultural San Martín, Buenos Aires, Argentina.\nMadera, pintura de pizarra, tiza, hilo, tela, papel. 40 x 125 cm.",
       "work": "consagrada"
     },
     {
-      "file": "ghost-2.jpg",
+      "file": "ghost_2.jpg",
       "description": "Mi deseo es un fantasma (Autorretrato). Fotografía editada digitalmente y sublimada sobre papel, bombacha bordada, cabello.",
       "work": "mi-deseo-es-un-fantasma"
     }
