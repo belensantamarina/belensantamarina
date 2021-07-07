@@ -15,7 +15,7 @@ const optimizeMedia = (mediaInfo) => {
     } else {
       console.log(`- Creating ${destinationPath}`);
       shell.exec(
-        `convert -strip -resize x${imageResolution.size}^ -quality 80 -density ${imageResolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${mediaInfo.path} ${destinationPath}`
+        `convert -strip -resize ${imageResolution.width}x${imageResolution.height} -quality 80 -density ${imageResolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${mediaInfo.path} ${destinationPath}`
       );
     }
   }
