@@ -124,6 +124,7 @@ collections:
                 value_field: '{{slug}}'
                 search_fields: ['name']
                 display_fields: ['name']
+                required: false
       - name: 'spanish_constants'
         label: 'Constantes (Español)'
         file: 'content/spanish_constants.json'
@@ -172,3 +173,4 @@ collections:
                 value_field: '{{slug}}'
                 search_fields: ['name']
                 display_fields: ['name']
+                required: false
