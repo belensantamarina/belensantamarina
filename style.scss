@@ -1,12 +1,14 @@
 body {
   margin: 0;
+  font-size: 1rem;
   font-family: 'novel-mono-pro', monospace;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
-  font-size: 1rem;
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
 }
 a {
   color: black;
@@ -33,9 +35,11 @@ header {
     button#nav {
       background: black;
       fill: white;
-      &:hover {
-        background: white;
-        fill: black;
+      @media (hover: hover) {
+        &:hover {
+          background: white;
+          fill: black;
+        }
       }
     }
   }
@@ -67,9 +71,11 @@ header {
       width: 0.8em;
       height: 0.8em;
     }
-    &:hover {
-      background: black;
-      fill: white;
+    @media (hover: hover) {
+      &:hover {
+        background: black;
+        fill: white;
+      }
     }
   }
 }
@@ -136,8 +142,10 @@ nav {
           vertical-align: middle;
           text-decoration: none;
         }
-        &:hover {
-          text-decoration: underline;
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
