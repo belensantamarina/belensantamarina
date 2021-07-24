@@ -42,8 +42,9 @@ if (galleryContainer) {
   };
 
   if (withNavigation) {
+    const generateButtonTitle = (index) =>
+      `${galleryContainer.dataset.action} ${index + 1}`;
     const navigationContainer = document.createElement('div');
-    navigationContainer.setAttribute('aria-hidden', 'true');
 
     imageContainers.forEach((imageContainer, index) => {
       const imageButton = document.createElement('button');
@@ -54,6 +55,7 @@ if (galleryContainer) {
         clearInterval(autoPlayInterval);
         selectImage(imageContainers[index]);
       });
+      imageButton.title = generateButtonTitle(index);
       navigationContainer.appendChild(imageButton);
     });
 
