@@ -188,6 +188,10 @@ main {
       list-style: none;
       margin: 0;
       padding: 0;
+      background-image: url('/assets/loading.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1rem;
       @media screen and (min-width: 48rem) {
         height: 30rem;
       }
