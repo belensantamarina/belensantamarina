@@ -4,14 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" type="text/css" href="/style.min.css" />
     <link rel="preconnect" href="https://use.typekit.net" />
     <link rel="preconnect" href="https://p.typekit.net" />
     <link
-      rel="stylesheet"
-      type="text/css"
+      rel="preload"
       href="https://use.typekit.net/krp0vnd.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" type="text/css" href="/style.min.css" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://use.typekit.net/krp0vnd.css"
+      />
+    </noscript>
     <title>{{html_title}}</title>
   </head>
   <body>
