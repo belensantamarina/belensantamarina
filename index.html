@@ -65,7 +65,11 @@
       {{#name}}
       <h2>{{name}}</h2>
       {{/name}} {{#gallery}}
-      <section id="gallery" data-nav="{{gallery_with_nav}}">
+      <section
+        id="gallery"
+        data-nav="{{gallery_with_nav}}"
+        data-action="{{i18n_string_gallery_action}}"
+      >
         <ul>
           {{#gallery_items}}
           <li data-id="{{id}}">

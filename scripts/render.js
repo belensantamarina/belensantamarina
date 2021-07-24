@@ -58,6 +58,7 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     nav_items: navItems,
     secondary_nav_items: secondaryNavItems,
     i18n_string_menu: websiteConstants.i18n_string_menu,
+    i18n_string_gallery_action: websiteConstants.i18n_string_gallery_action,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
     other_language_abbr: otherLanguage.abbreviation,
