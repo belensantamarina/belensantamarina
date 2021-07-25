@@ -108,6 +108,10 @@ const render = async ({
 
   const socialData = {
     ...websiteData,
+    html_title: `${websiteData.title}: ${websiteData.i18n_string_social.replace(
+      /(<([^>]+)>)/gi,
+      ''
+    )}`,
     social: true,
   };
 
