@@ -4,6 +4,8 @@
   "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "i18n_string_menu": "Menú",
   "i18n_string_gallery_action": "Seleccionar foto número",
+  "i18n_string_social": "Porque cerré mi <abbr title=\"Instagram\">In***gram</abbr>",
+  "i18n_string_social_action": "Ver todos los posts",
   "menu": [
     "Migran-t|migran-t",
     "Mi deseo es un fantasma|mi-deseo-es-un-fantasma",

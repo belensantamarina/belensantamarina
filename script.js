@@ -80,6 +80,7 @@ const MASTODON_COMMUNITY = 'mastodon.art';
 const MASTODON_USER_ID = '106634637437325100';
 
 const socialContainer = document.getElementById('social');
+const socialUrl = socialContainer.querySelector('a').href;
 
 const renderStatuses = (data) => {
   let statusesToRender = [];
@@ -87,7 +88,9 @@ const renderStatuses = (data) => {
     if (status.media_attachments.length > 0) {
       statusesToRender.push({
         id: status.id,
-        description: status.content.replace(/(<([^>]+)>)/gi, ''),
+        description:
+          status.media_attachments[0].description ||
+          status.content.replace(/(<([^>]+)>)/gi, ''),
         source: status.media_attachments[0].preview_url,
       });
     }
@@ -103,7 +106,7 @@ const renderStatuses = (data) => {
     statusImage.src = source;
 
     const statusLink = document.createElement('a');
-    statusLink.href = `/social.html?statusId=${id}`;
+    statusLink.href = `${socialUrl}?statusId=${id}`;
     statusLink.appendChild(statusImage);
 
     const statusContainer = document.createElement('li');
