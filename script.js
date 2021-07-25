@@ -71,3 +71,57 @@ if (galleryContainer) {
     selectImage(imageContainers[nextId]);
   }, 3000);
 }
+
+/********************************/
+/*            SOCIAL            */
+/********************************/
+
+const MASTODON_COMMUNITY = 'mastodon.art';
+const MASTODON_USER_ID = '106634637437325100';
+
+const socialContainer = document.getElementById('social');
+
+const renderStatuses = (data) => {
+  let statusesToRender = [];
+  data.every((status) => {
+    if (status.media_attachments.length > 0) {
+      statusesToRender.push({
+        id: status.id,
+        description: status.content.replace(/(<([^>]+)>)/gi, ''),
+        source: status.media_attachments[0].preview_url,
+      });
+    }
+
+    if (statusesToRender.length >= 3) return false;
+    return true;
+  });
+
+  statusesToRender.forEach(({ id, description, source }) => {
+    const statusImage = document.createElement('img');
+    statusImage.alt = description;
+    statusImage.src = source;
+
+    const statusLink = document.createElement('a');
+    statusLink.href = `?statusId=${id}`;
+    statusLink.appendChild(statusImage);
+
+    const statusContainer = document.createElement('li');
+    statusContainer.appendChild(statusLink);
+
+    socialContainer.appendChild(statusContainer);
+  });
+};
+
+const fetchStatuses = () => {
+  fetch(
+    `https://${MASTODON_COMMUNITY}/api/v1/accounts/${MASTODON_USER_ID}/statuses`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      renderStatuses(data);
+    });
+};
+
+window.addEventListener('load', () => {
+  fetchStatuses();
+});
