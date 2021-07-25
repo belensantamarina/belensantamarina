@@ -106,6 +106,14 @@ const render = async ({
     writeFile(`build/${route}/${fileName.replace('json', 'html')}`, pageOutput);
   }
 
+  const socialData = {
+    ...websiteData,
+    social: true,
+  };
+
+  const socialOutput = mustache.render(baseTemplate, socialData);
+  writeFile(`build${social}`, socialOutput);
+
   const homeGalleryItems = websiteConstants.gallery.map(
     (galleryItem, galleryItemIndex) => ({
       ...parseGalleryItem(galleryItem),
