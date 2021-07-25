@@ -2,6 +2,7 @@ const LANGUAGES = [
   {
     language: 'english',
     index: '/index.html',
+    social: '/social.html',
     route: 'work',
     link: 'Website in English',
     abbreviation: 'ENG',
@@ -10,6 +11,7 @@ const LANGUAGES = [
   {
     language: 'spanish',
     index: '/index.es.html',
+    social: '/social.es.html',
     route: 'obra',
     link: 'Sitio web en español',
     abbreviation: 'ESP',

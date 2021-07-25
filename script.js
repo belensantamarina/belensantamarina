@@ -71,3 +71,62 @@ if (galleryContainer) {
     selectImage(imageContainers[nextId]);
   }, 3000);
 }
+
+/********************************/
+/*            SOCIAL            */
+/********************************/
+
+const navSocialContainer = document.querySelector('ul.social');
+const socialViewAllContainer = navSocialContainer.querySelector('li');
+const socialUrl = navSocialContainer.querySelector('a').href;
+
+const renderStatusInNav = ({ id, description, source }) => {
+  const statusImage = document.createElement('img');
+  statusImage.alt = description;
+  statusImage.src = source;
+
+  const statusLink = document.createElement('a');
+  statusLink.href = `${socialUrl}?statusId=${id}`;
+  statusLink.appendChild(statusImage);
+
+  const statusContainer = document.createElement('li');
+  statusContainer.appendChild(statusLink);
+
+  navSocialContainer.insertBefore(statusContainer, socialViewAllContainer);
+};
+
+const renderSocialModuleInNav = (data) => {
+  let renderedStatuses = 0;
+  data.every((status) => {
+    if (status.media_attachments.length > 0 && renderedStatuses < 3) {
+      renderStatusInNav({
+        id: status.id,
+        description:
+          status.media_attachments[0].description ||
+          status.content.replace(/(<([^>]+)>)/gi, ''),
+        source: status.media_attachments[0].preview_url,
+      });
+      renderedStatuses++;
+      return true;
+    }
+
+    return false;
+  });
+};
+
+const fetchSocialData = () => {
+  fetch(
+    `https://${window.MASTODON_COMMUNITY}/api/v1/accounts/${window.MASTODON_USER_ID}/statuses`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      renderSocialModuleInNav(data);
+      if (window.renderSocialModuleInBody) {
+        window.renderSocialModuleInBody(data);
+      }
+    });
+};
+
+window.addEventListener('load', () => {
+  fetchSocialData();
+});
