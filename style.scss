@@ -85,7 +85,7 @@ nav {
   opacity: 0;
   background: black;
   color: white;
-  position: absolute;
+  position: fixed;
   z-index: 3;
   overflow-y: scroll;
   transition: all 0.25s;
@@ -363,11 +363,11 @@ main {
         opacity: 0;
         background: black;
         color: white;
-        position: absolute;
+        position: fixed;
         z-index: 10;
         overflow-y: scroll;
         transition: all 0.25s;
-        padding-top: 4rem;
+        padding: 4rem 0 2rem 0;
         inset: 0;
 
         img,
@@ -375,7 +375,7 @@ main {
           display: block;
           width: calc(100% - 4rem);
           height: auto;
-          max-width: 64rem;
+          max-width: 32rem;
           margin: 1rem auto;
           padding: 0;
         }
