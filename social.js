@@ -4,17 +4,44 @@
 
 const mainContainer = document.querySelector('main');
 
-const mainSocialContainer = document.createElement('ul');
-mainSocialContainer.classList.add('social');
+const mainSocialContainer = document.createElement('section');
+mainSocialContainer.id = 'social';
 mainContainer.appendChild(mainSocialContainer);
 
-const renderStatusInBody = ({ media }) => {
-  const statusImageButton = document.createElement('button');
-  statusImageButton.title = media[0].description;
-  statusImageButton.style.backgroundImage = `url('${media[0].source}')`;
+const renderStatusInBody = ({ content, media }) => {
+  const statusContainer = document.createElement('article');
 
-  const statusContainer = document.createElement('li');
-  statusContainer.appendChild(statusImageButton);
+  const statusDetailsContainer = document.createElement('div');
+
+  media.forEach(({ description, source }) => {
+    const statusImage = document.createElement('img');
+    statusImage.alt = description;
+    statusImage.src = source;
+    statusDetailsContainer.appendChild(statusImage);
+  });
+
+  const statusContent = document.createElement('blockquote');
+  statusContent.innerHTML = content;
+  statusDetailsContainer.appendChild(statusContent);
+
+  const closeStatusButton = document.createElement('button');
+  closeStatusButton.title = 'Close';
+  closeStatusButton.classList.add('close');
+  closeStatusButton.addEventListener('click', () => {
+    statusContainer.classList.remove('active');
+  });
+  statusDetailsContainer.prepend(closeStatusButton);
+
+  statusContainer.appendChild(statusDetailsContainer);
+
+  const openStatusButton = document.createElement('button');
+  openStatusButton.title = 'Open';
+  openStatusButton.classList.add('open');
+  openStatusButton.style.backgroundImage = `url('${media[0].source}')`;
+  openStatusButton.addEventListener('click', () => {
+    statusContainer.classList.add('active');
+  });
+  statusContainer.appendChild(openStatusButton);
 
   mainSocialContainer.appendChild(statusContainer);
 };

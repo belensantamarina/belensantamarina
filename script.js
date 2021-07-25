@@ -76,7 +76,7 @@ if (galleryContainer) {
 /*            SOCIAL            */
 /********************************/
 
-const navSocialContainer = document.getElementById('social');
+const navSocialContainer = document.querySelector('ul.social');
 const socialViewAllContainer = navSocialContainer.querySelector('li');
 const socialUrl = navSocialContainer.querySelector('a').href;
 
