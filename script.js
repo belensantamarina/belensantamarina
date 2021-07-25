@@ -96,19 +96,20 @@ const renderStatuses = (data) => {
     return true;
   });
 
+  statusesToRender.reverse();
   statusesToRender.forEach(({ id, description, source }) => {
     const statusImage = document.createElement('img');
     statusImage.alt = description;
     statusImage.src = source;
 
     const statusLink = document.createElement('a');
-    statusLink.href = `?statusId=${id}`;
+    statusLink.href = `/social.html?statusId=${id}`;
     statusLink.appendChild(statusImage);
 
     const statusContainer = document.createElement('li');
     statusContainer.appendChild(statusLink);
 
-    socialContainer.appendChild(statusContainer);
+    socialContainer.prepend(statusContainer);
   });
 };
 

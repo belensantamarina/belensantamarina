@@ -149,6 +149,52 @@ nav {
         }
       }
     }
+    &#social {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+
+      li {
+        width: 3em;
+        height: 3em;
+        margin-left: 0.5em;
+
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          border: 0.0625em solid white;
+          box-sizing: border-box;
+          margin-top: 0.60625em;
+
+          a {
+            color: white;
+            line-height: 2em;
+            text-align: center;
+            &::before {
+              content: '+';
+            }
+          }
+        }
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+
+          &::before {
+            content: '';
+            margin-right: 0;
+          }
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
   }
   h4 {
     &::before,
@@ -161,6 +207,10 @@ nav {
     font-weight: 400;
     font-size: 1.25em;
     margin: 2rem 1rem 0 1rem;
+
+    abbr {
+      text-decoration: none;
+    }
   }
 }
 
