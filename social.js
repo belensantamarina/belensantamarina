@@ -8,10 +8,10 @@ const mainSocialContainer = document.createElement('ul');
 mainSocialContainer.classList.add('social');
 mainContainer.appendChild(mainSocialContainer);
 
-const renderStatusInBody = (status) => {
+const renderStatusInBody = ({ media }) => {
   const statusImageButton = document.createElement('button');
-  statusImageButton.title = status.media[0].description;
-  statusImageButton.style.backgroundImage = `url('${status.media[0].source}')`;
+  statusImageButton.title = media[0].description;
+  statusImageButton.style.backgroundImage = `url('${media[0].source}')`;
 
   const statusContainer = document.createElement('li');
   statusContainer.appendChild(statusImageButton);

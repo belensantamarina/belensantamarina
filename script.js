@@ -77,39 +77,40 @@ if (galleryContainer) {
 /********************************/
 
 const navSocialContainer = document.getElementById('social');
+const socialViewAllContainer = navSocialContainer.querySelector('li');
 const socialUrl = navSocialContainer.querySelector('a').href;
 
+const renderStatusInNav = ({ id, description, source }) => {
+  const statusImage = document.createElement('img');
+  statusImage.alt = description;
+  statusImage.src = source;
+
+  const statusLink = document.createElement('a');
+  statusLink.href = `${socialUrl}?statusId=${id}`;
+  statusLink.appendChild(statusImage);
+
+  const statusContainer = document.createElement('li');
+  statusContainer.appendChild(statusLink);
+
+  navSocialContainer.insertBefore(statusContainer, socialViewAllContainer);
+};
+
 const renderSocialModuleInNav = (data) => {
-  let statusesToRender = [];
+  let renderedStatuses = 0;
   data.every((status) => {
-    if (status.media_attachments.length > 0) {
-      statusesToRender.push({
+    if (status.media_attachments.length > 0 && renderedStatuses < 3) {
+      renderStatusInNav({
         id: status.id,
         description:
           status.media_attachments[0].description ||
           status.content.replace(/(<([^>]+)>)/gi, ''),
         source: status.media_attachments[0].preview_url,
       });
+      renderedStatuses++;
+      return true;
     }
 
-    if (statusesToRender.length >= 3) return false;
-    return true;
-  });
-
-  statusesToRender.reverse();
-  statusesToRender.forEach(({ id, description, source }) => {
-    const statusImage = document.createElement('img');
-    statusImage.alt = description;
-    statusImage.src = source;
-
-    const statusLink = document.createElement('a');
-    statusLink.href = `${socialUrl}?statusId=${id}`;
-    statusLink.appendChild(statusImage);
-
-    const statusContainer = document.createElement('li');
-    statusContainer.appendChild(statusLink);
-
-    navSocialContainer.prepend(statusContainer);
+    return false;
   });
 };
 
@@ -120,7 +121,6 @@ const fetchSocialData = () => {
     .then((response) => response.json())
     .then((data) => {
       renderSocialModuleInNav(data);
-      console.log(window.renderSocialModuleInBody);
       if (window.renderSocialModuleInBody) {
         window.renderSocialModuleInBody(data);
       }
