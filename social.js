@@ -8,8 +8,9 @@ const mainSocialContainer = document.createElement('section');
 mainSocialContainer.id = 'social';
 mainContainer.appendChild(mainSocialContainer);
 
-const renderStatusInBody = ({ content, media }) => {
+const renderStatusInBody = ({ id, content, media }) => {
   const statusContainer = document.createElement('article');
+  statusContainer.id = id;
 
   const statusDetailsContainer = document.createElement('div');
 
@@ -63,4 +64,8 @@ window.renderSocialModuleInBody = (data) => {
       });
     }
   });
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  document.getElementById(urlParams.get('statusId')).classList.add('active');
 };
