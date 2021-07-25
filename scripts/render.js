@@ -11,7 +11,14 @@ const { LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
 
-const render = async ({ language, index, route, link, abbreviation }) => {
+const render = async ({
+  language,
+  index,
+  social,
+  route,
+  link,
+  abbreviation,
+}) => {
   const parseGalleryItem = (galleryItem) => {
     const fileName = galleryItem.file.split('.')[0];
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
@@ -59,11 +66,14 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     secondary_nav_items: secondaryNavItems,
     i18n_string_menu: websiteConstants.i18n_string_menu,
     i18n_string_gallery_action: websiteConstants.i18n_string_gallery_action,
+    i18n_string_social: websiteConstants.i18n_string_social,
+    i18n_string_social_action: websiteConstants.i18n_string_social_action,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
     other_language_abbr: otherLanguage.abbreviation,
     other_language_index: otherLanguage.index,
     current_language_index: index,
+    current_language_social: social,
     i18n_string_other_language: otherLanguage.link,
     other_language: otherLanguage.code,
   };
@@ -95,6 +105,18 @@ const render = async ({ language, index, route, link, abbreviation }) => {
     const pageOutput = mustache.render(baseTemplate, pageData);
     writeFile(`build/${route}/${fileName.replace('json', 'html')}`, pageOutput);
   }
+
+  const socialData = {
+    ...websiteData,
+    html_title: `${websiteData.title}: ${websiteData.i18n_string_social.replace(
+      /(<([^>]+)>)/gi,
+      ''
+    )}`,
+    social: true,
+  };
+
+  const socialOutput = mustache.render(baseTemplate, socialData);
+  writeFile(`build${social}`, socialOutput);
 
   const homeGalleryItems = websiteConstants.gallery.map(
     (galleryItem, galleryItemIndex) => ({

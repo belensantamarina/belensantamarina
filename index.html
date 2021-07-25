@@ -59,6 +59,15 @@
         <li><a href="{{{reference}}}">{{name}}</a></li>
         {{/secondary_nav_items}}
       </ul>
+      <h4>{{{i18n_string_social}}}</h4>
+      <ul class="social">
+        <li>
+          <a
+            href="{{{current_language_social}}}"
+            title="{{i18n_string_social_action}}"
+          ></a>
+        </li>
+      </ul>
     </nav>
 
     <main>
@@ -93,6 +102,13 @@
 
     <footer>{{{footer}}}</footer>
 
+    <script type="text/javascript">
+      window.MASTODON_COMMUNITY = 'mastodon.art';
+      window.MASTODON_USER_ID = '106634637437325100';
+    </script>
     <script type="text/javascript" src="/script.min.js"></script>
+    {{#social}}
+    <script type="text/javascript" src="/social.min.js"></script>
+    {{/social}}
   </body>
 </html>
