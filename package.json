@@ -19,7 +19,7 @@
     "url": "git+https://github.com/belenls/belenls.github.io.git"
   },
   "author": "Andres Moritan <amoritan@me.com>",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/belenls/belenls.github.io/issues"
   },
