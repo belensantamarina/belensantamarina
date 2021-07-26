@@ -84,6 +84,8 @@ const renderStatusInNav = ({ id, description, source }) => {
   const statusImage = document.createElement('img');
   statusImage.alt = description;
   statusImage.src = source;
+  statusImage.decoding = 'async';
+  statusImage.loading = 'lazy';
 
   const statusLink = document.createElement('a');
   statusLink.href = `${socialUrl}?statusId=${id}`;

@@ -8,7 +8,7 @@ const mainSocialContainer = document.createElement('section');
 mainSocialContainer.id = 'social';
 mainContainer.appendChild(mainSocialContainer);
 
-const renderStatusInBody = ({ id, content, media }) => {
+const renderStatusInBody = ({ id, content, thumbnail, media }) => {
   const statusContainer = document.createElement('article');
   statusContainer.id = id;
 
@@ -18,6 +18,8 @@ const renderStatusInBody = ({ id, content, media }) => {
     const statusImage = document.createElement('img');
     statusImage.alt = description;
     statusImage.src = source;
+    statusImage.decoding = 'async';
+    statusImage.loading = 'lazy';
     statusDetailsContainer.appendChild(statusImage);
   });
 
@@ -38,7 +40,7 @@ const renderStatusInBody = ({ id, content, media }) => {
   const openStatusButton = document.createElement('button');
   openStatusButton.title = 'Open';
   openStatusButton.classList.add('open');
-  openStatusButton.style.backgroundImage = `url('${media[0].source}')`;
+  openStatusButton.style.backgroundImage = `url('${thumbnail}')`;
   openStatusButton.addEventListener('click', () => {
     statusContainer.classList.add('active');
   });
@@ -60,6 +62,7 @@ window.renderSocialModuleInBody = (data) => {
       renderStatusInBody({
         id: status.id,
         content: status.content,
+        thumbnail: status.media_attachments[0].preview_url,
         media,
       });
     }
