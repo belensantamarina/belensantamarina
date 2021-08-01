@@ -1,5 +1,7 @@
 const mustache = require('mustache');
 const showdown = require('showdown');
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { Readable } = require('stream');
 
 const {
   readFile,
@@ -11,7 +13,7 @@ const { DOMAIN, LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
 
-const render = async ({
+const renderLanguage = async ({
   language,
   index,
   social,
@@ -19,6 +21,8 @@ const render = async ({
   link,
   abbreviation,
 }) => {
+  const renderedLinks = [];
+
   const parseGalleryItem = (galleryItem) => {
     const fileName = galleryItem.file.split('.')[0];
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
@@ -109,6 +113,12 @@ const render = async ({
 
     const pageOutput = mustache.render(baseTemplate, pageData);
     writeFile(`build${pagePath}`, pageOutput);
+
+    renderedLinks.push({
+      url: pagePath,
+      changefreq: 'yearly',
+      priority: 0.75,
+    });
   }
 
   const socialData = {
@@ -123,6 +133,12 @@ const render = async ({
 
   const socialOutput = mustache.render(baseTemplate, socialData);
   writeFile(`build${social}`, socialOutput);
+
+  renderedLinks.push({
+    url: social,
+    changefreq: 'always',
+    priority: 0.5,
+  });
 
   const homeGalleryItems = websiteConstants.gallery.map(
     (galleryItem, galleryItemIndex) => ({
@@ -143,8 +159,38 @@ const render = async ({
 
   const homeOutput = mustache.render(baseTemplate, homeData);
   writeFile(`build${index}`, homeOutput);
+
+  renderedLinks.push({
+    url: index,
+    changefreq: 'monthly',
+    priority: 1,
+  });
+
+  return renderedLinks;
 };
 
-LANGUAGES.forEach((language) => {
-  render(language);
-});
+const generateSitemap = (renderedLinksGroups) => {
+  const renderedLinks = renderedLinksGroups
+    .flat()
+    .sort((a, b) => b.priority - a.priority);
+  const stream = new SitemapStream({ hostname: DOMAIN });
+  streamToPromise(Readable.from(renderedLinks).pipe(stream))
+    .then((data) => data.toString())
+    .then((result) => {
+      writeFile('build/sitemap.xml', result);
+    });
+};
+
+const render = () => {
+  const renderedLinksGroups = [];
+  LANGUAGES.forEach((language) => {
+    renderLanguage(language).then((newlyRenderedLinks) => {
+      renderedLinksGroups.push(newlyRenderedLinks);
+      if (renderedLinksGroups.length === LANGUAGES.length) {
+        generateSitemap(renderedLinksGroups);
+      }
+    });
+  });
+};
+
+render();
