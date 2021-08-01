@@ -1,5 +1,7 @@
 const mustache = require('mustache');
 const showdown = require('showdown');
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { Readable } = require('stream');
 
 const {
   readFile,
@@ -7,11 +9,11 @@ const {
   readDirectory,
   prepareDirectory,
 } = require('./utils/filesHandler');
-const { LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
+const { DOMAIN, LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
 
 const showdownConverter = new showdown.Converter();
 
-const render = async ({
+const renderLanguage = async ({
   language,
   index,
   social,
@@ -19,6 +21,8 @@ const render = async ({
   link,
   abbreviation,
 }) => {
+  const renderedLinks = [];
+
   const parseGalleryItem = (galleryItem) => {
     const fileName = galleryItem.file.split('.')[0];
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
@@ -76,6 +80,7 @@ const render = async ({
     current_language_social: social,
     i18n_string_other_language: otherLanguage.link,
     other_language: otherLanguage.code,
+    meta_url: `${DOMAIN}${index}`,
   };
 
   let workFiles = await readDirectory(`content/${route}`);
@@ -91,19 +96,29 @@ const render = async ({
     );
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
+    const pagePath = `/${route}/${fileName.replace('json', 'html')}`;
     const pageData = {
       ...websiteData,
       html_title: `${websiteData.title}: ${pageConstants.name}`,
       description: pageConstants.description,
       body: pageBody,
       name: pageConstants.name,
-      gallery: pageConstants.gallery.length > 0,
+      gallery: galleryItems.length > 0,
       gallery_items: galleryItems,
       gallery_with_nav: true,
+      meta_url: `${DOMAIN}${pagePath}`,
+      meta_image:
+        galleryItems.length > 0 ? `${DOMAIN}${galleryItems[0].source}` : '',
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);
-    writeFile(`build/${route}/${fileName.replace('json', 'html')}`, pageOutput);
+    writeFile(`build${pagePath}`, pageOutput);
+
+    renderedLinks.push({
+      url: pagePath,
+      changefreq: 'yearly',
+      priority: 0.75,
+    });
   }
 
   const socialData = {
@@ -113,10 +128,17 @@ const render = async ({
       ''
     )}`,
     social: true,
+    meta_url: `${DOMAIN}${social}`,
   };
 
   const socialOutput = mustache.render(baseTemplate, socialData);
   writeFile(`build${social}`, socialOutput);
+
+  renderedLinks.push({
+    url: social,
+    changefreq: 'always',
+    priority: 0.5,
+  });
 
   const homeGalleryItems = websiteConstants.gallery.map(
     (galleryItem, galleryItemIndex) => ({
@@ -127,14 +149,48 @@ const render = async ({
 
   const homeData = {
     ...websiteData,
-    gallery: websiteConstants.gallery.length > 0,
+    gallery: homeGalleryItems.length > 0,
     gallery_items: homeGalleryItems,
+    meta_image:
+      homeGalleryItems.length > 0
+        ? `${DOMAIN}${homeGalleryItems[0].source}`
+        : '',
   };
 
   const homeOutput = mustache.render(baseTemplate, homeData);
   writeFile(`build${index}`, homeOutput);
+
+  renderedLinks.push({
+    url: index,
+    changefreq: 'monthly',
+    priority: 1,
+  });
+
+  return renderedLinks;
 };
 
-LANGUAGES.forEach((language) => {
-  render(language);
-});
+const generateSitemap = (renderedLinksGroups) => {
+  const renderedLinks = renderedLinksGroups
+    .flat()
+    .sort((a, b) => b.priority - a.priority);
+  const stream = new SitemapStream({ hostname: DOMAIN });
+  streamToPromise(Readable.from(renderedLinks).pipe(stream))
+    .then((data) => data.toString())
+    .then((result) => {
+      writeFile('build/sitemap.xml', result);
+    });
+};
+
+const render = () => {
+  const renderedLinksGroups = [];
+  LANGUAGES.forEach((language) => {
+    renderLanguage(language).then((newlyRenderedLinks) => {
+      renderedLinksGroups.push(newlyRenderedLinks);
+      if (renderedLinksGroups.length === LANGUAGES.length) {
+        generateSitemap(renderedLinksGroups);
+      }
+    });
+  });
+};
+
+render();

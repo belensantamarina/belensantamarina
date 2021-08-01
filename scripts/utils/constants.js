@@ -1,3 +1,5 @@
+const DOMAIN = 'https://belensantamarina.com';
+
 const LANGUAGES = [
   {
     language: 'english',
@@ -26,4 +28,4 @@ const IMAGE_RESOLUTIONS = [
   { tag: '@3x', width: 2160, height: 960, density: 300 },
 ];
 
-module.exports = { LANGUAGES, IMAGE_RESOLUTIONS };
+module.exports = { DOMAIN, LANGUAGES, IMAGE_RESOLUTIONS };

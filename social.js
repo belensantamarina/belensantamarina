@@ -2,6 +2,8 @@
 /*            SOCIAL            */
 /********************************/
 
+const url = new URL(window.location);
+
 const mainContainer = document.querySelector('main');
 
 const mainSocialContainer = document.createElement('section');
@@ -32,6 +34,8 @@ const renderStatusInBody = ({ id, content, thumbnail, media }) => {
   closeStatusButton.classList.add('close');
   closeStatusButton.addEventListener('click', () => {
     statusContainer.classList.remove('active');
+    url.searchParams.delete('statusId');
+    window.history.pushState({}, '', url);
   });
   statusDetailsContainer.prepend(closeStatusButton);
 
@@ -43,6 +47,8 @@ const renderStatusInBody = ({ id, content, thumbnail, media }) => {
   openStatusButton.style.backgroundImage = `url('${thumbnail}')`;
   openStatusButton.addEventListener('click', () => {
     statusContainer.classList.add('active');
+    url.searchParams.set('statusId', statusContainer.id);
+    window.history.pushState({}, '', url);
   });
   statusContainer.appendChild(openStatusButton);
 
@@ -68,7 +74,8 @@ window.renderSocialModuleInBody = (data) => {
     }
   });
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  document.getElementById(urlParams.get('statusId')).classList.add('active');
+  const selectedStatusId = url.searchParams.get('statusId');
+  if (selectedStatusId) {
+    document.getElementById(selectedStatusId).classList.add('active');
+  }
 };
