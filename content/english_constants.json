@@ -1,24 +1,10 @@
 {
-  "language": "en-GB",
-  "title": "Belen Santamarina",
-  "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
-  "i18n_string_menu": "Menu",
-  "i18n_string_gallery_action": "Select photo number",
-  "i18n_string_social": "Because I closed my <abbr title=\"Instagram\">In***gram</abbr>",
-  "i18n_string_social_action": "See all posts",
-  "menu": [
-    "Migran-t|migran-t",
-    "My desire is a ghost|my-desire-is-a-ghost",
-    "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
-    "Sowing|sowing",
-    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
-    "Memory of the action|memory-of-the-action",
-    "Consecrated|consecrated"
-  ],
   "secondary_menu": [
     "A pictorial calendar to see the world|a-pictorial-calendar-to-see-the-world",
     "365 Geometrical Days|365-geometrical-days"
   ],
+  "i18n_string_menu": "Menu",
+  "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
       "file": "ghost_1.jpg",
@@ -86,5 +72,19 @@
       "work": "my-desire-is-a-ghost"
     }
   ],
-  "footer": "Contact: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina. This is an <a href=\"https://github.com/belenls/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned a composted under the GNU GPL. Long live open source!"
+  "title": "Belen Santamarina",
+  "language": "en-GB",
+  "i18n_string_social": "Because I closed my <abbr title=\"Instagram\">In***gram</abbr>",
+  "footer": "Contact: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina. This is an <a href=\"https://github.com/belenls/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned and composted under the GNU GPL. Long live open source!",
+  "i18n_string_social_action": "See all posts",
+  "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
+  "menu": [
+    "Migran-t|migran-t",
+    "My desire is a ghost|my-desire-is-a-ghost",
+    "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
+    "Sowing|sowing",
+    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
+    "Memory of the action|memory-of-the-action",
+    "Consecrated|consecrated"
+  ]
 }
