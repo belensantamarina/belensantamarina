@@ -98,9 +98,8 @@ const renderStatusInNav = ({ id, description, source }) => {
 };
 
 const renderSocialModuleInNav = (data) => {
-  let renderedStatuses = 0;
   data.every((status) => {
-    if (status.media_attachments.length > 0 && renderedStatuses < 3) {
+    if (status.media_attachments.length > 0) {
       renderStatusInNav({
         id: status.id,
         description:
@@ -108,7 +107,6 @@ const renderSocialModuleInNav = (data) => {
           status.content.replace(/(<([^>]+)>)/gi, ''),
         source: status.media_attachments[0].preview_url,
       });
-      renderedStatuses++;
       return true;
     }
 
@@ -116,19 +114,19 @@ const renderSocialModuleInNav = (data) => {
   });
 };
 
-const fetchSocialData = () => {
+window.fetchSocialData = (
+  renderCallback = renderSocialModuleInNav,
+  limit = 3
+) => {
   fetch(
-    `https://${window.MASTODON_COMMUNITY}/api/v1/accounts/${window.MASTODON_USER_ID}/statuses`
+    `https://${window.MASTODON_COMMUNITY}/api/v1/accounts/${window.MASTODON_USER_ID}/statuses?limit=${limit}`
   )
     .then((response) => response.json())
     .then((data) => {
-      renderSocialModuleInNav(data);
-      if (window.renderSocialModuleInBody) {
-        window.renderSocialModuleInBody(data);
-      }
+      renderCallback(data);
     });
 };
 
 window.addEventListener('load', () => {
-  fetchSocialData();
+  window.fetchSocialData();
 });

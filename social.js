@@ -55,7 +55,7 @@ const renderStatusInBody = ({ id, content, thumbnail, media }) => {
   mainSocialContainer.appendChild(statusContainer);
 };
 
-window.renderSocialModuleInBody = (data) => {
+const renderSocialModuleInBody = (data) => {
   data.forEach((status) => {
     if (status.media_attachments.length > 0) {
       const fallbackDescription = status.content.replace(/(<([^>]+)>)/gi, '');
@@ -79,3 +79,7 @@ window.renderSocialModuleInBody = (data) => {
     document.getElementById(selectedStatusId).classList.add('active');
   }
 };
+
+window.addEventListener('load', () => {
+  window.fetchSocialData(renderSocialModuleInBody, 100);
+});
