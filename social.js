@@ -2,6 +2,8 @@
 /*            SOCIAL            */
 /********************************/
 
+let loading = true;
+
 const url = new URL(window.location);
 
 const mainContainer = document.querySelector('main');
@@ -78,8 +80,22 @@ const renderSocialModuleInBody = (data) => {
   if (selectedStatusId) {
     document.getElementById(selectedStatusId).classList.add('active');
   }
+
+  loading = false;
 };
 
 window.addEventListener('load', () => {
-  window.fetchSocialData(renderSocialModuleInBody, 100);
+  window.fetchSocialData(renderSocialModuleInBody, 30);
+});
+
+window.addEventListener('scroll', () => {
+  if (loading) return;
+  if (window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
+    loading = true;
+    window.fetchSocialData(
+      renderSocialModuleInBody,
+      30,
+      mainSocialContainer.lastChild.id
+    );
+  }
 });

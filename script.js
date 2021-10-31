@@ -116,11 +116,14 @@ const renderSocialModuleInNav = (data) => {
 
 window.fetchSocialData = (
   renderCallback = renderSocialModuleInNav,
-  limit = 3
+  limit = 3,
+  lastId = null
 ) => {
-  fetch(
-    `https://${window.MASTODON_COMMUNITY}/api/v1/accounts/${window.MASTODON_USER_ID}/statuses?limit=${limit}`
-  )
+  let url = `https://${window.MASTODON_COMMUNITY}/api/v1/accounts/${window.MASTODON_USER_ID}/statuses?limit=${limit}`;
+  if (lastId) {
+    url += `&max_id=${lastId}`;
+  }
+  fetch(url)
     .then((response) => response.json())
     .then((data) => {
       renderCallback(data);
