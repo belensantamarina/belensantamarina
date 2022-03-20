@@ -83,12 +83,12 @@
   "i18n_string_social_action": "Ver todos los posts",
   "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "menu": [
+    "En sueños (migran-t)|en-sueños-migran-t",
     "Migran-t|migran-t",
     "Conserva Nº2: Capital Semilla|conserva-n2-capital-semilla",
     "Siembra|siembra",
     "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
     "Memoria de la acción|memoria-de-la-accion",
-    "Consagrada|consagrada",
-    "En sueños (migran-t)|en-sueños-migran-t"
+    "Consagrada|consagrada"
   ]
 }
