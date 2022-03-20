@@ -1,24 +1,10 @@
 {
-  "language": "es-AR",
-  "title": "Belen Santamarina",
-  "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
-  "i18n_string_menu": "Menú",
-  "i18n_string_gallery_action": "Seleccionar foto número",
-  "i18n_string_social": "Porque cerré mi <abbr title=\"Instagram\">In***gram</abbr>",
-  "i18n_string_social_action": "Ver todos los posts",
-  "menu": [
-    "Migran-t|migran-t",
-    "Mi deseo es un fantasma|mi-deseo-es-un-fantasma",
-    "Conserva Nº2: Capital Semilla|conserva-n2-capital-semilla",
-    "Siembra|siembra",
-    "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
-    "Memoria de la acción|memoria-de-la-accion",
-    "Consagrada|consagrada"
-  ],
   "secondary_menu": [
     "Un calendario pictórico para ver el mundo|un-calendario-pictorico-para-ver-el-mundo",
     "365 Días Geométricos|365-dias-geometricos"
   ],
+  "i18n_string_menu": "Menú",
+  "i18n_string_gallery_action": "Seleccionar foto número",
   "gallery": [
     {
       "file": "ghost_1.jpg",
@@ -85,5 +71,18 @@
       "work": "mi-deseo-es-un-fantasma"
     }
   ],
-  "footer": "Contacto: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina. Este sitio fue <a href=\"https://github.com/belenls/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">creado con código abierto</a> para ser clonado y compostado bajo la GNU GPL. Larga vida al código abierto!"
+  "title": "Belen Santamarina",
+  "language": "es-AR",
+  "i18n_string_social": "Porque cerré mi <abbr title=\"Instagram\">In***gram</abbr>",
+  "footer": "Contacto: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina. Este sitio fue <a href=\"https://github.com/belenls/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">creado con código abierto</a> para ser clonado y compostado bajo la GNU GPL. Larga vida al código abierto!",
+  "i18n_string_social_action": "Ver todos los posts",
+  "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
+  "menu": [
+    "Migran-t|migran-t",
+    "Conserva Nº2: Capital Semilla|conserva-n2-capital-semilla",
+    "Siembra|siembra",
+    "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
+    "Memoria de la acción|memoria-de-la-accion",
+    "Consagrada|consagrada"
+  ]
 }
