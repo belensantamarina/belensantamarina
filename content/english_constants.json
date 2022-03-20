@@ -69,7 +69,12 @@
     {
       "file": "ghost_2.jpg",
       "description": "My desire is a ghost (Self portrait). Digitally edited photography, embroidered panties, hair.",
-      "work": "my-desire-is-a-ghost"
+      "work": "migran-t"
+    },
+    {
+      "file": "in-dreams_7.jpg",
+      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
+      "work": "in-dreams-migran-t"
     }
   ],
   "title": "Belen Santamarina",
@@ -79,6 +84,7 @@
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
+    "In dreams (Migran-t)|in-dreams-migran-t",
     "Migran-t|migran-t",
     "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
     "Sowing|sowing",
