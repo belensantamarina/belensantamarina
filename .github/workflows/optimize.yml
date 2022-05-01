@@ -8,6 +8,7 @@ on:
       - 'content/media/*.jpeg'
       - 'content/media/*.jpg'
       - 'content/media/*.gif'
+      - 'content/media/*.webp'
 
 jobs:
   process:
