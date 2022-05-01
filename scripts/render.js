@@ -27,8 +27,8 @@ const renderLanguage = async ({
     const fileName = galleryItem.file.split('.')[0];
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
       tag
-        ? `/media/${fileName}${tag}.jpg ${tag.replace('@', '')}`
-        : `/media/${fileName}.jpg`
+        ? `/media/${fileName}${tag}.webp ${tag.replace('@', '')}`
+        : `/media/${fileName}.webp`
     );
     let galleryItemResult = {
       source_set: sourceSet,

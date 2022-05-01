@@ -7,7 +7,7 @@ const optimizeMedia = (mediaInfo) => {
   console.log(`Processing ${mediaInfo.path}`);
 
   for (let imageResolution of IMAGE_RESOLUTIONS) {
-    const destinationPath = `static/media/${mediaInfo.name}${imageResolution.tag}.jpg`;
+    const destinationPath = `static/media/${mediaInfo.name}${imageResolution.tag}.webp`;
 
     if (mediaInfo.action === 'delete') {
       console.log(`- Deleting ${destinationPath}`);
@@ -15,7 +15,7 @@ const optimizeMedia = (mediaInfo) => {
     } else {
       console.log(`- Creating ${destinationPath}`);
       shell.exec(
-        `convert -strip -resize ${imageResolution.width}x${imageResolution.height} -quality 80 -density ${imageResolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG ${mediaInfo.path} ${destinationPath}`
+        `convert -strip -resize ${imageResolution.width}x${imageResolution.height} -quality 80 -density ${imageResolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG -define webp:lossless=false ${mediaInfo.path} ${destinationPath}`
       );
     }
   }
@@ -30,7 +30,7 @@ const optimizeLastCommit = () => {
       const modifiedMediaList = stdout
         .split('\n')
         .filter((modifiedMediaItem) =>
-          modifiedMediaItem.toLowerCase().includes('.jpg')
+          modifiedMediaItem.toLowerCase().includes('.webp')
         );
       for (let modifiedMediaItem of modifiedMediaList) {
         const modifiedMedia = modifiedMediaItem.split(' ');
