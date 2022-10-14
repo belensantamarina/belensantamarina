@@ -7,6 +7,11 @@
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
+      "file": "sangre_1.jpg",
+      "description": "Sangre Caliente (warm-blooded)",
+      "work": "sangre-caliente-warm-blooded"
+    },
+    {
       "file": "ghost_1.webp",
       "description": "White panties embroidered with human hair lying on the rope in the garden. Belonging to the work My desire is a ghost.",
       "work": "migran-t"
@@ -67,11 +72,6 @@
       "work": "consecrated"
     },
     {
-      "file": "ghost_2.webp",
-      "description": "My desire is a ghost (Self portrait). Digitally edited photography, embroidered panties, hair.",
-      "work": "migran-t"
-    },
-    {
       "file": "in-dreams_7.webp",
       "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
       "work": "in-dreams-migran-t"
@@ -84,6 +84,7 @@
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
+    "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
     "In dreams (Migran-t)|in-dreams-migran-t",
     "Migran-t|migran-t",
     "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
