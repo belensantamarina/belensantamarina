@@ -12,7 +12,7 @@
     "build:static": "cp -rf static/* build",
     "publish": "npm install && npm run build",
     "lint": "prettier --write . '!{build/**,content/**}'",
-    "optimize": "bin/optimize all"
+    "optimise": "bin/optimise all"
   },
   "repository": {
     "type": "git",

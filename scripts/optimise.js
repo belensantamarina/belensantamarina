@@ -3,7 +3,7 @@ const shell = require('shelljs');
 const { readDirectory } = require('./utils/filesHandler');
 const { IMAGE_RESOLUTIONS } = require('./utils/constants');
 
-const optimizeMedia = (mediaInfo) => {
+const optimiseMedia = (mediaInfo) => {
   console.log(`Processing ${mediaInfo.path}`);
 
   for (let imageResolution of IMAGE_RESOLUTIONS) {
@@ -21,7 +21,7 @@ const optimizeMedia = (mediaInfo) => {
   }
 };
 
-const optimizeLastCommit = () => {
+const optimiseLastCommit = () => {
   shell.exec(
     'git diff-tree --no-commit-id --summary -r $GITHUB_SHA',
     (code, stdout, stderr) => {
@@ -30,7 +30,7 @@ const optimizeLastCommit = () => {
       const modifiedMediaList = stdout
         .split('\n')
         .filter((modifiedMediaItem) =>
-          modifiedMediaItem.toLowerCase().includes('.webp')
+          modifiedMediaItem.toLowerCase().includes('.jpg')
         );
       for (let modifiedMediaItem of modifiedMediaList) {
         const modifiedMedia = modifiedMediaItem.split(' ');
@@ -40,13 +40,13 @@ const optimizeLastCommit = () => {
           name: modifiedMedia[4].split('/').pop().split('.').shift(),
         };
 
-        optimizeMedia(modifiedMediaInfo);
+        optimiseMedia(modifiedMediaInfo);
       }
     }
   );
 };
 
-const optimizeAll = async () => {
+const optimiseAll = async () => {
   let mediaFiles = await readDirectory('content/media');
   for (let mediaFile of mediaFiles) {
     const mediaInfo = {
@@ -54,8 +54,8 @@ const optimizeAll = async () => {
       path: `content/media/${mediaFile}`,
       name: mediaFile.split('.').shift(),
     };
-    optimizeMedia(mediaInfo);
+    optimiseMedia(mediaInfo);
   }
 };
 
-module.exports = { optimizeLastCommit, optimizeAll };
+module.exports = { optimiseLastCommit, optimiseAll };
