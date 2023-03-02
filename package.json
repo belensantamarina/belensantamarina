@@ -37,7 +37,7 @@
     "postcss-nested": "^5.0.6",
     "postcss-scss": "^4.0.4",
     "prettier": "^2.6.2",
-    "serve": "^13.0.2",
+    "serve": "^14.2.0",
     "shelljs": "^0.8.5",
     "showdown": "^2.1.0",
     "sitemap": "^7.1.1"
