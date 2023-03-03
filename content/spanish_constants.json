@@ -7,7 +7,7 @@
   "i18n_string_gallery_action": "Seleccionar foto número",
   "gallery": [
     {
-      "file": "sangre_1.webp",
+      "file": "sangre_7.webp",
       "description": "Sangre caliente (warm-blooded)",
       "work": "sangre-caliente"
     },
@@ -17,7 +17,7 @@
       "work": "migran-t"
     },
     {
-      "file": "migran-t_2.webp",
+      "file": "migran-t_11.webp",
       "description": "Detalle de la sábana bordada con cabello humano. Pertenece a la obra Migran-t. La imagen muestra el bordado del mapa de la Argentina al lado del mapa del Reino Unido con la leyenda \"Ni acá ni allá\" en Español e Inglés.",
       "work": "migran-t"
     },
@@ -25,6 +25,11 @@
       "file": "migran-t_1.webp",
       "description": "Migran-t, Primera Piel: Nostalgia. Sábana de Primark bordada con cabello humano. 150 x 200 cm.",
       "work": "migran-t"
+    },
+    {
+      "file": "in-dreams_9.webp",
+      "description": "Migran-t: En sueños\nFundas de almohada bordadas con pelo humano. ",
+      "work": "en-sueños-migran-t"
     },
     {
       "file": "sowing_1.webp",
@@ -69,11 +74,6 @@
       "file": "consecrated_2.webp",
       "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#4 · De a dos. Centro Cultural San Martín, Buenos Aires, Argentina.\nMadera, pintura de pizarra, tiza, hilo, tela, papel. 40 x 125 cm.",
       "work": "consagrada"
-    },
-    {
-      "file": "in-dreams_7.webp",
-      "description": "Migran-t: En sueños\nFundas de almohada bordadas con pelo humano. ",
-      "work": "en-sueños-migran-t"
     }
   ],
   "title": "Belen Santamarina",
