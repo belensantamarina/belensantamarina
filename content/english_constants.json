@@ -7,14 +7,14 @@
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
+      "file": "migran-t_9.webp",
+      "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
+      "work": "migran-t"
+    },
+    {
       "file": "sangre_7.webp",
       "description": "Sangre Caliente (warm-blooded)",
       "work": "sangre-caliente-warm-blooded"
-    },
-    {
-      "file": "ghost_1.webp",
-      "description": "White panties embroidered with human hair lying on the rope in the garden. Belonging to the work My desire is a ghost.",
-      "work": "migran-t"
     },
     {
       "file": "migran-t_11.webp",
@@ -30,11 +30,6 @@
       "file": "sowing_1.webp",
       "description": "2018. Sowing. Performance, 15 minutes. URRA (Tigre, Buenos Aires, Argentina)",
       "work": "sowing"
-    },
-    {
-      "file": "conserve-n1_1.webp",
-      "description": "Conserve Nº1. Site-specific work conducted by The Triangular Collective in September 2018 in the university community of Santa Fe (Argentina). Performative action of gathering objects from the community and excavation of a hole in the ground for a subsequent ritual burial of these objects.",
-      "work": "conserve-n1-2018-2048"
     },
     {
       "file": "conserve-n1_2.webp",
@@ -70,6 +65,11 @@
       "file": "consecrated_2.webp",
       "description": "Consecrated, September - November 2017.  \nIntervention n#4 · In pairs. San Martín Cultural Centre, City of Buenos Aires, Argentina.\nWood, blackboard paint, chalk, rag, string, paper. 40 x 125 cm.",
       "work": "consecrated"
+    },
+    {
+      "file": "ghost_1.webp",
+      "description": "White panties embroidered with human hair lying on the rope in the garden. Belonging to the work My desire is a ghost.",
+      "work": "migran-t"
     }
   ],
   "title": "Belen Santamarina",
