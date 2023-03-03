@@ -8,7 +8,7 @@
   "gallery": [
     {
       "file": "sangre_7.webp",
-      "description": "Sangre Caliente (warm-blooded). Ph: Catalina Romero (@fotografiadeobra)",
+      "description": "Sangre Caliente (warm-blooded)",
       "work": "sangre-caliente-warm-blooded"
     },
     {
@@ -17,18 +17,13 @@
       "work": "migran-t"
     },
     {
-      "file": "migran-t_13.webp",
-      "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish.\nPh: Catalina Romero (@fotografiadeobra)",
-      "work": "migran-t"
-    },
-    {
-      "file": "migran-t_9.webp",
-      "description": "Migran-t, First skin: Nostalgia. Primark flat sheet embroidered with human hair. 150 x 200 cm.\nPh: Catalina Romero (@fotografiadeobra)",
+      "file": "migran-t_11.webp",
+      "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish.",
       "work": "migran-t"
     },
     {
       "file": "in-dreams_9.webp",
-      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. \nPh: Catalina Romero (@fotografiadeobra)",
+      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
       "work": "in-dreams-migran-t"
     },
     {
@@ -79,8 +74,8 @@
   ],
   "title": "Belen Santamarina",
   "language": "en-GB",
-  "i18n_string_social": "B side",
-  "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned and composted under the GNU GPL. Long live open source!",
+  "i18n_string_social": "Because I closed my <abbr title=\"Instagram\">In***gram</abbr>",
+  "footer": "Contact: **belenls(at)me.com**. Copyright © 2021 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned and composted under the GNU GPL. Long live open source!",
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
