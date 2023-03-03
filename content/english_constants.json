@@ -7,7 +7,7 @@
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
-      "file": "sangre_1.webp",
+      "file": "sangre_7.webp",
       "description": "Sangre Caliente (warm-blooded)",
       "work": "sangre-caliente-warm-blooded"
     },
@@ -17,9 +17,14 @@
       "work": "migran-t"
     },
     {
-      "file": "migran-t_2.webp",
+      "file": "migran-t_11.webp",
       "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish.",
       "work": "migran-t"
+    },
+    {
+      "file": "in-dreams_9.webp",
+      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
+      "work": "in-dreams-migran-t"
     },
     {
       "file": "sowing_1.webp",
@@ -65,11 +70,6 @@
       "file": "consecrated_2.webp",
       "description": "Consecrated, September - November 2017.  \nIntervention n#4 · In pairs. San Martín Cultural Centre, City of Buenos Aires, Argentina.\nWood, blackboard paint, chalk, rag, string, paper. 40 x 125 cm.",
       "work": "consecrated"
-    },
-    {
-      "file": "in-dreams_7.webp",
-      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
-      "work": "in-dreams-migran-t"
     }
   ],
   "title": "Belen Santamarina",
