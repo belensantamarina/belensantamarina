@@ -190,10 +190,8 @@ const renderLanguage = async ({
     name: websiteData.i18n_string_shows,
     gallery: showsGalleryItems.length > 0,
     gallery_items: showsGalleryItems,
-    meta_image:
-      showsGalleryItems.length > 0
-        ? `${DOMAIN}${showsGalleryItems[0].source}`
-        : '',
+    gallery_with_nav: true,
+    gallery_with_description: true,
   };
 
   const showsOutput = mustache.render(baseTemplate, showsData);
