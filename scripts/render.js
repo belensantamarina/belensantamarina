@@ -158,6 +158,7 @@ const renderLanguage = async ({
   const aboutData = {
     ...websiteData,
     html_title: `${websiteData.i18n_string_about} ${websiteData.title}`,
+    description: `${websiteData.i18n_string_about} ${websiteConstants.description}`,
     meta_url: `${DOMAIN}${about}`,
     name: websiteData.i18n_string_about,
     body: aboutBody,
@@ -192,6 +193,14 @@ const renderLanguage = async ({
     gallery_items: showsGalleryItems,
     gallery_with_nav: true,
     gallery_with_description: true,
+    description:
+      showsGalleryItems.length > 0
+        ? showsGalleryItems[0].description
+        : websiteConstants.description,
+    meta_image:
+      showsGalleryItems.length > 0
+        ? `${DOMAIN}${showsGalleryItems[0].source}`
+        : '',
   };
 
   const showsOutput = mustache.render(baseTemplate, showsData);
