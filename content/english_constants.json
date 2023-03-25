@@ -1,6 +1,12 @@
 {
   "i18n_string_about": "About",
-  "shows_gallery": [],
+  "shows_gallery": [
+    {
+      "description": "Taoyuan International Art Award 2023, Taiwan.",
+      "file": "tiaa-1.webp",
+      "work": "migran-t"
+    }
+  ],
   "i18n_string_shows": "Exhibitions",
   "secondary_menu": [
     "Consecrated|consecrated",
