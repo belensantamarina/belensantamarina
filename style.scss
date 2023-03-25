@@ -162,6 +162,16 @@ nav {
         }
       }
     }
+    &.sections {
+      li {
+        a {
+          font-weight: 600;
+          &::before {
+            content: '+';
+          }
+        }
+      }
+    }
     &.social {
       display: flex;
       flex-wrap: wrap;
@@ -210,7 +220,6 @@ nav {
     }
   }
   h4 {
-    &::before,
     &::after {
       content: '***';
       display: block;
@@ -294,6 +303,25 @@ main {
           margin: 0 auto;
           object-fit: contain;
         }
+        p {
+          position: absolute;
+          bottom: 0;
+          background: rgba(255, 255, 255, 0.75);
+          margin: 0;
+          padding: 0 0.25rem 0.25rem 0;
+          font-size: 0.85rem;
+        }
+      }
+    }
+    &.descriptive {
+      ul {
+        height: 24rem;
+        @media screen and (min-width: 48rem) {
+          height: 34rem;
+          li p {
+            font-size: 1rem;
+          }
+        }
       }
     }
     div {
@@ -341,7 +369,7 @@ main {
 
         li {
           position: static;
-          display: block !important;
+          display: block;
           max-height: 12rem;
           &:first-child {
             max-height: 25rem;
@@ -381,6 +409,31 @@ main {
 
       div {
         display: none;
+      }
+
+      &.descriptive {
+        ul {
+          display: block;
+          height: auto;
+          li {
+            min-height: 18rem;
+            margin-bottom: 2rem;
+            height: auto;
+            display: flex;
+            flex-direction: row-reverse;
+            max-height: 100%;
+            align-items: center;
+            img {
+              break-inside: avoid;
+              width: auto;
+              object-fit: contain;
+            }
+            p {
+              width: 40%;
+              position: static;
+            }
+          }
+        }
       }
     }
   }

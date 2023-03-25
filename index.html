@@ -53,6 +53,15 @@
           >{{other_language_abbr}}</a
         >
       </aside>
+      <ul class="sections">
+        <li>
+          <a href="{{{current_language_about}}}">{{i18n_string_about}}</a>
+        </li>
+        <li>
+          <a href="{{{current_language_shows}}}">{{i18n_string_shows}}</a>
+        </li>
+      </ul>
+      <h4>{{{i18n_string_works}}}</h4>
       <ul>
         {{#nav_items}}
         <li><a href="{{{reference}}}">{{name}}</a></li>
@@ -83,6 +92,7 @@
         id="gallery"
         data-nav="{{gallery_with_nav}}"
         data-action="{{i18n_string_gallery_action}}"
+        class="{{#gallery_with_description}}descriptive{{/gallery_with_description}}"
       >
         <ul>
           {{#gallery_items}}
@@ -99,7 +109,9 @@
                 loading="eager"
               />
               {{#work_link}}</a
-            >{{/work_link}}
+            >{{/work_link}} {{#gallery_with_description}}
+            <p>{{description}}</p>
+            {{/gallery_with_description}}
           </li>
           {{/gallery_items}}
         </ul>

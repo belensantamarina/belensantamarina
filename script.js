@@ -48,9 +48,9 @@ if (galleryContainer) {
 
     imageContainers.forEach((imageContainer, index) => {
       const imageButton = document.createElement('button');
-      imageButton.style.backgroundImage = `url('${imageContainer.children[0].getAttribute(
-        'src'
-      )}')`;
+      imageButton.style.backgroundImage = `url('${imageContainer
+        .getElementsByTagName('img')[0]
+        .getAttribute('src')}')`;
       imageButton.addEventListener('click', (event) => {
         clearInterval(autoPlayInterval);
         selectImage(imageContainers[index]);

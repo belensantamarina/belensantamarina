@@ -1,5 +1,6 @@
 {
   "secondary_menu": [
+    "Consecrated|consecrated",
     "A pictorial calendar to see the world|a-pictorial-calendar-to-see-the-world",
     "365 Geometrical Days|365-geometrical-days"
   ],
@@ -77,6 +78,9 @@
   "i18n_string_social": "B side",
   "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned and composted under the GNU GPL. Long live open source!",
   "i18n_string_social_action": "See all posts",
+  "i18n_string_about": "About",
+  "i18n_string_shows": "Exhibitions",
+  "i18n_string_works": "Works",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
     "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
@@ -85,7 +89,8 @@
     "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
     "Sowing|sowing",
     "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
-    "Memory of the action|memory-of-the-action",
-    "Consecrated|consecrated"
-  ]
+    "Memory of the action|memory-of-the-action"
+  ],
+  "about": "",
+  "shows": []
 }
