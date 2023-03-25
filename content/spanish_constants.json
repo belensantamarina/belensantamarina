@@ -1,10 +1,13 @@
 {
+  "i18n_string_about": "Acerca",
+  "i18n_string_shows": "Exhibiciones",
   "secondary_menu": [
     "Consagrada|consagrada",
     "Un calendario pictórico para ver el mundo|un-calendario-pictorico-para-ver-el-mundo",
     "365 Días Geométricos|365-dias-geometricos"
   ],
   "i18n_string_menu": "Menú",
+  "about": "Belen Santamarina was born in 1993 in Buenos Aires, Argentina and currently lives in London, United Kingdom.\n\nHer formation is based on critical study groups and painting workshops. She trained with Argentinean artists Diana Aisenberg, Flavia Da Rin, Fabiana Barreda and Belen Romero Gunset.\n\nHer practice gravitates around migration, collective experiences across genealogies, territory and the use of contemporary communication technologies. She uses techniques commonly attached to the idea of the 'domestic', such as embroidery, spinning, cooking and the use of the soil.\n\nShe uses hair, soil, cloth and food as mater to create tapestries, performances, videos, installations and collaborative works.\n\nBelen Santamarina has exhibited her work in Argentina, Taiwan, Spain, the USA and UK.",
   "i18n_string_gallery_action": "Seleccionar foto número",
   "gallery": [
     {
@@ -72,14 +75,13 @@
       "work": "migran-t"
     }
   ],
+  "i18n_string_works": "Obra",
+  "shows": [],
   "title": "Belen Santamarina",
   "language": "es-AR",
   "i18n_string_social": "Lado B",
   "footer": "Contacto: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. Este sitio fue <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">creado con código abierto</a> para ser clonado y compostado bajo la GNU GPL. Larga vida al código abierto!",
   "i18n_string_social_action": "Ver todos los posts",
-  "i18n_string_about": "Acerca",
-  "i18n_string_shows": "Exhibiciones",
-  "i18n_string_works": "Obra",
   "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "menu": [
     "Sangre caliente|sangre-caliente",
@@ -89,7 +91,5 @@
     "Siembra|siembra",
     "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
     "Memoria de la acción|memoria-de-la-accion"
-  ],
-  "about": "",
-  "shows": []
+  ]
 }
