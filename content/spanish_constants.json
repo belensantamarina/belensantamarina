@@ -1,5 +1,6 @@
 {
   "secondary_menu": [
+    "Consagrada|consagrada",
     "Un calendario pictórico para ver el mundo|un-calendario-pictorico-para-ver-el-mundo",
     "365 Días Geométricos|365-dias-geometricos"
   ],
@@ -77,7 +78,7 @@
   "footer": "Contacto: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. Este sitio fue <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">creado con código abierto</a> para ser clonado y compostado bajo la GNU GPL. Larga vida al código abierto!",
   "i18n_string_social_action": "Ver todos los posts",
   "i18n_string_about": "Acerca",
-  "i18n_string_shows": "Muestras",
+  "i18n_string_shows": "Exhibiciones",
   "i18n_string_works": "Obra",
   "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "menu": [
@@ -87,8 +88,7 @@
     "Conserva Nº2: Capital Semilla|conserva-n2-capital-semilla",
     "Siembra|siembra",
     "Conserva Nº1: 2018 - 2048|conserva-n1-2018-2048",
-    "Memoria de la acción|memoria-de-la-accion",
-    "Consagrada|consagrada"
+    "Memoria de la acción|memoria-de-la-accion"
   ],
   "about": "2021\n\nMigran-t, Primera piel: Nostalgia. \n\nSábana de Primark bordada con pelo humano. \n150 x 200 cm.\n\n\n\nPh: Catalina Romero (@fotografiadeobra)",
   "shows": [
