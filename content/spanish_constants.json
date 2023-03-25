@@ -1,5 +1,22 @@
 {
   "i18n_string_about": "Acerca",
+  "shows_gallery": [
+    {
+      "file": "tiaa-1.webp",
+      "description": "Taoyuan International Art Award 2023, Taiwan.\nHonorary Mention.",
+      "work": "migran-t"
+    },
+    {
+      "file": "tiaa-2.webp",
+      "description": "Taoyuan International Art Award 2023, Taiwan.",
+      "work": "migran-t"
+    },
+    {
+      "file": "tiaa-3.webp",
+      "description": "Taoyuan International Art Award 2023, Taiwan.\nMigran-t: First Skin, Nostalgia",
+      "work": "migran-t"
+    }
+  ],
   "i18n_string_shows": "Exhibiciones",
   "secondary_menu": [
     "Consagrada|consagrada",
