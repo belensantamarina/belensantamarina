@@ -1,10 +1,14 @@
 {
+  "i18n_string_about": "About",
+  "shows_gallery": [],
+  "i18n_string_shows": "Exhibitions",
   "secondary_menu": [
     "Consecrated|consecrated",
     "A pictorial calendar to see the world|a-pictorial-calendar-to-see-the-world",
     "365 Geometrical Days|365-geometrical-days"
   ],
   "i18n_string_menu": "Menu",
+  "about": "I was born in 1993 in Buenos Aires, Argentina and currently live in London, UK. \nMy formation is based in critical study groups and painting workshops. I trained with Argentinean artists Diana Aisenberg, Flavia Da Rin, Fabiana Barreda and Belén Romero Gunset.\n\nMy practice gravitates around migration, collective experiences across genealogies, territory and the use of contemporary communication technologies. I use techniques commonly attached to the idea of the 'domestic', such as embroidery, spinning, cooking and the use of the soil.\n\nI use hair, soil, cloth and food as mater to  create tapestries, performances, videos, installations and collaborative works.\n\nI exhibited my work in Argentina, Taiwan, Spain, USA and UK.",
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
@@ -73,14 +77,13 @@
       "work": "migran-t"
     }
   ],
+  "i18n_string_works": "Works",
+  "shows": [],
   "title": "Belen Santamarina",
   "language": "en-GB",
   "i18n_string_social": "B side",
   "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned and composted under the GNU GPL. Long live open source!",
   "i18n_string_social_action": "See all posts",
-  "i18n_string_about": "About",
-  "i18n_string_shows": "Exhibitions",
-  "i18n_string_works": "Works",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
     "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
@@ -90,7 +93,5 @@
     "Sowing|sowing",
     "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
     "Memory of the action|memory-of-the-action"
-  ],
-  "about": "",
-  "shows": []
+  ]
 }
