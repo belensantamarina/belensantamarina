@@ -38,6 +38,16 @@
     {
       "file": "invitadisimes-munar-cleene-2.webp",
       "description": "Invitadisimes en Munar (Buenos Aires, Argentina). Estudio abierto de la clínica de Flavia Da Rin. \nBombacha y papel bordados con cabello humano."
+    },
+    {
+      "file": "a-voyage-of-absurdity-1.webp",
+      "description": "A Voyage of Absurdity en Craft Central London (2021). Curatedo por Vanessa Giorgo, Anna Kolosova y Melissa Vipritskaya Topal.",
+      "work": "migran-t"
+    },
+    {
+      "file": "a-voyage-of-absurdity-2.webp",
+      "description": "A Voyage of Absurdity en Craft Central London (2021). Curatedo por Vanessa Giorgo, Anna Kolosova y Melissa Vipritskaya Topal.\nExhibidas las obras Migran-t y Longing. ",
+      "work": "migran-t"
     }
   ],
   "i18n_string_shows": "Exhibiciones",
