@@ -78,7 +78,6 @@ const renderLanguage = async ({
     i18n_string_shows: websiteConstants.i18n_string_shows,
     i18n_string_works: websiteConstants.i18n_string_works,
     about: websiteConstants.about,
-    shows: websiteConstants.shows,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
     other_language_abbr: otherLanguage.abbreviation,
@@ -177,7 +176,7 @@ const renderLanguage = async ({
   // SHOWS
   ////
 
-  const showsGalleryItems = websiteConstants.shows.map(
+  const showsGalleryItems = websiteConstants.shows_gallery.map(
     (galleryItem, galleryItemIndex) => ({
       ...parseGalleryItem(galleryItem),
       id: galleryItemIndex,
