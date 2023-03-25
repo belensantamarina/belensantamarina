@@ -83,6 +83,16 @@
       "file": "conserve-n1_1.webp",
       "description": "Conserve nº1 by Triangular Collective for Bienal de Arte Joven de Santa Fe (2018). ",
       "work": "conserve-n1-2018-2048"
+    },
+    {
+      "file": "memory_2.webp",
+      "description": "Performance 'Memory of the action' for open studio at the [Espacio en Blanco] Residence by Fundación Proyecto 'ace.",
+      "work": "memory-of-the-action"
+    },
+    {
+      "file": "calendar_2.webp",
+      "description": "A pictorial calendar to see the world, installation displayed in Premio Internacional de Artes Plásticas Caja de Extremadura (2018).",
+      "work": "a-pictorial-calendar-to-see-the-world"
     }
   ],
   "i18n_string_shows": "Exhibitions",
