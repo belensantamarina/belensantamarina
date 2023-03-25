@@ -15,6 +15,21 @@
       "file": "tiaa-3.webp",
       "description": "Taoyuan International Art Award 2023, Taiwan.\nMigran-t: First Skin, Nostalgia",
       "work": "migran-t"
+    },
+    {
+      "file": "in-dreams_1.webp",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (2022).",
+      "work": "in-dreams-migran-t"
+    },
+    {
+      "file": "in-dreams_4.webp",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (2022).",
+      "work": "in-dreams-migran-t"
+    },
+    {
+      "file": "in-dreams_5.webp",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (2022).",
+      "work": "in-dreams-migran-t"
     }
   ],
   "i18n_string_shows": "Exhibitions",
