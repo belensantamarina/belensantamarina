@@ -18,17 +18,17 @@
     },
     {
       "file": "in-dreams_1.webp",
-      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (2022).",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (Chicago, 2022).",
       "work": "in-dreams-migran-t"
     },
     {
       "file": "in-dreams_4.webp",
-      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (2022).",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (Chicago, 2022).",
       "work": "in-dreams-migran-t"
     },
     {
       "file": "in-dreams_5.webp",
-      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (2022).",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (Chicago, 2022).",
       "work": "in-dreams-migran-t"
     },
     {
@@ -176,7 +176,7 @@
   "title": "Belen Santamarina",
   "language": "en-GB",
   "i18n_string_social": "B side",
-  "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> build to be cloned and composted under the GNU GPL. Long live open source!",
+  "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> built to be cloned and composted under the GNU GPL. Long live open source!",
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
