@@ -326,6 +326,63 @@ main {
         }
       }
     }
+
+    @media print {
+      ul {
+        height: 36rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 33%);
+        justify-items: stretch;
+        align-items: stretch;
+        gap: 1rem;
+        background: none;
+        overflow: hidden;
+
+        li {
+          position: static;
+          display: block !important;
+          max-height: 12rem;
+          &:first-child {
+            max-height: 25rem;
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+          }
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &:has(> :last-child:nth-child(1)) {
+          grid-template-columns: 1fr;
+          grid-template-rows: 100%;
+
+          li:first-child {
+            grid-column: 1;
+          }
+        }
+        &:has(> :last-child:nth-child(2)) {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 100%;
+        }
+        &:has(> :last-child:nth-child(1)),
+        &:has(> :last-child:nth-child(2)) {
+          height: 24rem;
+          li {
+            max-height: 100% !important;
+            &:first-child {
+              grid-row: 1;
+            }
+          }
+        }
+      }
+
+      div {
+        display: none;
+      }
+    }
   }
 
   section#social {
