@@ -410,6 +410,19 @@ main {
       }
     }
   }
+
+  @media print {
+    p {
+      font-size: 0.85rem;
+      break-inside: avoid;
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
 }
 
 footer {
