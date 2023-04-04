@@ -423,4 +423,8 @@ footer {
       margin-top: 2rem;
     }
   }
+
+  @media print {
+    display: none;
+  }
 }
