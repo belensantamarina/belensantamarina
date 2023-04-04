@@ -4,7 +4,7 @@
 
 ![Netlify](https://img.shields.io/netlify/31e333f6-6f22-49bb-bc41-b53dc6abc54e?label=build) ![Website](https://img.shields.io/website/https/belensantamarina.com.svg) ![GitHub](https://img.shields.io/github/license/belenls/belensantamarina)
 
-This is an open-source website, you can redistribute its source code and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation.
+This is an open-source website, you can redistribute its source code and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation.
 
 The website was build and is designed to work using other great open-source tools and libraries like:
 

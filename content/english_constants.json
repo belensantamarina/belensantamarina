@@ -176,7 +176,7 @@
   "title": "Belen Santamarina",
   "language": "en-GB",
   "i18n_string_social": "B side",
-  "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> built to be cloned and composted under the GNU GPL. Long live open source!",
+  "footer": "Contact: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> built to be cloned and composted under the GNU AGPL. Long live open source!",
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina, Argentinian visual artist. Lives and works between London and Buenos Aires.",
   "menu": [
