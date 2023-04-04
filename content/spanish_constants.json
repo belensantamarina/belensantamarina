@@ -76,6 +76,9 @@
   "i18n_string_social": "Lado B",
   "footer": "Contacto: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. Este sitio fue <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">creado con código abierto</a> para ser clonado y compostado bajo la GNU GPL. Larga vida al código abierto!",
   "i18n_string_social_action": "Ver todos los posts",
+  "i18n_string_about": "Acerca",
+  "i18n_string_shows": "Muestras",
+  "i18n_string_works": "Obra",
   "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
   "menu": [
     "Sangre caliente|sangre-caliente",
