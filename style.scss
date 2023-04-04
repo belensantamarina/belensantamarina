@@ -78,6 +78,19 @@ header {
       }
     }
   }
+
+  @media print {
+    h1 {
+      font-size: 1.25rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0.5;
+    }
+    button#nav {
+      display: none;
+    }
+  }
 }
 
 nav {
