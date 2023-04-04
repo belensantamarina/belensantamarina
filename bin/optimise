@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+const args = require('args');
+
+const { optimiseLastCommit, optimiseAll } = require('../scripts/optimise');
+
+args
+  .command('commit', 'Optimise media from current commit', optimiseLastCommit)
+  .command('all', 'Optimise all existing media', optimiseAll);
+
+const flags = args.parse(process.argv);
