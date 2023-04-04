@@ -162,6 +162,16 @@ nav {
         }
       }
     }
+    &.sections {
+      li {
+        a {
+          font-weight: 600;
+          &::before {
+            content: '+';
+          }
+        }
+      }
+    }
     &.social {
       display: flex;
       flex-wrap: wrap;
