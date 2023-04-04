@@ -77,6 +77,8 @@ const renderLanguage = async ({
     i18n_string_about: websiteConstants.i18n_string_about,
     i18n_string_shows: websiteConstants.i18n_string_shows,
     i18n_string_works: websiteConstants.i18n_string_works,
+    about: websiteConstants.about,
+    shows: websiteConstants.shows,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
     other_language_abbr: otherLanguage.abbreviation,
@@ -128,12 +130,13 @@ const renderLanguage = async ({
     });
   }
 
+  ////
+  // SOCIAL
+  ////
+
   const socialData = {
     ...websiteData,
-    html_title: `${websiteData.title}: ${websiteData.i18n_string_social.replace(
-      /(<([^>]+)>)/gi,
-      ''
-    )}`,
+    html_title: `${websiteData.title}: ${websiteData.i18n_string_social}`,
     social: true,
     meta_url: `${DOMAIN}${social}`,
   };
@@ -146,6 +149,65 @@ const renderLanguage = async ({
     changefreq: 'always',
     priority: 0.5,
   });
+
+  ////
+  // ABOUT
+  ////
+
+  const aboutBody = showdownConverter.makeHtml(websiteData.about);
+  const aboutData = {
+    ...websiteData,
+    html_title: `${websiteData.i18n_string_about} ${websiteData.title}`,
+    meta_url: `${DOMAIN}${about}`,
+    name: websiteData.i18n_string_about,
+    body: aboutBody,
+  };
+
+  const aboutOutput = mustache.render(baseTemplate, aboutData);
+  writeFile(`build${about}`, aboutOutput);
+
+  renderedLinks.push({
+    url: about,
+    changefreq: 'yearly',
+    priority: 0.95,
+  });
+
+  ////
+  // SHOWS
+  ////
+
+  const showsGalleryItems = websiteConstants.shows.map(
+    (galleryItem, galleryItemIndex) => ({
+      ...parseGalleryItem(galleryItem),
+      id: galleryItemIndex,
+    })
+  );
+
+  const showsData = {
+    ...websiteData,
+    html_title: `${websiteData.title}: ${websiteData.i18n_string_shows}`,
+    meta_url: `${DOMAIN}${shows}`,
+    name: websiteData.i18n_string_shows,
+    gallery: showsGalleryItems.length > 0,
+    gallery_items: showsGalleryItems,
+    meta_image:
+      showsGalleryItems.length > 0
+        ? `${DOMAIN}${showsGalleryItems[0].source}`
+        : '',
+  };
+
+  const showsOutput = mustache.render(baseTemplate, showsData);
+  writeFile(`build${shows}`, showsOutput);
+
+  renderedLinks.push({
+    url: shows,
+    changefreq: 'yearly',
+    priority: 0.85,
+  });
+
+  ////
+  // HOMEPAGE
+  ////
 
   const homeGalleryItems = websiteConstants.gallery.map(
     (galleryItem, galleryItemIndex) => ({

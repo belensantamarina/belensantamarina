@@ -154,6 +154,27 @@ collections:
                 search_fields: ['name']
                 display_fields: ['name']
                 required: false
+          - name: 'about'
+            label: 'About'
+            widget: 'markdown'
+          - name: 'shows_gallery'
+            label: 'Shows'
+            widget: 'list'
+            fields:
+              - name: 'file'
+                label: 'File'
+                widget: 'file'
+              - name: 'description'
+                label: 'Description'
+                widget: 'text'
+              - name: 'work'
+                label: 'Work'
+                widget: 'relation'
+                collection: 'english_work'
+                value_field: '{{slug}}'
+                search_fields: ['name']
+                display_fields: ['name']
+                required: false
       - name: 'spanish_constants'
         label: 'Constantes (Español)'
         file: 'content/spanish_constants.json'
@@ -216,6 +237,27 @@ collections:
               display_fields: ['name']
           - name: 'gallery'
             label: 'Galería'
+            widget: 'list'
+            fields:
+              - name: 'file'
+                label: 'Archivo'
+                widget: 'file'
+              - name: 'description'
+                label: 'Descripción'
+                widget: 'text'
+              - name: 'work'
+                label: 'Obra'
+                widget: 'relation'
+                collection: 'spanish_work'
+                value_field: '{{slug}}'
+                search_fields: ['name']
+                display_fields: ['name']
+                required: false
+          - name: 'about'
+            label: 'Acerca'
+            widget: 'markdown'
+          - name: 'shows_gallery'
+            label: 'Muestras'
             widget: 'list'
             fields:
               - name: 'file'
