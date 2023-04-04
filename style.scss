@@ -220,7 +220,6 @@ nav {
     }
   }
   h4 {
-    &::before,
     &::after {
       content: '***';
       display: block;
@@ -306,7 +305,7 @@ main {
         }
         p {
           position: absolute;
-          top: 0;
+          bottom: 0;
           background: rgba(255, 255, 255, 0.75);
           margin: 0;
           padding: 0 0.25rem 0.25rem 0;
