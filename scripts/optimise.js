@@ -30,7 +30,7 @@ const optimiseLastCommit = () => {
       const modifiedMediaList = stdout
         .split('\n')
         .filter((modifiedMediaItem) =>
-          modifiedMediaItem.toLowerCase().includes('.jpg')
+          modifiedMediaItem.toLowerCase().includes('.webp')
         );
       for (let modifiedMediaItem of modifiedMediaList) {
         const modifiedMedia = modifiedMediaItem.split(' ');
