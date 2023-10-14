@@ -23,6 +23,17 @@ const LANGUAGES = [
     abbreviation: 'ESP',
     code: 'es-AR',
   },
+  {
+    language: 'chinese',
+    index: '/index.zh.html',
+    social: '/social.zh.html',
+    about: '/关于.html',
+    shows: '/艺术展览.html',
+    route: '艺术品',
+    link: '中网站',
+    abbreviation: '中',
+    code: 'zh-CN',
+  },
 ];
 
 const IMAGE_RESOLUTIONS = [
