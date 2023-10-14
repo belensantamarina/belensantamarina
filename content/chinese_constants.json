@@ -1,8 +1,107 @@
 {
   "i18n_string_about": "关于",
-  "shows_gallery": [],
+  "shows_gallery": [
+    {
+      "description": "Taoyuan International Art Award 2023, Taiwan.\nHonorary Mention.",
+      "file": "tiaa-1.webp",
+      "work": "migran-t"
+    },
+    {
+      "file": "tiaa-2.webp",
+      "description": "Taoyuan International Art Award 2023, Taiwan.",
+      "work": "migran-t"
+    },
+    {
+      "file": "tiaa-3.webp",
+      "description": "Taoyuan International Art Award 2023, Taiwan.\nMigran-t: First Skin, Nostalgia",
+      "work": "migran-t"
+    },
+    {
+      "file": "in-dreams_1.webp",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (Chicago, 2022).",
+      "work": "in-dreams-migran-t"
+    },
+    {
+      "file": "in-dreams_4.webp",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (Chicago, 2022).",
+      "work": "in-dreams-migran-t"
+    },
+    {
+      "file": "in-dreams_5.webp",
+      "description": "Work exhibited in the Word of Mouth show curated by Rosalyn D’Mello at Woman Made Gallery (Chicago, 2022).",
+      "work": "in-dreams-migran-t"
+    },
+    {
+      "file": "invitadisimes-munar-cleene-1.webp",
+      "description": "Invitadisimes show at Munar (Buenos Aires, Argentina). Final show of critical group study organised by Flavia Da Rin. "
+    },
+    {
+      "file": "invitadisimes-munar-cleene-2.webp",
+      "description": "Invitadisimes show at Munar (Buenos Aires, Argentina). Final show of critical group study organised by Flavia Da Rin. \nPanties and paper embroidered with human hair."
+    },
+    {
+      "file": "a-voyage-of-absurdity-1.webp",
+      "description": "A Voyage of Absurdity at Craft Central London (2021). Curated by Vanessa Giorgo, Anna Kolosova and Melissa Vipritskaya Topal.",
+      "work": "migran-t"
+    },
+    {
+      "file": "a-voyage-of-absurdity-2.webp",
+      "description": "A Voyage of Absurdity at Craft Central London (2021). Curated by Vanessa Giorgo, Anna Kolosova and Melissa Vipritskaya Topal.\nExhibited here Migran-t and Longing. ",
+      "work": "migran-t"
+    },
+    {
+      "file": "conserve-n2_1.webp",
+      "description": "Conserve nº 2 at Fundación Cazadores (2019). Triangular Collective show selected within the PIPA program. General view of the room.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "conserve-n2_14.webp",
+      "description": "Conserve nº 2 at Fundación Cazadores (2019). Triangular Collective show selected within the PIPA program.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "conserve-n2_17.webp",
+      "description": "Conserve nº 2 at Fundación Cazadores (2019). Triangular Collective show selected within the PIPA program.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "conserve-n2_8.webp",
+      "description": "Conserve nº 2 at Fundación Cazadores (2019). Triangular Collective show selected within the PIPA program. Manifestation Ritual performance.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "conserve-n1_10.webp",
+      "description": "Conserve nº1 by Triangular Collective for Bienal de Arte Joven de Santa Fe (2018). Honorary Mention. ",
+      "work": "conserve-n1-2018-2048"
+    },
+    {
+      "file": "conserve-n1_11.webp",
+      "description": "Conserve nº1 by Triangular Collective for Bienal de Arte Joven de Santa Fe (2018). ",
+      "work": "conserve-n1-2018-2048"
+    },
+    {
+      "file": "conserve-n1_1.webp",
+      "description": "Conserve nº1 by Triangular Collective for Bienal de Arte Joven de Santa Fe (2018). ",
+      "work": "conserve-n1-2018-2048"
+    },
+    {
+      "file": "memory_2.webp",
+      "description": "Performance 'Memory of the action' for open studio at the [Espacio en Blanco] Residence by Fundación Proyecto 'ace.",
+      "work": "memory-of-the-action"
+    },
+    {
+      "file": "calendar_2.webp",
+      "description": "A pictorial calendar to see the world, installation displayed in Premio Internacional de Artes Plásticas Caja de Extremadura (2018).",
+      "work": "a-pictorial-calendar-to-see-the-world"
+    }
+  ],
   "i18n_string_shows": "艺术展览",
-  "secondary_menu": [],
+  "secondary_menu": [
+    "Memory of the action|memory-of-the-action",
+    "Consecrated|consecrated",
+    "A pictorial calendar to see the world|a-pictorial-calendar-to-see-the-world",
+    "365 Geometrical Days|365-geometrical-days"
+  ],
   "i18n_string_menu": "菜单",
   "about": "Belen Santamarina\\\n出生于阿根廷布宜诺斯艾利斯\\\n现居英国伦敦\n\n我的作品以头发、土壤、种子和食物作为材料，旨在探索自传式艺术风格的独特精髓，挂毯、摆件和装置等作品全都渗透着一种强烈的自叙精神。从我所绣制的文字和图画可见，这些作品主要讲述漂洋过海、移居海外的个人和集体经验，加上把记忆与科幻和自然相互交织，构想出有别于主导话语的另类叙述。我在作品中使用了继承自家族女性长辈的传统手艺，如刺绣、钩针和烹饪。这些手艺长久以来仅被视为妇女理家应有的技巧，通过把它们融入作品里，我希望对美术和手工艺背后存在的权力关系提出质疑，同时重新编写我的故事，用艺术向我的根致敬。我的艺术造诣主要培养自批判性研究小组和绘画作坊，作品曾在阿根廷、台湾、西班牙及英美等地展出。名为《Migran-t》的作品除了在“2023桃源国际艺术奖”获得荣誉奖，最近也获台湾桃园市立美术馆（TMoFA）收藏。",
   "i18n_string_gallery_action": "选择照片编号",
@@ -10,6 +109,66 @@
     {
       "file": "migran-t_9.webp",
       "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
+      "work": "migran-t"
+    },
+    {
+      "file": "sangre_7.webp",
+      "description": "Sangre Caliente (warm-blooded)",
+      "work": "sangre-caliente-warm-blooded"
+    },
+    {
+      "file": "migran-t_11.webp",
+      "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish.",
+      "work": "migran-t"
+    },
+    {
+      "file": "in-dreams_9.webp",
+      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
+      "work": "in-dreams-migran-t"
+    },
+    {
+      "file": "sowing_1.webp",
+      "description": "2018. Sowing. Performance, 15 minutes. URRA (Tigre, Buenos Aires, Argentina)",
+      "work": "sowing"
+    },
+    {
+      "file": "conserve-n1_2.webp",
+      "description": "Conserve Nº1. Site-specific work conducted by The Triangular Collective in September 2018 in the university community of Santa Fe (Argentina). Performative action of gathering objects from the community and excavation of a hole in the ground for a subsequent ritual burial of these objects.",
+      "work": "conserve-n1-2018-2048"
+    },
+    {
+      "file": "conserve-n2_1.webp",
+      "description": "General view of Conserve Nº2 at Fundación Cazadores. Triangular Collective integrated by Regina Calcaterra, Leonardo Vallejo and Belén Santamarina. The project investigates the seed within a biological, anthropological, historical, social, economic and political context as a platform to imagine the future.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "conserve-n2_2.webp",
+      "description": "SVM (Seed Vending Machine), 2019. Conserve Nº2 (Seed Capital) · Triangular Collective | Ph. Martina Mordeau.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "conserve-n2_3.webp",
+      "description": "Chronology Translator, 2019. Conserve Nº2 (Seed Capital) · Triangular Collective | Ph. Martina Mordeau.",
+      "work": "conserve-n2-seed-capital"
+    },
+    {
+      "file": "letters-to_1.webp",
+      "description": "Recipes for distance. installation and collective experience. The transcription of the letters in pasta format are sealed and displayed in a cupboard, waiting to be eaten, shared, thrown away.",
+      "work": ""
+    },
+    {
+      "file": "consecrated_1.webp",
+      "description": "Consecrated, September - November 2017.  \nIntervention n#5, Connection. MARQ (Architecture Museum), City of Buenos Aires, Argentina.\nPVC tubes. 26 x 50 cm",
+      "work": "consecrated"
+    },
+    {
+      "file": "consecrated_2.webp",
+      "description": "Consecrated, September - November 2017.  \nIntervention n#4 · In pairs. San Martín Cultural Centre, City of Buenos Aires, Argentina.\nWood, blackboard paint, chalk, rag, string, paper. 40 x 125 cm.",
+      "work": "consecrated"
+    },
+    {
+      "file": "ghost_1.webp",
+      "description": "White panties embroidered with human hair lying on the rope in the garden. Belonging to the work My desire is a ghost.",
       "work": "migran-t"
     }
   ],
@@ -22,6 +181,11 @@
   "i18n_string_social_action": "查看所有帖子",
   "description": "Belen Santamarina，居住在伦敦的阿根廷艺术家。 头发刺绣挂毯。",
   "menu": [
-    "Migran-t|migran-t"
+    "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
+    "In dreams (Migran-t)|in-dreams-migran-t",
+    "Migran-t|migran-t",
+    "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
+    "Sowing|sowing",
+    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048"
   ]
 }
