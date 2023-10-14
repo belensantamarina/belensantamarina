@@ -97,6 +97,7 @@
   ],
   "i18n_string_shows": "Exhibitions",
   "secondary_menu": [
+    "Memory of the action|memory-of-the-action",
     "Consecrated|consecrated",
     "A pictorial calendar to see the world|a-pictorial-calendar-to-see-the-world",
     "365 Geometrical Days|365-geometrical-days"
@@ -185,7 +186,6 @@
     "Migran-t|migran-t",
     "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
     "Sowing|sowing",
-    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
-    "Memory of the action|memory-of-the-action"
+    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048"
   ]
 }
