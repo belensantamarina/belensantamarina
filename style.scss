@@ -122,13 +122,18 @@ nav {
     }
 
     a {
+      text-decoration: none;
       color: white;
       cursor: pointer;
+      &::before {
+        content: '- ';
+      }
       &:first-child {
-        text-decoration: none;
+        color: black;
+        background: white;
         cursor: default;
-        &::after {
-          content: ' -';
+        &::before {
+          content: '';
         }
       }
     }
