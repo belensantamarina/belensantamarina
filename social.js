@@ -95,7 +95,7 @@ window.addEventListener('scroll', () => {
     window.fetchSocialData(
       renderSocialModuleInBody,
       30,
-      mainSocialContainer.lastChild.id
+      mainSocialContainer.lastChild.id,
     );
   }
 });

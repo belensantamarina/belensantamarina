@@ -36,7 +36,7 @@ const readDirectory = (directoryPath) =>
     fs.readdir(fullDirectoryPath, (directoryError, directoryFiles) => {
       if (directoryError) {
         reject(
-          new ReferenceError(`Directory not found on ${fullDirectoryPath}`)
+          new ReferenceError(`Directory not found on ${fullDirectoryPath}`),
         );
       }
       resolve(directoryFiles);

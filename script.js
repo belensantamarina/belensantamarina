@@ -24,7 +24,7 @@ if (galleryContainer) {
   const selectImage = (imageContainer) => {
     if (galleryContainer.dataset.selected) {
       imageContainers[galleryContainer.dataset.selected].classList.toggle(
-        'active'
+        'active',
       );
     }
     imageContainer.classList.toggle('active');
@@ -33,7 +33,7 @@ if (galleryContainer) {
       const imageButtons = galleryContainer.querySelectorAll('button');
       if (galleryContainer.dataset.selected) {
         imageButtons[galleryContainer.dataset.selected].classList.toggle(
-          'active'
+          'active',
         );
       }
       imageButtons[imageContainer.dataset.id].classList.toggle('active');
@@ -117,7 +117,7 @@ const renderSocialModuleInNav = (data) => {
 window.fetchSocialData = (
   renderCallback = renderSocialModuleInNav,
   limit = 3,
-  lastId = null
+  lastId = null,
 ) => {
   let url = `https://${window.MASTODON_COMMUNITY}/api/v1/accounts/${window.MASTODON_USER_ID}/statuses?limit=${limit}`;
   if (lastId) {

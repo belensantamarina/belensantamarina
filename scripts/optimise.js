@@ -15,7 +15,7 @@ const optimiseMedia = (mediaInfo) => {
     } else {
       console.log(`- Creating ${destinationPath}`);
       shell.exec(
-        `convert -strip -resize ${imageResolution.width}x${imageResolution.height} -quality 80 -density ${imageResolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG -define webp:lossless=false ${mediaInfo.path} ${destinationPath}`
+        `convert -strip -resize ${imageResolution.width}x${imageResolution.height} -quality 80 -density ${imageResolution.density} -sampling-factor 4:2:0 -colorspace sRGB -interlace JPEG -define webp:lossless=false ${mediaInfo.path} ${destinationPath}`,
       );
     }
   }
@@ -30,7 +30,7 @@ const optimiseLastCommit = () => {
       const modifiedMediaList = stdout
         .split('\n')
         .filter((modifiedMediaItem) =>
-          modifiedMediaItem.toLowerCase().includes('.webp')
+          modifiedMediaItem.toLowerCase().includes('.webp'),
         );
       for (let modifiedMediaItem of modifiedMediaList) {
         const modifiedMedia = modifiedMediaItem.split(' ');
@@ -42,7 +42,7 @@ const optimiseLastCommit = () => {
 
         optimiseMedia(modifiedMediaInfo);
       }
-    }
+    },
   );
 };
 

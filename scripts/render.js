@@ -30,7 +30,7 @@ const renderLanguage = async ({
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
       tag
         ? `/media/${fileName}${tag}.webp ${tag.replace('@', '')}`
-        : `/media/${fileName}.webp`
+        : `/media/${fileName}.webp`,
     );
     let galleryItemResult = {
       source_set: sourceSet,
@@ -51,7 +51,7 @@ const renderLanguage = async ({
   let baseTemplate = await readFile('index.html');
   let websiteConstants = await readFile(
     `content/${language}_constants.json`,
-    true
+    true,
   );
 
   const navItems = websiteConstants.menu.map(parseMenuItem);
@@ -59,7 +59,7 @@ const renderLanguage = async ({
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
   const otherLanguage = LANGUAGES.find(
-    (element) => element.language !== language
+    (element) => element.language !== language,
   );
 
   const websiteData = {
@@ -100,7 +100,7 @@ const renderLanguage = async ({
       (galleryItem, galleryItemIndex) => ({
         ...parseGalleryItem(galleryItem),
         id: galleryItemIndex,
-      })
+      }),
     );
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
@@ -180,7 +180,7 @@ const renderLanguage = async ({
     (galleryItem, galleryItemIndex) => ({
       ...parseGalleryItem(galleryItem),
       id: galleryItemIndex,
-    })
+    }),
   );
 
   const showsData = {
@@ -219,7 +219,7 @@ const renderLanguage = async ({
     (galleryItem, galleryItemIndex) => ({
       ...parseGalleryItem(galleryItem),
       id: galleryItemIndex,
-    })
+    }),
   );
 
   const homeData = {
