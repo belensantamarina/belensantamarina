@@ -46,12 +46,11 @@
         <a href="#" title="{{i18n_string_current_language}}"
           >{{current_language_abbr}}</a
         >
-        <a
-          href="{{{other_language_index}}}"
-          title="{{i18n_string_other_language}}"
-          lang="{{other_language}}"
-          >{{other_language_abbr}}</a
+        {{#other_languages}}
+        <a href="{{{index}}}" title="{{i18n_string}}" lang="{{language}}"
+          >{{abbr}}</a
         >
+        {{/other_languages}}
       </aside>
       <ul class="sections">
         <li>

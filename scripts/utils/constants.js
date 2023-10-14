@@ -9,7 +9,7 @@ const LANGUAGES = [
     shows: '/shows.html',
     route: 'work',
     link: 'Website in English',
-    abbreviation: 'ENG',
+    abbreviation: 'EN',
     code: 'en-GB',
   },
   {
@@ -20,7 +20,7 @@ const LANGUAGES = [
     shows: '/muestras.html',
     route: 'obra',
     link: 'Sitio web en español',
-    abbreviation: 'ESP',
+    abbreviation: 'ES',
     code: 'es-AR',
   },
   {

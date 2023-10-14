@@ -58,9 +58,14 @@ const renderLanguage = async ({
   const secondaryNavItems = websiteConstants.secondary_menu.map(parseMenuItem);
 
   const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
-  const otherLanguage = LANGUAGES.find(
-    (element) => element.language !== language,
-  );
+  const otherLanguages = LANGUAGES.filter(
+    (otherLanguage) => otherLanguage.language !== language,
+  ).map((otherLanguage) => ({
+    i18n_string: otherLanguage.link,
+    language: otherLanguage.code,
+    abbr: otherLanguage.abbreviation,
+    index: otherLanguage.index,
+  }));
 
   const websiteData = {
     language: websiteConstants.language,
@@ -80,14 +85,11 @@ const renderLanguage = async ({
     about: websiteConstants.about,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
-    other_language_abbr: otherLanguage.abbreviation,
-    other_language_index: otherLanguage.index,
     current_language_index: index,
     current_language_social: social,
     current_language_about: about,
     current_language_shows: shows,
-    i18n_string_other_language: otherLanguage.link,
-    other_language: otherLanguage.code,
+    other_languages: otherLanguages,
     meta_url: `${DOMAIN}${index}`,
   };
 
