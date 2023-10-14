@@ -4,10 +4,10 @@
   "i18n_string_shows": "艺术展览",
   "secondary_menu": [],
   "i18n_string_menu": "菜单",
-  "about": "Belen Santamarina\\\nb. Buenos Aires, Argentina\\\nlives in London, United Kingdom\n\nThrough the use of hair, soil, seeds and food as materials, my works explore the autobiographical and confessional to create tapestries, objects and installations. Reflected in the texts and drawings I embroider, my works engage with personal and collective migration experiences and the use of memories hybridised with science fiction and the natural world to imagine and propose alternative narratives to the dominant discourse.\n\nI use craft techniques I inherited from the women in my family, such as embroidery, crocheting and cooking. These techniques have been systematically secluded to the feminine and domestic space. By employing them, I intend to question the relations of power behind fine arts and crafts while rewriting my story and honouring my roots.\n\nI base my formation on critical study groups and painting workshops. I exhibited my work in Argentina, Taiwan, Spain, the USA and UK. In 2019, I was awarded the Honorary Mention at the Taoyuan International Art Award 2023 in Taiwan. My work Migran-t has been recently acquired by the Taoyuan Museum of Fine Arts, Taiwan (TMoFA).",
+  "about": "Belen Santamarina\\\n出生于阿根廷布宜诺斯艾利斯\\\n现居英国伦敦\n\n我的作品以头发、土壤、种子和食物作为材料，旨在探索自传式艺术风格的独特精髓，挂毯、摆件和装置等作品全都渗透着一种强烈的自叙精神。从我所绣制的文字和图画可见，这些作品主要讲述漂洋过海、移居海外的个人和集体经验，加上把记忆与科幻和自然相互交织，构想出有别于主导话语的另类叙述。我在作品中使用了继承自家族女性长辈的传统手艺，如刺绣、钩针和烹饪。这些手艺长久以来仅被视为妇女理家应有的技巧，通过把它们融入作品里，我希望对美术和手工艺背后存在的权力关系提出质疑，同时重新编写我的故事，用艺术向我的根致敬。我的艺术造诣主要培养自批判性研究小组和绘画作坊，作品曾在阿根廷、台湾、西班牙及英美等地展出。名为《Migran-t》的作品除了在“2023桃源国际艺术奖”获得荣誉奖，最近也获台湾桃园市立美术馆（TMoFA）收藏。",
   "i18n_string_gallery_action": "选择照片编号",
   "gallery": [
-  	{
+    {
       "file": "migran-t_9.webp",
       "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
       "work": "migran-t"
@@ -22,6 +22,6 @@
   "i18n_string_social_action": "查看所有帖子",
   "description": "Belen Santamarina，居住在伦敦的阿根廷艺术家。 头发刺绣挂毯。",
   "menu": [
-  	"Migran-t|migran-t"
+    "Migran-t|migran-t"
   ]
 }
