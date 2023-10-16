@@ -86,7 +86,9 @@
     <main>
       {{#name}}
       <h2>{{name}}</h2>
-      {{/name}} {{#gallery}}
+      {{/name}} {{#hidden_body}}
+      <section id="about">{{{hidden_body}}}</section>
+      {{/hidden_body}} {{#gallery}}
       <section
         id="gallery"
         data-nav="{{gallery_with_nav}}"

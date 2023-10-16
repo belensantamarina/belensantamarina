@@ -526,6 +526,13 @@ main {
     }
   }
 
+  section#about {
+    position: absolute !important;
+    height: 0.25rem; width: 0.25rem;
+    overflow: hidden;
+    clip: rect(0.25rem, 0.25rem, 0.25rem, 0.25rem);
+  }
+
   @media print {
     p {
       font-size: 0.85rem;

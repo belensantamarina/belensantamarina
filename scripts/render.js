@@ -232,6 +232,7 @@ const renderLanguage = async ({
       homeGalleryItems.length > 0
         ? `${DOMAIN}${homeGalleryItems[0].source}`
         : '',
+    hidden_body: aboutBody,
   };
 
   const homeOutput = mustache.render(baseTemplate, homeData);
