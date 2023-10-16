@@ -175,12 +175,12 @@
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina is an Argentine artist based in London. Hair embroidered tapestry.",
   "menu": [
+    "The Carrier Bag|the-carrier-bag",
     "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
     "In dreams (Migran-t)|in-dreams-migran-t",
     "Migran-t|migran-t",
     "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
     "Sowing|sowing",
-    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
-    "The Carrier Bag|the-carrier-bag"
+    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048"
   ]
 }
