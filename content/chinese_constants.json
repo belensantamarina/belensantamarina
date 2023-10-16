@@ -112,6 +112,11 @@
       "work": "migran-t"
     },
     {
+      "file": "carrier-bag_2..webp",
+      "description": "《The Carrier Bag》，2023年。\n头发编织购物袋，3D打印的手，眼影颜料，丙烯钉。尺寸：40厘米 x 80厘米 x 25厘米。\n\n携带袋《The Carrier Bag》是“传送门系列《Portal Series》的第一章的一部分。",
+      "work": "the-carrier-bag"
+    },
+    {
       "file": "sangre_7.webp",
       "description": "Sangre Caliente（中译《温血》），2022年。带有发绣图案的棉质帆布，60x70公分。摄：Catalina Romero\n",
       "work": "sangre-caliente-warm-blooded"
@@ -171,6 +176,7 @@
   "i18n_string_social_action": "查看所有帖子",
   "description": "Belen Santamarina，居住在伦敦的阿根廷艺术家。 头发刺绣挂毯。",
   "menu": [
+    "The Carrier Bag|the-carrier-bag",
     "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
     "In dreams (Migran-t)|in-dreams-migran-t",
     "Migran-t|migran-t",
