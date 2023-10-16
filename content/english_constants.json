@@ -107,6 +107,10 @@
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
+      "file": "carrier-bag_2..webp",
+      "description": "The Carrier Bag, 2023\nHair crocheted shopping bag, 3d printed hand, eye shadow pigments, acrylic nails."
+    },
+    {
       "file": "migran-t_9.webp",
       "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
       "work": "migran-t"
@@ -176,6 +180,7 @@
     "Migran-t|migran-t",
     "Conserve Nº2: Seed Capital|conserve-n2-seed-capital",
     "Sowing|sowing",
-    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048"
+    "Conserve Nº1: 2018 - 2048|conserve-n1-2018-2048",
+    "The Carrier Bag|the-carrier-bag"
   ]
 }
