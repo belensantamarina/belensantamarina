@@ -269,7 +269,7 @@ main {
       position: relative;
       display: block;
       width: 100%;
-      height: 20rem;
+      height: 32rem;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -278,7 +278,7 @@ main {
       background-position: center;
       background-size: 1rem;
       @media screen and (min-width: 48rem) {
-        height: 30rem;
+        height: 48rem;
       }
 
       li {
