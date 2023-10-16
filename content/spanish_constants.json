@@ -111,6 +111,11 @@
       "work": "migran-t"
     },
     {
+      "file": "carrier-bag_2..webp",
+      "description": "The Carrier Bag, 2023 \nBolsa realizada a crochet con cabello humano, impresión 3D, sombras de ojos, uñas acrílicas. 40 cm x 80 cm x 25 cm.",
+      "work": "the-carrier-bag"
+    },
+    {
       "file": "sangre_7.webp",
       "description": "Sangre caliente (warm-blooded)",
       "work": "sangre-caliente"
@@ -169,6 +174,7 @@
   "i18n_string_social_action": "Ver todos los posts",
   "description": "Belén Santamarina es una artista Argentina radicada en Londres. Tapices bordados con cabello.",
   "menu": [
+    "The Carrier Bag |the-carrier-bag",
     "Sangre caliente|sangre-caliente",
     "En sueños (migran-t)|en-sueños-migran-t",
     "Migran-t|migran-t",
