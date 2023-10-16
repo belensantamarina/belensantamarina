@@ -64,12 +64,14 @@ if (galleryContainer) {
 
   selectImage(imageContainers[0]);
 
-  const autoPlayInterval = window.setInterval(() => {
-    const currentId = Number(galleryContainer.dataset.selected);
-    const nextId =
-      imageContainers.length - 1 >= currentId + 1 ? currentId + 1 : 0;
-    selectImage(imageContainers[nextId]);
-  }, 3000);
+  window.addEventListener('load', () => {
+    const autoPlayInterval = window.setInterval(() => {
+      const currentId = Number(galleryContainer.dataset.selected);
+      const nextId =
+        imageContainers.length - 1 >= currentId + 1 ? currentId + 1 : 0;
+      selectImage(imageContainers[nextId]);
+    }, 3000);
+  });
 }
 
 /********************************/
