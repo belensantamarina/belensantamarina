@@ -155,16 +155,6 @@
       "description": "Recetas para la distancia. instalación y experiencia colectiva. La transcripción de las cartas en formato pasta se sella y se exhibe en un armario, esperando ser comidas, compartidas, desechadas."
     },
     {
-      "file": "consecrated_1.webp",
-      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#5, Conexión. MARQ (Museo de Arquitectura), Buenos Aires, Argentina.\nTubos de PVC. 26 x 50 cm",
-      "work": "consagrada"
-    },
-    {
-      "file": "consecrated_2.webp",
-      "description": "Consagrada, Septiembre - Noviembre 2017.  \nIntervención n#4 · De a dos. Centro Cultural San Martín, Buenos Aires, Argentina.\nMadera, pintura de pizarra, tiza, hilo, tela, papel. 40 x 125 cm.",
-      "work": "consagrada"
-    },
-    {
       "file": "ghost_1.webp",
       "description": "Bombacha blanca bordada con cabello humano tendida en el jardín. Pertenece a la obra Mi deseo es un fantasma.",
       "work": "migran-t"
@@ -177,7 +167,7 @@
   "i18n_string_social": "Lado B",
   "footer": "Contacto: **belenls(at)me.com**. Copyright © 2023 Belen Santamarina. Este sitio fue <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">creado con código abierto</a> para ser clonado y compostado bajo la GNU AGPL. Larga vida al código abierto!",
   "i18n_string_social_action": "Ver todos los posts",
-  "description": "Belén Santamarina, artista visual Argentina. Vive y trabaja entre Londres y Buenos Aires.",
+  "description": "Belén Santamarina es una artista Argentina radicada en Londres. Tapices bordados co cabello.",
   "menu": [
     "Sangre caliente|sangre-caliente",
     "En sueños (migran-t)|en-sueños-migran-t",
