@@ -16,6 +16,8 @@ navButton.addEventListener('click', () => {
 /*						GALLERY						*/
 /********************************/
 
+let autoPlayInterval;
+
 const galleryContainer = document.getElementById('gallery');
 if (galleryContainer) {
   const withNavigation = Boolean(galleryContainer.dataset.nav);
@@ -65,7 +67,7 @@ if (galleryContainer) {
   selectImage(imageContainers[0]);
 
   window.addEventListener('load', () => {
-    const autoPlayInterval = window.setInterval(() => {
+    autoPlayInterval = window.setInterval(() => {
       const currentId = Number(galleryContainer.dataset.selected);
       const nextId =
         imageContainers.length - 1 >= currentId + 1 ? currentId + 1 : 0;
