@@ -106,6 +106,16 @@
   "i18n_string_gallery_action": "Seleccionar foto número",
   "gallery": [
     {
+      "file": "portal_1.webp",
+      "description": "Portal 1: Seres complejos, 2024\n\nLienzos bordados con cabello humano.\nPelo, cadena, argollas metálicas, vidrio.",
+      "work": "portales-capítulo-1-seres-complejos"
+    },
+    {
+      "file": "portal_4.webp",
+      "description": "Portal 1: Seres complejos (detalle), 2024\n\nLienzos bordados con cabello humano.\nPelo, cadena, argollas metálicas, vidrio.",
+      "work": "portales-capítulo-1-seres-complejos"
+    },
+    {
       "file": "migran-t_9.webp",
       "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
       "work": "migran-t"
@@ -174,6 +184,7 @@
   "i18n_string_social_action": "Ver todos los posts",
   "description": "Belén Santamarina es una artista Argentina radicada en Londres. Tapices bordados con cabello.",
   "menu": [
+    "Portales*Capítulo 1*: Seres complejos |portales-capítulo-1-seres-complejos",
     "The Carrier Bag |the-carrier-bag",
     "Sangre caliente|sangre-caliente",
     "En sueños (migran-t)|en-sueños-migran-t",
