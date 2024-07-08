@@ -26,22 +26,22 @@
   },
   "homepage": "https://belensantamarina.com",
   "devDependencies": {
-    "@babel/cli": "^7.23.0",
-    "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "args": "^5.0.3",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.19",
     "babel-preset-minify": "^0.5.2",
-    "cssnano": "^6.0.1",
+    "cssnano": "^7.0.4",
     "mustache": "^4.2.0",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
-    "prettier": "^3.0.3",
-    "sass": "^1.69.4",
-    "serve": "^14.2.1",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.3.2",
+    "sass": "^1.77.6",
+    "serve": "^14.2.3",
     "shelljs": "^0.8.5",
     "showdown": "^2.1.0",
-    "sitemap": "^7.1.1"
+    "sitemap": "^8.0.0"
   },
   "babel": {
     "presets": [
