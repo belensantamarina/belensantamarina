@@ -156,7 +156,11 @@ let messageCharCountSpan;
 const obfuscateMessage = (message) => {
   const validChars = /^[0-9A-Z:¡!¿?().";/]+$/;
 
-  const messageChars = message.toUpperCase().split('');
+  const messageChars = message
+    .toUpperCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .split('');
   const messageCharsCount = messageChars.reduce((count, char) => {
     if (validChars.test(char)) {
       count[char] = (count[char] || 0) + 1;
@@ -167,13 +171,6 @@ const obfuscateMessage = (message) => {
   const messageCharsCountSorted = Object.entries(messageCharsCount).sort(
     ([, valueA], [, valueB]) => valueB - valueA,
   );
-
-  // const obfuscatedMessage = messageCharsCountSorted.reduce(
-  //   (countString, charArray) =>
-  //     `${countString}\n${charArray[0]}:${charArray[1]}`,
-  //   '',
-  // );
-  // return obfuscatedMessage;
 
   return messageCharsCountSorted;
 };
