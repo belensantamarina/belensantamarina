@@ -7,10 +7,12 @@ const navButton = document.getElementById('nav');
 const navContainer = document.querySelector('nav');
 const headerContainer = document.querySelector('header');
 
-navButton.addEventListener('click', () => {
-  headerContainer.classList.toggle('active');
-  navContainer.classList.toggle('active');
-});
+if (navButton) {
+  navButton.addEventListener('click', () => {
+    headerContainer.classList.toggle('active');
+    navContainer.classList.toggle('active');
+  });
+}
 
 /********************************/
 /*						GALLERY						*/
@@ -81,8 +83,8 @@ if (galleryContainer) {
 /********************************/
 
 const navSocialContainer = document.querySelector('ul.social');
-const socialViewAllContainer = navSocialContainer.querySelector('li');
-const socialUrl = navSocialContainer.querySelector('a').href;
+let socialViewAllContainer;
+let socialUrl;
 
 const renderStatusInNav = ({ id, description, source }) => {
   const statusImage = document.createElement('img');
@@ -134,6 +136,11 @@ window.fetchSocialData = (
     });
 };
 
-window.addEventListener('load', () => {
-  window.fetchSocialData();
-});
+if (navSocialContainer) {
+  socialViewAllContainer = navSocialContainer.querySelector('li');
+  socialUrl = navSocialContainer.querySelector('a').href;
+
+  window.addEventListener('load', () => {
+    window.fetchSocialData();
+  });
+}
