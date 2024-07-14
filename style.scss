@@ -580,6 +580,24 @@ main {
       }
       textarea {
         resize: vertical;
+        min-height: 8rem;
+      }
+
+      &.textarea {
+        position: relative;
+        padding: 0 0 2rem 0;
+
+        span#messageCharCount {
+          position: absolute;
+          bottom: 1em;
+          right: 0;
+          z-index: 2;
+          display: block;
+          font-size: 0.75rem;
+          text-align: right;
+          width: 8em;
+          height: 1em;
+        }
       }
     }
     input#submit {

@@ -150,6 +150,8 @@ if (navSocialContainer) {
 /********************************/
 
 const messagesForm = document.getElementById('messages');
+let messageTextarea;
+let messageCharCountSpan;
 
 const obfuscateMessage = (message) => {
   const validChars = /^[0-9A-Z:¡!¿?().";/]+$/;
@@ -178,6 +180,32 @@ const obfuscateMessage = (message) => {
 
 console.log(messagesForm);
 if (messagesForm) {
+  messageTextarea = document.getElementById('message');
+  messageCharCountSpan = document.getElementById('messageCharCount');
+
+  const maxChars = 140;
+
+  messageTextarea.addEventListener('input', () => {
+    const nonSpaceChars = messageTextarea.value.replace(/\s/g, '');
+    if (nonSpaceChars.length > maxChars) {
+      let truncatedValue = '';
+      let count = 0;
+
+      for (let char of messageTextarea.value) {
+        if (char !== ' ' && char !== '\t' && char !== '\n' && char !== '\r') {
+          count++;
+        }
+        if (count > maxChars) {
+          break;
+        }
+        truncatedValue += char;
+      }
+      messageTextarea.value = truncatedValue;
+    }
+    const currentLength = messageTextarea.value.replace(/\s/g, '').length;
+    messageCharCountSpan.textContent = `${currentLength}/${maxChars}`;
+  });
+
   messagesForm.addEventListener('submit', (event) => {
     event.preventDefault();
 

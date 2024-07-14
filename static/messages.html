@@ -45,15 +45,15 @@
           <label for="email">E-mail</label>
           <input type="email" name="email" id="email" required="required" />
         </fieldset>
-        <fieldset>
+        <fieldset class="textarea">
           <label for="message">Message</label>
           <textarea
             name="message"
             id="message"
             required="required"
             rows="6"
-            maxlength="140"
           ></textarea>
+          <span id="messageCharCount">0/140</span>
         </fieldset>
         <input type="submit" name="submit" id="submit" value="Send" />
       </form>
