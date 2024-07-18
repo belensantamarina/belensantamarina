@@ -51,5 +51,8 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.614.0"
   }
 }
