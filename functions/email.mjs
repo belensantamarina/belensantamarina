@@ -1,10 +1,12 @@
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
 
-const websiteEmail = 'amoritan@me.com'; // 'belenls@me.com';
+const websiteEmail = 'belenls@me.com';
 const client = new SESv2Client({
   region: 'eu-west-2',
-  accessKeyId: `${process.env.BS_SES_ACCESS_KEY_ID}`,
-  secretAccessKey: `${process.env.BS_SES_SECRET_ACCESS_KEY}`,
+  credentials: {
+    accessKeyId: `${process.env.BS_SES_ACCESS_KEY_ID}`,
+    secretAccessKey: `${process.env.BS_SES_SECRET_ACCESS_KEY}`,
+  },
 });
 
 const obfuscateMessage = (message) => {
@@ -26,7 +28,7 @@ const obfuscateMessage = (message) => {
     ([, valueA], [, valueB]) => valueB - valueA,
   );
 
-  return messageCharsCountSorted;
+  return messageCharsCountSorted.map((char) => char.join(' → ')).join('\n');
 };
 
 const createEmail = (sender, receiver, subject, content) => ({
@@ -61,13 +63,13 @@ export default async (request, context) => {
     websiteEmail,
     email,
     `Message sent to Belen Santamarina`,
-    `Here's a copy of your message:\n ${message}`,
+    `Here's a copy of your message:\n\n ${message}`,
   );
   const emailForReceiver = createEmail(
     email,
     websiteEmail,
     `New message from ${name}`,
-    `Here's the obfuscated from ${name} <${email}>:\n ${obfuscatedMessage.join('\n')}`,
+    `Here's the obfuscated message from ${name} <${email}>:\n\n ${obfuscatedMessage}`,
   );
 
   const commandForSender = new SendEmailCommand(emailForSender);
