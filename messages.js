@@ -3,8 +3,11 @@
 /********************************/
 
 const messagesForm = document.getElementById('messages');
+const messageName = document.getElementById('name');
+const messageEmail = document.getElementById('email');
 const messageTextarea = document.getElementById('message');
 const messageCharCountSpan = document.getElementById('messageCharCount');
+const messageSubmit = document.getElementById('submit');
 const maxChars = 140;
 
 messageTextarea.addEventListener('input', () => {
@@ -38,10 +41,24 @@ const sendMessage = async (form) => {
       body: JSON.stringify(formDataObject),
     });
 
+    messageName.setAttribute('disabled', 'disabled');
+    messageEmail.setAttribute('disabled', 'disabled');
+    messageTextarea.setAttribute('disabled', 'disabled');
+    messageSubmit.setAttribute('disabled', 'disabled');
+    messageSubmit.value = 'Sending...';
+
     const responseBody = await response.json();
-    console.log(responseBody);
+    if (responseBody) {
+      console.log(responseBody);
+      messageSubmit.value = 'Sent!';
+    }
   } catch (error) {
     console.error(error.message);
+    messageSubmit.value = 'Error... (Try again)';
+    messageName.removeAttribute('disabled');
+    messageEmail.removeAttribute('disabled');
+    messageTextarea.removeAttribute('disabled');
+    messageSubmit.removeAttribute('disabled');
   }
 };
 

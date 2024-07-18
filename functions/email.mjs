@@ -63,13 +63,17 @@ export default async (request, context) => {
     websiteEmail,
     email,
     `Message sent to Belen Santamarina`,
-    `Here's a copy of your message:\n\n ${message}`,
+    `Here's a copy of your message:
+    \n\n${message}
+    \n\nWhich will be received as follows:
+    \n\n${obfuscatedMessage}`,
   );
   const emailForReceiver = createEmail(
     email,
     websiteEmail,
     `New message from ${name}`,
-    `Here's the obfuscated message from ${name} <${email}>:\n\n ${obfuscatedMessage}`,
+    `Here's the obfuscated message from ${name} <${email}>:
+    \n\n${obfuscatedMessage}`,
   );
 
   const commandForSender = new SendEmailCommand(emailForSender);

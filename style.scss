@@ -577,6 +577,9 @@ main {
         font-family: 'novel-mono-pro', monospace;
         border: solid 0.0125rem black;
         padding: 0.25rem;
+        &:disabled {
+          background: lightgray;
+        }
       }
       textarea {
         resize: vertical;
@@ -617,6 +620,12 @@ main {
           color: black;
           box-shadow: inset 0 0 0 0.125rem black;
         }
+      }
+      &:disabled {
+        background: lightgray;
+        color: white;
+        cursor: default;
+        box-shadow: none;
       }
     }
   }
