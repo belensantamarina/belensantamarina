@@ -40,7 +40,6 @@ const sendMessage = async (form) => {
 
     const responseBody = await response.json();
     console.log(responseBody);
-
   } catch (error) {
     console.error(error.message);
   }
