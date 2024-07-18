@@ -1,7 +1,11 @@
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
 
 const websiteEmail = 'amoritan@me.com'; // 'belenls@me.com';
-const client = new SESv2Client({ region: 'eu-west-2' });
+const client = new SESv2Client({
+  region: 'eu-west-2',
+  accessKeyId: `${process.env.BS_SES_ACCESS_KEY_ID}`,
+  secretAccessKey: `${process.env.BS_SES_SECRET_ACCESS_KEY}`,
+});
 
 const obfuscateMessage = (message) => {
   const validChars = /^[0-9A-Z:¡!¿?().";/]+$/;
@@ -27,7 +31,7 @@ const obfuscateMessage = (message) => {
 
 const createEmail = (sender, receiver, subject, content) => ({
   FromEmailAddress: 'no-reply@belensantamarina.com',
-  FromEmailAddressIdentityArn: `${process.env.EMAIL_ARN}`,
+  FromEmailAddressIdentityArn: `${process.env.BS_SES_EMAIL_ARN}`,
   Destination: {
     ToAddresses: [receiver],
   },
