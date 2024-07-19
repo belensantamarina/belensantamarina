@@ -98,12 +98,12 @@ const renderLanguage = async ({
   for (let fileName of workFiles) {
     let pageConstants = await readFile(`content/${route}/${fileName}`, true);
 
-    const galleryItems = pageConstants.gallery.map(
-      (galleryItem, galleryItemIndex) => ({
-        ...parseGalleryItem(galleryItem),
-        id: galleryItemIndex,
-      }),
-    );
+    const galleryItems = pageConstants.gallery
+      ? pageConstants.gallery.map((galleryItem, galleryItemIndex) => ({
+          ...parseGalleryItem(galleryItem),
+          id: galleryItemIndex,
+        }))
+      : [];
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
     const pagePath = `/${route}/${fileName.replace('json', 'html')}`;
@@ -119,6 +119,7 @@ const renderLanguage = async ({
       meta_url: `${DOMAIN}${pagePath}`,
       meta_image:
         galleryItems.length > 0 ? `${DOMAIN}${galleryItems[0].source}` : '',
+      plugin_form: pageConstants.plugin === 'form',
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);

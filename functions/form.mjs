@@ -59,15 +59,6 @@ export default async (request, context) => {
   const { email, message, name } = requestBody;
   const obfuscatedMessage = obfuscateMessage(message);
 
-  const emailForSender = createEmail(
-    websiteEmail,
-    email,
-    `Message sent to Belen Santamarina`,
-    `Here's a copy of your message:
-    \n\n${message}
-    \n\nWhich will be received as follows:
-    \n\n${obfuscatedMessage}`,
-  );
   const emailForReceiver = createEmail(
     email,
     websiteEmail,
@@ -76,14 +67,13 @@ export default async (request, context) => {
     \n\n${obfuscatedMessage}`,
   );
 
-  const commandForSender = new SendEmailCommand(emailForSender);
   const commandForReceiver = new SendEmailCommand(emailForReceiver);
-  const sendFromSender = await client.send(commandForSender);
   const sendFromReceiver = await client.send(commandForReceiver);
 
   const response = JSON.stringify({
-    sendFromSender,
-    sendFromReceiver,
+    ...sendFromReceiver,
+    dialog: `Message sent, will be received as follows:
+    \n${obfuscatedMessage}`,
   });
 
   return new Response(response);
