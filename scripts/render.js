@@ -119,6 +119,7 @@ const renderLanguage = async ({
       meta_url: `${DOMAIN}${pagePath}`,
       meta_image:
         galleryItems.length > 0 ? `${DOMAIN}${galleryItems[0].source}` : '',
+      plugin_form: pageConstants.plugin === 'form',
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);

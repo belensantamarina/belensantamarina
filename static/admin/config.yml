@@ -39,6 +39,9 @@ collections:
       - name: 'language'
         widget: 'hidden'
         default: 'en-GB'
+      - name: 'plugin'
+        widget: 'hidden'
+        required: false
   - name: 'spanish_work'
     label: 'Work (Español)'
     folder: 'content/obra'
