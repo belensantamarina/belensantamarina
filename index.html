@@ -117,29 +117,7 @@
           {{/gallery_items}}
         </ul>
       </section>
-      {{/gallery}} {{{body}}} {{#plugin_form}}
-      <form id="messages" method="post" action="/.netlify/functions/email">
-        <fieldset>
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" required="required" />
-        </fieldset>
-        <fieldset>
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" required="required" />
-        </fieldset>
-        <fieldset class="textarea" required="required">
-          <label for="message">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            required="required"
-            rows="6"
-          ></textarea>
-          <span id="messageCharCount">0/140</span>
-        </fieldset>
-        <input type="submit" name="submit" id="submit" value="Send" />
-      </form>
-      {{/plugin_form}}
+      {{/gallery}} {{{body}}}
     </main>
 
     <footer>{{{footer}}}</footer>

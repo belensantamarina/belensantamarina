@@ -98,12 +98,12 @@ const renderLanguage = async ({
   for (let fileName of workFiles) {
     let pageConstants = await readFile(`content/${route}/${fileName}`, true);
 
-    const galleryItems = pageConstants.gallery.map(
-      (galleryItem, galleryItemIndex) => ({
-        ...parseGalleryItem(galleryItem),
-        id: galleryItemIndex,
-      }),
-    );
+    const galleryItems = pageConstants.gallery
+      ? pageConstants.gallery.map((galleryItem, galleryItemIndex) => ({
+          ...parseGalleryItem(galleryItem),
+          id: galleryItemIndex,
+        }))
+      : [];
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
     const pagePath = `/${route}/${fileName.replace('json', 'html')}`;

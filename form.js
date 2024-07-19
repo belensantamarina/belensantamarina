@@ -1,22 +1,89 @@
 /********************************/
-/*           MESSAGES           */
+/*             FORM             */
 /********************************/
 
-const messagesForm = document.getElementById('messages');
-const messageName = document.getElementById('name');
-const messageEmail = document.getElementById('email');
-const messageTextarea = document.getElementById('message');
-const messageCharCountSpan = document.getElementById('messageCharCount');
-const messageSubmit = document.getElementById('submit');
+const mainContainer = document.querySelector('main');
 const maxChars = 140;
 
-messageTextarea.addEventListener('input', () => {
-  const nonSpaceChars = messageTextarea.value.replace(/\s/g, '');
+const form = document.createElement('form');
+form.setAttribute('method', 'post');
+form.setAttribute('action', '/.netlify/functions/form');
+
+/* INPUT: NAME */
+const nameFieldset = document.createElement('fieldset');
+
+const nameLabel = document.createElement('label');
+nameLabel.setAttribute('for', 'name');
+nameLabel.textContent = 'Name';
+nameFieldset.appendChild(nameLabel);
+
+const nameInput = document.createElement('input');
+nameInput.setAttribute('id', 'name');
+nameInput.setAttribute('type', 'text');
+nameInput.setAttribute('name', 'name');
+nameInput.setAttribute('required', 'required');
+nameFieldset.appendChild(nameInput);
+
+form.appendChild(nameFieldset);
+
+/* INPUT: EMAIL */
+const emailFieldset = document.createElement('fieldset');
+
+const emailLabel = document.createElement('label');
+emailLabel.setAttribute('for', 'email');
+emailLabel.textContent = 'E-mail';
+emailFieldset.appendChild(emailLabel);
+
+const emailInput = document.createElement('input');
+emailInput.setAttribute('id', 'email');
+emailInput.setAttribute('type', 'email');
+emailInput.setAttribute('name', 'email');
+emailInput.setAttribute('required', 'required');
+emailFieldset.appendChild(emailInput);
+
+form.appendChild(emailFieldset);
+
+/* INPUT: MESSAGE */
+const messageFieldset = document.createElement('fieldset');
+messageFieldset.setAttribute('class', 'textarea');
+
+const messageLabel = document.createElement('label');
+messageLabel.setAttribute('for', 'message');
+messageLabel.textContent = 'Message';
+messageFieldset.appendChild(messageLabel);
+
+const messageInput = document.createElement('textarea');
+messageInput.setAttribute('id', 'message');
+messageInput.setAttribute('name', 'message');
+messageInput.setAttribute('rows', '6');
+messageInput.setAttribute('required', 'required');
+messageFieldset.appendChild(messageInput);
+
+const messageSpan = document.createElement('span');
+messageSpan.textContent = `0/${maxChars}`;
+messageFieldset.appendChild(messageSpan);
+
+form.appendChild(messageFieldset);
+
+/* BUTTON: SUBMIT */
+const submitButton = document.createElement('input');
+submitButton.setAttribute('id', 'submit');
+submitButton.setAttribute('type', 'submit');
+submitButton.setAttribute('name', 'submit');
+submitButton.value = 'Send';
+
+form.appendChild(submitButton);
+
+/* FORM: APPEND */
+mainContainer.appendChild(form);
+
+messageInput.addEventListener('input', () => {
+  const nonSpaceChars = messageInput.value.replace(/\s/g, '');
   if (nonSpaceChars.length > maxChars) {
     let truncatedValue = '';
     let count = 0;
 
-    for (let char of messageTextarea.value) {
+    for (let char of messageInput.value) {
       if (char !== ' ' && char !== '\t' && char !== '\n' && char !== '\r') {
         count++;
       }
@@ -25,45 +92,49 @@ messageTextarea.addEventListener('input', () => {
       }
       truncatedValue += char;
     }
-    messageTextarea.value = truncatedValue;
+    messageInput.value = truncatedValue;
   }
-  const currentLength = messageTextarea.value.replace(/\s/g, '').length;
-  messageCharCountSpan.textContent = `${currentLength}/${maxChars}`;
+  const currentLength = messageInput.value.replace(/\s/g, '').length;
+  messageSpan.textContent = `${currentLength}/${maxChars}`;
 });
 
-const sendMessage = async (form) => {
-  const formData = new FormData(form);
-  const formDataObject = Object.fromEntries(formData);
-
+const sendMessage = async (target) => {
   try {
     const response = await fetch(form.action, {
       method: form.method,
-      body: JSON.stringify(formDataObject),
+      body: JSON.stringify({
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
+      }),
     });
-
-    messageName.setAttribute('disabled', 'disabled');
-    messageEmail.setAttribute('disabled', 'disabled');
-    messageTextarea.setAttribute('disabled', 'disabled');
-    messageSubmit.setAttribute('disabled', 'disabled');
-    messageSubmit.value = 'Sending...';
 
     const responseBody = await response.json();
     if (responseBody) {
       console.log(responseBody);
-      messageSubmit.value = 'Sent!';
+      submitButton.value = 'Sent!';
+      const responseParagraph = document.createElement('p');
+      responseParagraph.textContent = responseBody.dialog;
+      form.appendChild(responseParagraph);
     }
   } catch (error) {
     console.error(error.message);
-    messageSubmit.value = 'Error... (Try again)';
-    messageName.removeAttribute('disabled');
-    messageEmail.removeAttribute('disabled');
-    messageTextarea.removeAttribute('disabled');
-    messageSubmit.removeAttribute('disabled');
+    submitButton.value = 'Error... (Try again)';
+    nameInput.removeAttribute('disabled');
+    emailInput.removeAttribute('disabled');
+    messageInput.removeAttribute('disabled');
+    submitButton.removeAttribute('disabled');
   }
 };
 
-messagesForm.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  nameInput.setAttribute('disabled', 'disabled');
+  emailInput.setAttribute('disabled', 'disabled');
+  messageInput.setAttribute('disabled', 'disabled');
+  submitButton.setAttribute('disabled', 'disabled');
+  submitButton.value = 'Sending...';
 
   sendMessage(event.target);
 });
