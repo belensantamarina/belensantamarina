@@ -65,18 +65,6 @@ messageFieldset.appendChild(messageSpan);
 
 form.appendChild(messageFieldset);
 
-/* BUTTON: SUBMIT */
-const submitButton = document.createElement('input');
-submitButton.setAttribute('id', 'submit');
-submitButton.setAttribute('type', 'submit');
-submitButton.setAttribute('name', 'submit');
-submitButton.value = 'Send';
-
-form.appendChild(submitButton);
-
-/* FORM: APPEND */
-mainContainer.appendChild(form);
-
 messageInput.addEventListener('input', () => {
   const nonSpaceChars = messageInput.value.replace(/\s/g, '');
   if (nonSpaceChars.length > maxChars) {
@@ -98,43 +86,82 @@ messageInput.addEventListener('input', () => {
   messageSpan.textContent = `${currentLength}/${maxChars}`;
 });
 
-const sendMessage = async (target) => {
+/* BUTTON: SUBMIT */
+const submitButton = document.createElement('input');
+submitButton.setAttribute('id', 'submit');
+submitButton.setAttribute('type', 'submit');
+submitButton.setAttribute('name', 'submit');
+submitButton.value = 'Send';
+
+form.appendChild(submitButton);
+
+/* FORM: LOGIC */
+mainContainer.appendChild(form);
+
+const obfuscateMessage = (message) => {
+  const validChars = /^[0-9A-Z:¡!¿?().";/]+$/;
+
+  const messageChars = message
+    .toUpperCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .split('');
+  const messageCharsCount = messageChars.reduce((count, char) => {
+    if (validChars.test(char)) {
+      count[char] = (count[char] || 0) + 1;
+    }
+    return count;
+  }, {});
+
+  const messageCharsCountSorted = Object.entries(messageCharsCount).sort(
+    ([, valueA], [, valueB]) => valueB - valueA,
+  );
+
+  return messageCharsCountSorted.map((char) => char.join(' → ')).join('\n');
+};
+
+const sendMessage = async (targetForm, submitter) => {
+  const formData = new FormData(targetForm);
+  const formDataObject = Object.fromEntries(formData);
+
+  const requestBody = {
+    ...formDataObject,
+    obfuscated: obfuscateMessage(formDataObject.message),
+  };
+
+  for (const formElement of targetForm.elements) {
+    formElement.setAttribute('disabled', 'disabled');
+  }
+  submitter.value = 'Sending...';
+
+  console.log('requestBody', requestBody);
+
   try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: JSON.stringify({
-        name: nameInput.value,
-        email: emailInput.value,
-        message: messageInput.value,
-      }),
+    const response = await fetch(targetForm.action, {
+      method: targetForm.method,
+      body: JSON.stringify(requestBody),
     });
 
     const responseBody = await response.json();
     if (responseBody) {
-      console.log(responseBody);
-      submitButton.value = 'Sent!';
+      console.log('responseBody', responseBody);
+      submitter.value = 'Sent!';
       const responseParagraph = document.createElement('p');
-      responseParagraph.textContent = responseBody.dialog;
-      form.appendChild(responseParagraph);
+      responseParagraph.textContent = `Message sent, will be received as follows:
+      \n${responseBody.requestBody.obfuscated}`;
+      targetForm.appendChild(responseParagraph);
     }
   } catch (error) {
     console.error(error.message);
-    submitButton.value = 'Error... (Try again)';
-    nameInput.removeAttribute('disabled');
-    emailInput.removeAttribute('disabled');
-    messageInput.removeAttribute('disabled');
-    submitButton.removeAttribute('disabled');
+    for (const formElement of targetForm.elements) {
+      formElement.removeAttribute('disabled');
+    }
+    submitter.value = 'Error... (Try again)';
   }
 };
 
 form.addEventListener('submit', (event) => {
+  sendMessage(event.target, event.submitter);
+
   event.preventDefault();
-
-  nameInput.setAttribute('disabled', 'disabled');
-  emailInput.setAttribute('disabled', 'disabled');
-  messageInput.setAttribute('disabled', 'disabled');
-  submitButton.setAttribute('disabled', 'disabled');
-  submitButton.value = 'Sending...';
-
-  sendMessage(event.target);
 });
