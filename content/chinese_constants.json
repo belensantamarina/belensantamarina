@@ -107,14 +107,13 @@
   "i18n_string_gallery_action": "选择照片编号",
   "gallery": [
     {
+      "file": "portal_2.webp",
+      "description": "Portal 1: Complex Beings, 2024"
+    },
+    {
       "file": "migran-t_9.webp",
       "description": "Migran-t. First skin: Nostalgia，2021年。带有发绣图案的床单。150x200公分。摄：Catalina Romero",
       "work": "migran-t"
-    },
-    {
-      "file": "carrier-bag_2..webp",
-      "description": "《The Carrier Bag》，2023年。\n头发编织购物袋，3D打印的手，眼影颜料，丙烯钉。尺寸：40厘米 x 80厘米 x 25厘米。\n\n携带袋《The Carrier Bag》是“传送门系列《Portal Series》的第一章的一部分。",
-      "work": "the-carrier-bag"
     },
     {
       "file": "sangre_7.webp",
@@ -135,11 +134,6 @@
       "file": "sowing_1.webp",
       "description": "Sowing. 表演艺术，历时15分钟，2018年。URRA Tigre艺术中心（阿根廷布宜诺斯艾利斯）\n",
       "work": "sowing"
-    },
-    {
-      "file": "conserve-n1_2.webp",
-      "description": "Conserve Nº1: 2018 – 2048",
-      "work": "conserve-n1-2018-2048"
     },
     {
       "file": "conserve-n2_1.webp",
