@@ -106,6 +106,21 @@
   "i18n_string_gallery_action": "Seleccionar foto número",
   "gallery": [
     {
+      "file": "entanglement_01.webp",
+      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
+      "work": "entanglement"
+    },
+    {
+      "file": "entanglement.webp",
+      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
+      "work": "entanglement"
+    },
+    {
+      "file": "take-me.webp",
+      "description": "Take Me (llevame), 2024\nPoema instalación, dimensiones variables\nPelo humano, marco metálico, argollas, cadenas",
+      "work": "take-me"
+    },
+    {
       "file": "portal_2.webp",
       "description": "Portal 1: Seres complejos, 2024\n\nLienzos bordados con cabello humano.\nPelo, cadena, argollas metálicas, vidrio.",
       "work": "portales-capítulo-1-seres-complejos"
