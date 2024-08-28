@@ -1,0 +1,16 @@
+{
+  "language": "en-GB",
+  "name": "Take me",
+  "description": "Poem installation, variable dimensions\nHuman hair, metal frame, metal rings, chains",
+  "body": "**Take Me**, 2024\n\nPoem installation, variable dimensions\n\nHuman hair, metal frame, metal rings, chains.",
+  "gallery": [
+    {
+      "file": "take-me.webp",
+      "description": "**Take Me**, 2024\nPoem installation, variable dimensions"
+    },
+    {
+      "file": "take-me_01.webp",
+      "description": "**Take Me**, 2024\nPoem installation, variable dimensions"
+    }
+  ]
+}
