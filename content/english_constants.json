@@ -107,6 +107,16 @@
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
+      "file": "entanglement.webp",
+      "description": "Entanglement, 2024\nInstallation, dimensions variable. Human hair, metal wire.",
+      "work": "entanglement"
+    },
+    {
+      "file": "entanglement_01.webp",
+      "description": "Entanglement, 2024\nInstallation, dimensions variable. Human hair, metal wire.",
+      "work": "entanglement"
+    },
+    {
       "file": "take-me.webp",
       "description": "**Take Me**, 2024\nPoem installation, variable dimensions",
       "work": "take-me"
