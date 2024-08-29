@@ -108,12 +108,12 @@
   "gallery": [
     {
       "file": "entanglement.webp",
-      "description": "Entanglement, 2024\nInstallation, dimensions variable. Human hair, metal wire.",
+      "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
       "work": "entanglement"
     },
     {
       "file": "entanglement_01.webp",
-      "description": "Entanglement, 2024\nInstallation, dimensions variable. Human hair, metal wire.",
+      "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
       "work": "entanglement"
     },
     {
@@ -191,6 +191,8 @@
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina is an Argentine artist based in London. Hair embroidered tapestry.",
   "menu": [
+    "Take me|take-me",
+    "Entanglement|entanglement",
     "Portals*Chapter 1*: Complex Beings |portals-chapter-1-complex-beings",
     "The Carrier Bag|the-carrier-bag",
     "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
