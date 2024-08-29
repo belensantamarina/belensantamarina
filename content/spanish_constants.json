@@ -189,6 +189,8 @@
   "i18n_string_social_action": "Ver todos los posts",
   "description": "Belén Santamarina es una artista Argentina radicada en Londres. Tapices bordados con cabello.",
   "menu": [
+    "Take Me (llevame)|take-me",
+    "Entanglement (Enredos)|entanglement",
     "Portales*Capítulo 1*: Seres complejos |portales-capítulo-1-seres-complejos",
     "The Carrier Bag |the-carrier-bag",
     "Sangre caliente|sangre-caliente",
