@@ -1,8 +1,8 @@
 {
   "language": "es-AR",
   "name": "Take Me (llevame)",
-  "description": "Take Me (llevame), 2024\nPoema instalación, dimensiones variables\nPelo humano, marco metálico, argollas, cadenas",
-  "body": "Take Me (llevame), 2024\nPoema instalación, dimensiones variables\nPelo humano, marco metálico, argollas, cadenas",
+  "description": "Take Me (llevame), 2024\nPoema instalación\nPelo humano, metal\n\nFotografía: Ollie Harp",
+  "body": "Take Me (llevame), 2024\nPoema instalación\nPelo humano, metal\n\nFotografía: Ollie Harp",
   "gallery": [
     {
       "file": "take-me.webp",
@@ -11,6 +11,14 @@
     {
       "file": "take-me_01.webp",
       "description": "Take Me, 2024\nPoema instalación, dimensiones variables\nPelo humano, marco metálico, argollas, cadenas"
+    },
+    {
+      "file": "take-me_02.webp",
+      "description": "Take Me (llevame), 2024\nPoema instalación\nPelo humano, metal\n\nFotografía: Ollie Harp"
+    },
+    {
+      "file": "take-me_03.webp",
+      "description": "Take Me (llevame), 2024\nPoema instalación\nPelo humano, metal\n\nFotografía: Ollie Harp"
     }
   ]
 }
