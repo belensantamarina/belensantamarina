@@ -1,16 +1,28 @@
 {
   "language": "en-GB",
-  "description": "Entanglement, 2024\nInstallation, variable dimensions. Human hair, metal wire.",
+  "description": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions",
   "name": "Entanglement",
-  "body": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
+  "body": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions",
   "gallery": [
     {
-      "file": "entanglement.webp",
-      "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire."
+      "description": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions",
+      "file": "entanglement_00.webp"
     },
     {
       "file": "entanglement_01.webp",
-      "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire."
+      "description": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions"
+    },
+    {
+      "file": "entanglement_02.webp",
+      "description": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions"
+    },
+    {
+      "file": "entanglement_03.webp",
+      "description": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions"
+    },
+    {
+      "file": "entanglement.webp",
+      "description": "Entanglement, 2024\nInstallation\nHuman hair, metal\nVariable dimensions"
     }
   ]
 }
