@@ -19,8 +19,6 @@ jobs:
           fetch-depth: 0
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.2.0
-        with:
-          cache: npm
       - run: npm install
       - name: Install ImageMagick
         run: sudo apt install imagemagick
