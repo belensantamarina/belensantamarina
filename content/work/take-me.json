@@ -1,16 +1,24 @@
 {
   "language": "en-GB",
   "name": "Take me",
-  "description": "Poem installation, variable dimensions\nHuman hair, metal frame, metal rings, chains",
-  "body": "**Take Me**, 2024\n\nPoem installation, variable dimensions\n\nHuman hair, metal frame, metal rings, chains.",
+  "description": "Take me, 2024\nPoem installation\nHuman hair, metal \n102 x 90 cm ~ 40 x 35 in\n\nPh. Ollie Harp",
+  "body": "Take me, 2024\nPoem installation\nHuman hair, metal \n102 x 90 cm ~ 40 x 35 in\n\nPh. Ollie Harp",
   "gallery": [
     {
       "file": "take-me.webp",
-      "description": "**Take Me**, 2024\nPoem installation, variable dimensions"
+      "description": "Take me, 2024\nPoem installation\nHuman hair, metal \n102 x 90 cm ~ 40 x 35 in"
     },
     {
       "file": "take-me_01.webp",
-      "description": "**Take Me**, 2024\nPoem installation, variable dimensions"
+      "description": "Take me, 2024\nPoem installation\nHuman hair, metal \n102 x 90 cm ~ 40 x 35 in"
+    },
+    {
+      "file": "take-me_02.webp",
+      "description": "Take me, 2024\nPoem installation\nHuman hair, metal \n102 x 90 cm ~ 40 x 35 in"
+    },
+    {
+      "file": "take-me_03.webp",
+      "description": "Take me, 2024\nPoem installation\nHuman hair, metal \n102 x 90 cm ~ 40 x 35 in"
     }
   ]
 }
