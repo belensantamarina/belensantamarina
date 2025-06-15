@@ -1,15 +1,27 @@
 {
   "language": "es-AR",
   "name": "Entanglement (Enredos)",
-  "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
-  "body": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
+  "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.\n\nFotografía: Ollie Harp",
+  "body": "Entanglement, 2024\nInstalación. Cabello humano, metal.\n\nFotografía: Ollie Harp",
   "gallery": [
     {
-      "file": "entanglement.webp",
+      "file": "entanglement_00.webp",
       "description": "Entanglement, 2024\nInstalación. Cabello humano, metal."
     },
     {
       "file": "entanglement_01.webp",
+      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal."
+    },
+    {
+      "file": "entanglement_02.webp",
+      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal."
+    },
+    {
+      "file": "entanglement_03.webp",
+      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal."
+    },
+    {
+      "file": "entanglement.webp",
       "description": "Entanglement, 2024\nInstalación. Cabello humano, metal."
     }
   ]
