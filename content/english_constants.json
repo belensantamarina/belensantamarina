@@ -107,7 +107,7 @@
   "i18n_string_gallery_action": "Select photo number",
   "gallery": [
     {
-      "file": "entanglement.webp",
+      "file": "roots-and-bonds_02.webp",
       "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
       "work": "entanglement"
     },
@@ -117,9 +117,19 @@
       "work": "entanglement"
     },
     {
-      "file": "take-me.webp",
+      "file": "roots-and-bonds_07.webp",
       "description": "**Take Me**, 2024\nPoem installation, variable dimensions",
       "work": "take-me"
+    },
+    {
+      "file": "threads-series_02.webp",
+      "description": "Thread series",
+      "work": "threads"
+    },
+    {
+      "file": "roots-and-bonds_10.webp",
+      "description": "Roots and Bonds, 2025 at KOPPEL Collective",
+      "work": "entanglement"
     },
     {
       "file": "portal_2.webp",
@@ -137,19 +147,9 @@
       "work": "migran-t"
     },
     {
-      "file": "sangre_7.webp",
-      "description": "Sangre Caliente (warm-blooded)",
-      "work": "sangre-caliente-warm-blooded"
-    },
-    {
       "file": "migran-t_11.webp",
       "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish.",
       "work": "migran-t"
-    },
-    {
-      "file": "in-dreams_9.webp",
-      "description": "Migran-t: In dreams\nPrimark pillow covers embroidered with human hair. ",
-      "work": "in-dreams-migran-t"
     },
     {
       "file": "sowing_1.webp",
@@ -170,16 +170,6 @@
       "file": "conserve-n2_3.webp",
       "description": "Chronology Translator, 2019. Conserve Nº2 (Seed Capital) · Triangular Collective | Ph. Martina Mordeau.",
       "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "letters-to_1.webp",
-      "description": "Recipes for distance. installation and collective experience. The transcription of the letters in pasta format are sealed and displayed in a cupboard, waiting to be eaten, shared, thrown away.",
-      "work": ""
-    },
-    {
-      "file": "ghost_1.webp",
-      "description": "White panties embroidered with human hair lying on the rope in the garden. Belonging to the work My desire is a ghost.",
-      "work": "migran-t"
     }
   ],
   "i18n_string_works": "Works",
