@@ -191,10 +191,11 @@
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina is an Argentine artist based in London. Hair embroidered tapestry.",
   "menu": [
-    "Take me|take-me",
     "Entanglement|entanglement",
-    "Portals*Chapter 1*: Complex Beings |portals-chapter-1-complex-beings",
+    "Threads|threads",
+    "Take me|take-me",
     "The Carrier Bag|the-carrier-bag",
+    "Portals*Chapter 1*: Complex Beings |portals-chapter-1-complex-beings",
     "Sangre Caliente (Warm-blooded)|sangre-caliente-warm-blooded",
     "In dreams (Migran-t)|in-dreams-migran-t",
     "Migran-t|migran-t",
