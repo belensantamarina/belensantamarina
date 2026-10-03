@@ -2,74 +2,11 @@
   "i18n_string_about": "Acerca",
   "i18n_string_menu": "Menú",
   "about": "Belen Santamarina\\\nb. Buenos Aires, Argentina 1993\\\nVive y trabaja en Londres, Reino Unido\n\nA través del uso de cabello, tierra, semillas y alimento como materiales, sus obras exploran lo autobiográfico y confesional para crear tapices, objetos e instalaciones. Su practica aborda experiencias de migraciones personales y colectivas, combinando recuerdos con ciencia ficción y el mundo natural para imaginar y proponer narrativas alternativas al discurso dominante.\n\nBelen Santamarina utiliza técnicas artesanales heredadas de las mujeres de su familia, como el bordado, el crochet y la cocina. Estas técnicas han sido sistemáticamente recluidas al espacio doméstico y femenino. Al emplearlos, pretende cuestionar las relaciones de poder en el arte en relación a la artesanía mientras reescribo su historia y honro sus raíces.\n\nSu formación esta basada en clínicas y talleres. Asistió a las clínicas de formación de Diana Aisenberg, Flavia Da Rin y Belen Romero Gunset. Expuso sus obras en Argentina, Taiwán, España, Estados Unidos y Reino Unido. En 2019, recibió la Mención Honorífica en el Taoyuan Art Award 2023 en Taiwán. Su obra Migran-t ha sido adquirida recientemente por el Taoyuan Museum of Fine Arts, Taiwán (TMoFA).",
-  "i18n_string_gallery_action": "Seleccionar foto número",
-  "gallery": [
-    {
-      "file": "roots-and-bonds_02.webp",
-      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
-      "work": "entanglement"
-    },
-    {
-      "file": "entanglement_01.webp",
-      "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
-      "work": "entanglement"
-    },
-    {
-      "file": "roots-and-bonds_07.webp",
-      "description": "Take Me (llevame), 2024\nPoema instalación, dimensiones variables\nPelo humano, marco metálico, argollas, cadenas",
-      "work": "take-me"
-    },
-    {
-      "file": "threads-series_02.webp",
-      "description": "Threads Series",
-      "work": "threads-hilos"
-    },
-    {
-      "file": "roots-and-bonds_10.webp",
-      "description": "Roots and Bonds, 2025 at KOPPEL Collective",
-      "work": "entanglement"
-    },
-    {
-      "file": "portal_2.webp",
-      "description": "Portal 1: Seres complejos, 2024\n\nLienzos bordados con cabello humano.\nPelo, cadena, argollas metálicas, vidrio.",
-      "work": "portales-capítulo-1-seres-complejos"
-    },
-    {
-      "file": "portal_4.webp",
-      "description": "Portal 1: Seres complejos (detalle), 2024\n\nLienzos bordados con cabello humano.\nPelo, cadena, argollas metálicas, vidrio.",
-      "work": "portales-capítulo-1-seres-complejos"
-    },
-    {
-      "file": "migran-t_9.webp",
-      "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
-      "work": "migran-t"
-    },
-    {
-      "file": "migran-t_11.webp",
-      "description": "Detalle de la sábana bordada con cabello humano. Pertenece a la obra Migran-t. La imagen muestra el bordado del mapa de la Argentina al lado del mapa del Reino Unido con la leyenda \"Ni acá ni allá\" en Español e Inglés.",
-      "work": "migran-t"
-    },
-    {
-      "file": "sowing_1.webp",
-      "description": "2018. Siembra. Performance, 15 minutos. URRA (Tiara, Buenos Aires, Argentina)",
-      "work": "siembra"
-    },
-    {
-      "file": "conserve-n2_1.webp",
-      "description": "Vista general de la muestra Conserva Nº2 del Colectivo Triangular en Fundación Cazadores. \nColectivo Triangular está conformado por Regina Calcaterra, Leonardo Vallejo y Belén Santamarina.\nEl proyecto investiga a la Semilla desde un contexto biológico, antropológico, histórico, social, económico y político como plataforma para imaginar el futuro.",
-      "work": "conserva-n2-capital-semilla"
-    },
-    {
-      "file": "conserve-n2_2.webp",
-      "description": "MES (Máquina Expendedora de Semillas), 2019. Conserva Nº2 (Capital Semilla) · Colectivo Triangular | Ph. Martina Mordeau.",
-      "work": "conserva-n2-capital-semilla"
-    },
-    {
-      "file": "conserve-n2_3.webp",
-      "description": "Traductor de Cronologías, 2019. Conserva Nº2 (Capital Semilla) · Colectivo Triangular | Ph. Martina Mordeau.",
-      "work": "conserva-n2-capital-semilla"
-    }
-  ],
+  "image": {
+    "file": "roots-and-bonds_02.webp",
+    "description": "Entanglement, 2024\nInstalación. Cabello humano, metal.",
+    "work": "entanglement"
+  },
   "title": "Belen Santamarina",
   "language": "es-AR",
   "i18n_string_social": "Lado B",

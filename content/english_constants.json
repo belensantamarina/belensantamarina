@@ -2,74 +2,11 @@
   "i18n_string_about": "About",
   "i18n_string_menu": "Menu",
   "about": "Belen Santamarina\n\nb. Buenos Aires, Argentina \\\nlives in London, United Kingdom\n\nThrough the use of hair, soil, seeds and food as materials, Belen Santamarina's works explore the autobiographical and confessional to create tapestries, objects and installations. Her works engage with personal and collective migration experiences and the use of memories hybridised with science fiction and the natural world to imagine and propose alternative narratives to dominant discourses.\n\nSantamarina employs crafts historically secluded to the feminine and domestic space investigating relations of power between fine arts and craft.  \n\nHer formation is based on critical study groups and painting workshops. She exhibited her work in Argentina, Taiwan, Spain, USA and UK. In 2019, she was awarded the Honorary Mention at the Taoyuan International Art Award 2023 in Taiwan. In 2023 her work Migran-t was acquired by the Taoyuan Museum of Fine Arts, Taiwan (TMoFA).",
-  "i18n_string_gallery_action": "Select photo number",
-  "gallery": [
-    {
-      "file": "roots-and-bonds_02.webp",
-      "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
-      "work": "entanglement"
-    },
-    {
-      "file": "entanglement_01.webp",
-      "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
-      "work": "entanglement"
-    },
-    {
-      "file": "roots-and-bonds_07.webp",
-      "description": "**Take Me**, 2024\nPoem installation, variable dimensions",
-      "work": "take-me"
-    },
-    {
-      "file": "threads-series_02.webp",
-      "description": "Thread series",
-      "work": "threads"
-    },
-    {
-      "file": "roots-and-bonds_10.webp",
-      "description": "Roots and Bonds, 2025 at KOPPEL Collective",
-      "work": "entanglement"
-    },
-    {
-      "file": "portal_2.webp",
-      "description": "Portals*Chapter 1*: Complex Beings ",
-      "work": "portals-chapter-1-complex-beings"
-    },
-    {
-      "file": "portal_5.webp",
-      "description": "Portals*Chapter 1*: Complex Beings ",
-      "work": "portals-chapter-1-complex-beings"
-    },
-    {
-      "file": "migran-t_9.webp",
-      "description": "Migran-t, First skin: Nostalgia. 2021.\nPrimark flat sheet embroidered with human hair. \n150 x 200 cm.",
-      "work": "migran-t"
-    },
-    {
-      "file": "migran-t_11.webp",
-      "description": "Detail of bedsheet embroidered with human hair. Belonging to the work Migran-t, the embroidery shows the map of Argentina next to the United Kingdom map with the legend \"Nor here, not there\" in English and Spanish.",
-      "work": "migran-t"
-    },
-    {
-      "file": "sowing_1.webp",
-      "description": "2018. Sowing. Performance, 15 minutes. URRA (Tigre, Buenos Aires, Argentina)",
-      "work": "sowing"
-    },
-    {
-      "file": "conserve-n2_1.webp",
-      "description": "General view of Conserve Nº2 at Fundación Cazadores. Triangular Collective integrated by Regina Calcaterra, Leonardo Vallejo and Belén Santamarina. The project investigates the seed within a biological, anthropological, historical, social, economic and political context as a platform to imagine the future.",
-      "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "conserve-n2_2.webp",
-      "description": "SVM (Seed Vending Machine), 2019. Conserve Nº2 (Seed Capital) · Triangular Collective | Ph. Martina Mordeau.",
-      "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "conserve-n2_3.webp",
-      "description": "Chronology Translator, 2019. Conserve Nº2 (Seed Capital) · Triangular Collective | Ph. Martina Mordeau.",
-      "work": "conserve-n2-seed-capital"
-    }
-  ],
+  "image": {
+    "file": "roots-and-bonds_02.webp",
+    "description": "Entanglement, 2024\nInstallation,  variable dimensions. Human hair, metal wire.",
+    "work": "entanglement"
+  },
   "title": "Belen Santamarina",
   "language": "en-GB",
   "i18n_string_social": "B side",

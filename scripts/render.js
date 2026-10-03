@@ -10,6 +10,7 @@ const {
   prepareDirectory,
 } = require('./utils/filesHandler');
 const { DOMAIN, LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
+const { readWebpSize } = require('./utils/imageSize');
 
 const showdownConverter = new showdown.Converter();
 
@@ -24,17 +25,24 @@ const renderLanguage = async ({
 }) => {
   const renderedLinks = [];
 
-  const parseGalleryItem = (galleryItem) => {
+  const parseGalleryItem = (galleryItem, galleryItemIndex) => {
     const fileName = galleryItem.file.split('.')[0];
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
       tag
         ? `/media/${fileName}${tag}.webp ${tag.replace('@', '')}`
         : `/media/${fileName}.webp`,
     );
+    const imageSize = readWebpSize(`static${sourceSet[0]}`);
+    if (!imageSize) {
+      console.warn(`Could not read image size of ${sourceSet[0]}`);
+    }
     let galleryItemResult = {
       source_set: sourceSet,
       source: sourceSet[0],
       description: galleryItem.description,
+      width: imageSize ? imageSize.width : '',
+      height: imageSize ? imageSize.height : '',
+      loading: galleryItemIndex === 0 ? 'eager' : 'lazy',
     };
     if (galleryItem.work) {
       galleryItemResult.work_link = `/${route}/${galleryItem.work}.html`;
@@ -73,7 +81,6 @@ const renderLanguage = async ({
     description: websiteConstants.description,
     nav_items: navItems,
     i18n_string_menu: websiteConstants.i18n_string_menu,
-    i18n_string_gallery_action: websiteConstants.i18n_string_gallery_action,
     i18n_string_social: websiteConstants.i18n_string_social,
     i18n_string_social_action: websiteConstants.i18n_string_social_action,
     i18n_string_about: websiteConstants.i18n_string_about,
@@ -93,10 +100,7 @@ const renderLanguage = async ({
     let pageConstants = await readFile(`content/${route}/${fileName}`, true);
 
     const galleryItems = pageConstants.gallery
-      ? pageConstants.gallery.map((galleryItem, galleryItemIndex) => ({
-          ...parseGalleryItem(galleryItem),
-          id: galleryItemIndex,
-        }))
+      ? pageConstants.gallery.map(parseGalleryItem)
       : [];
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
@@ -109,7 +113,6 @@ const renderLanguage = async ({
       name: pageConstants.name,
       gallery: galleryItems.length > 0,
       gallery_items: galleryItems,
-      gallery_with_nav: true,
       meta_url: `${DOMAIN}${pagePath}`,
       meta_image:
         galleryItems.length > 0 ? `${DOMAIN}${galleryItems[0].source}` : '',
@@ -173,21 +176,15 @@ const renderLanguage = async ({
   // HOMEPAGE
   ////
 
-  const homeGalleryItems = websiteConstants.gallery.map(
-    (galleryItem, galleryItemIndex) => ({
-      ...parseGalleryItem(galleryItem),
-      id: galleryItemIndex,
-    }),
-  );
+  const homeImage = websiteConstants.image
+    ? parseGalleryItem(websiteConstants.image, 0)
+    : null;
 
   const homeData = {
     ...websiteData,
-    gallery: homeGalleryItems.length > 0,
-    gallery_items: homeGalleryItems,
-    meta_image:
-      homeGalleryItems.length > 0
-        ? `${DOMAIN}${homeGalleryItems[0].source}`
-        : '',
+    gallery: Boolean(homeImage),
+    gallery_items: homeImage ? [homeImage] : [],
+    meta_image: homeImage ? `${DOMAIN}${homeImage.source}` : '',
     hidden_body: aboutBody,
   };
 

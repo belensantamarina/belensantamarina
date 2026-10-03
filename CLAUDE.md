@@ -8,7 +8,7 @@ Portfolio website for the artist Belén Santamarina (belensantamarina.com). It i
 - **No frameworks or runtime libraries in the browser.** Client JS is plain DOM code (`document.createElement`, `fetch`). Don't add npm packages that end up in the shipped bundle. Build-time devDependencies are fine when they're justified.
 - **Load JS per page.** `script.min.js` loads everywhere. The other scripts are pulled in through Mustache flags only on the pages that need them (`{{#social}}`, `{{#plugin_form}}`). Follow the same pattern for new features.
 - **Keep the build simple.** Plain npm scripts plus `scripts/render.js`, with no bundler. Don't introduce Webpack/Vite/etc.
-- Images are WebP with `srcset` at 4 densities, `decoding="async"`, and lazy loading where it's not above the fold.
+- Images are WebP with `srcset` at 4 densities, `decoding="async"`, and `width`/`height` read from the file at build time (`scripts/utils/imageSize.js`) so there's no layout shift. The first image on a page is eager, the rest lazy. Work images are stacked one below the other, with no carousel JS.
 
 ## Commands
 
@@ -37,7 +37,7 @@ Node version is in `.nvmrc`. There are no tests. To verify a change, run `npm ru
 ## Content and i18n
 
 - There are three languages: English (`content/work`), Spanish (`content/obra`) and Chinese (`content/艺术品`). Output routes match these folder names, including non-ASCII paths, so quote paths in shell commands.
-- `content/<language>_constants.json` holds site-wide strings and data for each language: `menu` (entries are `"Display Name|slug"`), the `gallery` list, `about`, `footer` and the `i18n_string_*` labels.
+- `content/<language>_constants.json` holds site-wide strings and data for each language: `menu` (entries are `"Display Name|slug"`), the homepage `image` (`file`, `description`, optional `work` slug), `about`, `footer` and the `i18n_string_*` labels.
 - Each work is a JSON file: `name`, `description`, `body` (Markdown, rendered with Showdown), an optional `gallery` (`file` and `description`), `language`, and an optional `plugin` (`"form"` loads `form.js`).
 - WebP is the only accepted upload format for `content/media`. The optimise script and workflow only handle `.webp`.
 - Gallery `file` names map to `static/media/<name>{,@1.5x,@2x,@3x}.webp`, so those variants must exist.

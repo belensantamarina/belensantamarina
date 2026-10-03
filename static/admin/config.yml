@@ -133,9 +133,6 @@ collections:
           - name: 'i18n_string_menu'
             widget: 'hidden'
             default: 'Menu'
-          - name: 'i18n_string_gallery_action'
-            widget: 'hidden'
-            default: 'Select photo number'
           - name: 'i18n_string_social'
             widget: 'string'
             default: 'B side'
@@ -156,9 +153,9 @@ collections:
               value_field: '{{name}}|{{slug}}'
               search_fields: ['name']
               display_fields: ['name']
-          - name: 'gallery'
-            label: 'Gallery'
-            widget: 'list'
+          - name: 'image'
+            label: 'Image'
+            widget: 'object'
             fields:
               - name: 'file'
                 label: 'File'
@@ -197,9 +194,6 @@ collections:
           - name: 'i18n_string_menu'
             widget: 'hidden'
             default: 'Menú'
-          - name: 'i18n_string_gallery_action'
-            widget: 'hidden'
-            default: 'Seleccionar foto número'
           - name: 'i18n_string_social'
             widget: 'string'
             default: 'Lado B'
@@ -220,9 +214,9 @@ collections:
               value_field: '{{name}}|{{slug}}'
               search_fields: ['name']
               display_fields: ['name']
-          - name: 'gallery'
-            label: 'Gallery'
-            widget: 'list'
+          - name: 'image'
+            label: 'Image'
+            widget: 'object'
             fields:
               - name: 'file'
                 label: 'File'
@@ -261,9 +255,6 @@ collections:
           - name: 'i18n_string_menu'
             widget: 'hidden'
             default: '菜单'
-          - name: 'i18n_string_gallery_action'
-            widget: 'hidden'
-            default: '选择照片编号'
           - name: 'i18n_string_social'
             widget: 'string'
             default: 'B面'
@@ -284,9 +275,9 @@ collections:
               value_field: '{{name}}|{{slug}}'
               search_fields: ['name']
               display_fields: ['name']
-          - name: 'gallery'
-            label: 'Galley'
-            widget: 'list'
+          - name: 'image'
+            label: 'Image'
+            widget: 'object'
             fields:
               - name: 'file'
                 label: 'File'
