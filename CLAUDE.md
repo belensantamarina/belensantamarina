@@ -24,10 +24,10 @@ Node version is in `.nvmrc`. There are no tests. To verify a change, run `npm ru
 
 ## Layout
 
-- `index.html`: the **single Mustache template** for every page (home, work pages, about, shows, social). Page types are toggled by template variables.
+- `index.html`: the **single Mustache template** for every page (home, work pages, about, social). Page types are toggled by template variables.
 - `style.scss`: all styles in one file. Built to `build/style.min.css` (sass → autoprefixer → cssnano).
 - `script.js`, `social.js`, `form.js`: client scripts. **Every `*.js` in the repo root is compiled by Babel** to `build/*.min.js` (preset-env + minify), so don't put Node or config `.js` files in the root.
-- `scripts/render.js`: the build. For each language it renders work pages, about, shows, social and the homepage, then writes `build/sitemap.xml`.
+- `scripts/render.js`: the build. For each language it renders work pages, about, social and the homepage, then writes `build/sitemap.xml`.
 - `scripts/utils/constants.js`: `DOMAIN`, `LANGUAGES` (routes and page filenames per language) and `IMAGE_RESOLUTIONS`.
 - `scripts/optimise.js` + `bin/optimise`: image pipeline. Run by `.github/workflows/optimise.yml` on pushes to `main` that touch `content/media`.
 - `functions/form.mjs`: Netlify Function behind the contact form (`/.netlify/functions/form`). Sends mail via AWS SES using the `BS_SES_*` env vars. `@aws-sdk/client-sesv2` is the only runtime dependency and is used only here.
@@ -37,7 +37,7 @@ Node version is in `.nvmrc`. There are no tests. To verify a change, run `npm ru
 ## Content and i18n
 
 - There are three languages: English (`content/work`), Spanish (`content/obra`) and Chinese (`content/艺术品`). Output routes match these folder names, including non-ASCII paths, so quote paths in shell commands.
-- `content/<language>_constants.json` holds site-wide strings and data for each language: `menu` / `secondary_menu` (entries are `"Display Name|slug"`), the `gallery` and `shows_gallery` lists, `about`, `footer` and the `i18n_string_*` labels.
+- `content/<language>_constants.json` holds site-wide strings and data for each language: `menu` / `secondary_menu` (entries are `"Display Name|slug"`), the `gallery` list, `about`, `footer` and the `i18n_string_*` labels.
 - Each work is a JSON file: `name`, `description`, `body` (Markdown, rendered with Showdown), an optional `gallery` (`file` and `description`), `language`, and an optional `plugin` (`"form"` loads `form.js`).
 - WebP is the only accepted upload format for `content/media`. The optimise script and workflow only handle `.webp`.
 - Gallery `file` names map to `static/media/<name>{,@1.5x,@2x,@3x}.webp`, so those variants must exist.

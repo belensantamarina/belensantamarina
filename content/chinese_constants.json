@@ -1,101 +1,5 @@
 {
   "i18n_string_about": "关于",
-  "shows_gallery": [
-    {
-      "description": "Taoyuan International Art Award 2023, Taiwan.\nHonorary Mention.",
-      "file": "tiaa-1.webp",
-      "work": "migran-t"
-    },
-    {
-      "file": "tiaa-2.webp",
-      "description": "Taoyuan International Art Award 2023, Taiwan.",
-      "work": "migran-t"
-    },
-    {
-      "file": "tiaa-3.webp",
-      "description": "Taoyuan International Art Award 2023, Taiwan.\nMigran-t: First Skin, Nostalgia",
-      "work": "migran-t"
-    },
-    {
-      "file": "in-dreams_1.webp",
-      "description": "《Word of Mouth》由Rosalyn D’Mello策展，于芝加哥Woman Made Gallery展出（美国，2022年）",
-      "work": "in-dreams-migran-t"
-    },
-    {
-      "file": "in-dreams_4.webp",
-      "description": "《Word of Mouth》由Rosalyn D’Mello策展，于芝加哥Woman Made Gallery展出（美国，2022年）",
-      "work": "in-dreams-migran-t"
-    },
-    {
-      "file": "in-dreams_5.webp",
-      "description": "《Word of Mouth》由Rosalyn D’Mello策展，于芝加哥Woman Made Gallery展出（美国，2022年）",
-      "work": "in-dreams-migran-t"
-    },
-    {
-      "file": "invitadisimes-munar-cleene-1.webp",
-      "description": "《Invitadisimes》由Flavia Da Rin举办的研究作坊作品展，于布宜诺斯艾利斯的Munar展出（阿根廷）"
-    },
-    {
-      "file": "invitadisimes-munar-cleene-2.webp",
-      "description": "《Invitadisimes》由Flavia Da Rin举办的研究作坊作品展，于布宜诺斯艾利斯的Munar展出（阿根廷）"
-    },
-    {
-      "file": "a-voyage-of-absurdity-1.webp",
-      "description": "《A Voyage of Absurdity》由Vanessa Giorgo、Anna Kolosova及Melissa Vipritskaya Topal携手策展，于伦敦工艺美术中心Craft Central展出（英国，2021年）",
-      "work": "migran-t"
-    },
-    {
-      "file": "a-voyage-of-absurdity-2.webp",
-      "description": "《A Voyage of Absurdity》由Vanessa Giorgo、Anna Kolosova及Melissa Vipritskaya Topal携手策展，于伦敦工艺美术中心Craft Central展出（英国，2021年）",
-      "work": "migran-t"
-    },
-    {
-      "file": "conserve-n2_1.webp",
-      "description": "《Conserve nº 2》是PIPA项目下的展览，于布宜诺斯艾利斯Fundación Cazadores艺术中心展出（阿根廷，2019年）",
-      "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "conserve-n2_14.webp",
-      "description": "《Conserve nº 2》是PIPA项目下的展览，于布宜诺斯艾利斯Fundación Cazadores艺术中心展出（阿根廷，2019年）",
-      "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "conserve-n2_17.webp",
-      "description": "《Conserve nº 2》是PIPA项目下的展览，于布宜诺斯艾利斯Fundación Cazadores艺术中心展出（阿根廷，2019年）",
-      "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "conserve-n2_8.webp",
-      "description": "《Conserve nº 2》是PIPA项目下的展览，于布宜诺斯艾利斯Fundación Cazadores艺术中心展出（阿根廷，2019年）",
-      "work": "conserve-n2-seed-capital"
-    },
-    {
-      "file": "conserve-n1_10.webp",
-      "description": "Conserve nº1 by Triangular Collective for Bienal de Arte Joven de Santa Fe (2018). Honorary Mention. ",
-      "work": "conserve-n1-2018-2048"
-    },
-    {
-      "file": "conserve-n1_11.webp",
-      "description": "《Conserve nº1》圣塔菲青年艺术双年展 - 荣誉奖（阿根廷，2018年）",
-      "work": "conserve-n1-2018-2048"
-    },
-    {
-      "file": "conserve-n1_1.webp",
-      "description": "《Conserve nº1》圣塔菲青年艺术双年展 - 荣誉奖（阿根廷，2018年）",
-      "work": "conserve-n1-2018-2048"
-    },
-    {
-      "file": "memory_2.webp",
-      "description": "《Memory of the action》Fundación Proyecto‘ace的[Espacio en Blanco]常设展览（阿根廷，2018）",
-      "work": "memory-of-the-action"
-    },
-    {
-      "file": "calendar_2.webp",
-      "description": "《A pictorial calendar to see the world》Premio Internacional de Artes Plásticas Caja de Extremadura 埃斯特雷马杜拉卡哈国际视觉艺术奖（西班牙卡塞雷斯，2018年）",
-      "work": "a-pictorial-calendar-to-see-the-world"
-    }
-  ],
-  "i18n_string_shows": "艺术展览",
   "secondary_menu": [
     "Memory of the action|memory-of-the-action",
     "Consecrated|consecrated",
@@ -162,7 +66,6 @@
     }
   ],
   "i18n_string_works": "艺术品",
-  "shows": [],
   "title": "Belen Santamarina",
   "language": "zh-CN",
   "i18n_string_social": "B面",

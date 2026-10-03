@@ -18,7 +18,6 @@ const renderLanguage = async ({
   index,
   social,
   about,
-  shows,
   route,
   link,
   abbreviation,
@@ -80,7 +79,6 @@ const renderLanguage = async ({
     i18n_string_social: websiteConstants.i18n_string_social,
     i18n_string_social_action: websiteConstants.i18n_string_social_action,
     i18n_string_about: websiteConstants.i18n_string_about,
-    i18n_string_shows: websiteConstants.i18n_string_shows,
     i18n_string_works: websiteConstants.i18n_string_works,
     about: websiteConstants.about,
     i18n_string_current_language: link,
@@ -88,7 +86,6 @@ const renderLanguage = async ({
     current_language_index: index,
     current_language_social: social,
     current_language_about: about,
-    current_language_shows: shows,
     other_languages: otherLanguages,
     meta_url: `${DOMAIN}${index}`,
   };
@@ -173,45 +170,6 @@ const renderLanguage = async ({
     url: about,
     changefreq: 'yearly',
     priority: 0.95,
-  });
-
-  ////
-  // SHOWS
-  ////
-
-  const showsGalleryItems = websiteConstants.shows_gallery.map(
-    (galleryItem, galleryItemIndex) => ({
-      ...parseGalleryItem(galleryItem),
-      id: galleryItemIndex,
-    }),
-  );
-
-  const showsData = {
-    ...websiteData,
-    html_title: `${websiteData.title}: ${websiteData.i18n_string_shows}`,
-    meta_url: `${DOMAIN}${shows}`,
-    name: websiteData.i18n_string_shows,
-    gallery: showsGalleryItems.length > 0,
-    gallery_items: showsGalleryItems,
-    gallery_with_nav: true,
-    gallery_with_description: true,
-    description:
-      showsGalleryItems.length > 0
-        ? showsGalleryItems[0].description
-        : websiteConstants.description,
-    meta_image:
-      showsGalleryItems.length > 0
-        ? `${DOMAIN}${showsGalleryItems[0].source}`
-        : '',
-  };
-
-  const showsOutput = mustache.render(baseTemplate, showsData);
-  await writeFile(`build${shows}`, showsOutput);
-
-  renderedLinks.push({
-    url: shows,
-    changefreq: 'yearly',
-    priority: 0.85,
   });
 
   ////

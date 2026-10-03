@@ -318,17 +318,6 @@ main {
         }
       }
     }
-    &.descriptive {
-      ul {
-        height: 24rem;
-        @media screen and (min-width: 48rem) {
-          height: 34rem;
-          li p {
-            font-size: 1rem;
-          }
-        }
-      }
-    }
     div {
       display: flex;
       justify-content: center;
@@ -414,31 +403,6 @@ main {
 
       div {
         display: none;
-      }
-
-      &.descriptive {
-        ul {
-          display: block;
-          height: auto;
-          li {
-            min-height: 18rem;
-            margin-bottom: 2rem;
-            height: auto;
-            display: flex;
-            flex-direction: row-reverse;
-            max-height: 100%;
-            align-items: center;
-            img {
-              break-inside: avoid;
-              width: auto;
-              object-fit: contain;
-            }
-            p {
-              width: 40%;
-              position: static;
-            }
-          }
-        }
       }
     }
   }
