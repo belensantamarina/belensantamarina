@@ -123,7 +123,7 @@ const renderLanguage = async ({
     };
 
     const pageOutput = mustache.render(baseTemplate, pageData);
-    writeFile(`build${pagePath}`, pageOutput);
+    await writeFile(`build${pagePath}`, pageOutput);
 
     renderedLinks.push({
       url: pagePath,
@@ -144,7 +144,7 @@ const renderLanguage = async ({
   };
 
   const socialOutput = mustache.render(baseTemplate, socialData);
-  writeFile(`build${social}`, socialOutput);
+  await writeFile(`build${social}`, socialOutput);
 
   renderedLinks.push({
     url: social,
@@ -167,7 +167,7 @@ const renderLanguage = async ({
   };
 
   const aboutOutput = mustache.render(baseTemplate, aboutData);
-  writeFile(`build${about}`, aboutOutput);
+  await writeFile(`build${about}`, aboutOutput);
 
   renderedLinks.push({
     url: about,
@@ -206,7 +206,7 @@ const renderLanguage = async ({
   };
 
   const showsOutput = mustache.render(baseTemplate, showsData);
-  writeFile(`build${shows}`, showsOutput);
+  await writeFile(`build${shows}`, showsOutput);
 
   renderedLinks.push({
     url: shows,
@@ -237,7 +237,7 @@ const renderLanguage = async ({
   };
 
   const homeOutput = mustache.render(baseTemplate, homeData);
-  writeFile(`build${index}`, homeOutput);
+  await writeFile(`build${index}`, homeOutput);
 
   renderedLinks.push({
     url: index,
@@ -248,28 +248,21 @@ const renderLanguage = async ({
   return renderedLinks;
 };
 
-const generateSitemap = (renderedLinksGroups) => {
+const generateSitemap = async (renderedLinksGroups) => {
   const renderedLinks = renderedLinksGroups
     .flat()
     .sort((a, b) => b.priority - a.priority);
   const stream = new SitemapStream({ hostname: DOMAIN });
-  streamToPromise(Readable.from(renderedLinks).pipe(stream))
-    .then((data) => data.toString())
-    .then((result) => {
-      writeFile('build/sitemap.xml', result);
-    });
+  const data = await streamToPromise(Readable.from(renderedLinks).pipe(stream));
+  await writeFile('build/sitemap.xml', data.toString());
 };
 
-const render = () => {
-  const renderedLinksGroups = [];
-  LANGUAGES.forEach((language) => {
-    renderLanguage(language).then((newlyRenderedLinks) => {
-      renderedLinksGroups.push(newlyRenderedLinks);
-      if (renderedLinksGroups.length === LANGUAGES.length) {
-        generateSitemap(renderedLinksGroups);
-      }
-    });
-  });
+const render = async () => {
+  const renderedLinksGroups = await Promise.all(LANGUAGES.map(renderLanguage));
+  await generateSitemap(renderedLinksGroups);
 };
 
-render();
+render().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
