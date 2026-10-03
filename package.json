@@ -26,22 +26,22 @@
   },
   "homepage": "https://belensantamarina.com",
   "devDependencies": {
-    "@babel/cli": "^7.24.8",
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.4",
+    "@babel/cli": "^8.0.6",
+    "@babel/core": "^8.0.6",
+    "@babel/preset-env": "^8.0.6",
     "args": "^5.0.3",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.6.1",
     "babel-preset-minify": "^0.5.2",
-    "cssnano": "^7.0.5",
+    "cssnano": "^9.0.5",
     "mustache": "^4.2.0",
-    "postcss": "^8.4.41",
-    "postcss-cli": "^11.0.0",
-    "prettier": "^3.3.3",
-    "sass": "^1.77.8",
-    "serve": "^14.2.3",
+    "postcss": "^8.5.28",
+    "postcss-cli": "^12.0.0",
+    "prettier": "^3.9.9",
+    "sass": "^1.105.0",
+    "serve": "^14.2.6",
     "shelljs": "^0.8.5",
     "showdown": "^2.1.0",
-    "sitemap": "^8.0.0"
+    "sitemap": "^9.0.1"
   },
   "babel": {
     "presets": [
@@ -53,6 +53,6 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@aws-sdk/client-sesv2": "^3.637.0"
+    "@aws-sdk/client-sesv2": "^3.1141.0"
   }
 }
