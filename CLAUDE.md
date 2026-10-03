@@ -37,7 +37,7 @@ Node version is in `.nvmrc`. There are no tests. To verify a change, run `npm ru
 ## Content and i18n
 
 - There are three languages: English (`content/work`), Spanish (`content/obra`) and Chinese (`content/艺术品`). Output routes match these folder names, including non-ASCII paths, so quote paths in shell commands.
-- `content/<language>_constants.json` holds site-wide strings and data for each language: `menu` / `secondary_menu` (entries are `"Display Name|slug"`), the `gallery` list, `about`, `footer` and the `i18n_string_*` labels.
+- `content/<language>_constants.json` holds site-wide strings and data for each language: `menu` (entries are `"Display Name|slug"`), the `gallery` list, `about`, `footer` and the `i18n_string_*` labels.
 - Each work is a JSON file: `name`, `description`, `body` (Markdown, rendered with Showdown), an optional `gallery` (`file` and `description`), `language`, and an optional `plugin` (`"form"` loads `form.js`).
 - WebP is the only accepted upload format for `content/media`. The optimise script and workflow only handle `.webp`.
 - Gallery `file` names map to `static/media/<name>{,@1.5x,@2x,@3x}.webp`, so those variants must exist.
