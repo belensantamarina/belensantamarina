@@ -84,6 +84,7 @@ const renderLanguage = async ({
     i18n_string_social: websiteConstants.i18n_string_social,
     i18n_string_social_action: websiteConstants.i18n_string_social_action,
     i18n_string_about: websiteConstants.i18n_string_about,
+    i18n_string_contact: websiteConstants.i18n_string_contact,
     about: websiteConstants.about,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
