@@ -63,7 +63,11 @@ const renderLanguage = async ({
 
   const navItems = websiteConstants.menu.map(parseMenuItem);
 
-  const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
+  const websiteFooter = showdownConverter.makeHtml(
+    mustache.render(websiteConstants.footer, {
+      year: new Date().getFullYear(),
+    }),
+  );
   const otherLanguages = LANGUAGES.filter(
     (otherLanguage) => otherLanguage.language !== language,
   ).map((otherLanguage) => ({

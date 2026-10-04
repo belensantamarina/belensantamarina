@@ -11,7 +11,7 @@
   "title": "Belen Santamarina",
   "language": "zh-CN",
   "i18n_string_social": "B面",
-  "footer": "联系方式: **contact(at)belensantamarina.com**。版权所有 © 2026 Belen Santamarina。<a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">此为开源网站</a>, 根据GNU AGPL进行克隆和合成。开源万岁",
+  "footer": "联系方式: **contact(at)belensantamarina.com**。版权所有 © {{year}} Belen Santamarina。<a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">此为开源网站</a>, 根据GNU AGPL进行克隆和合成。开源万岁",
   "i18n_string_social_action": "查看所有帖子",
   "description": "Belen Santamarina，居住在伦敦的阿根廷艺术家。 头发刺绣挂毯。",
   "menu": [

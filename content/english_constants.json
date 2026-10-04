@@ -12,7 +12,7 @@
   "title": "Belen Santamarina",
   "language": "en-GB",
   "i18n_string_social": "B-side",
-  "footer": "Contact: **contact(at)belensantamarina.com**. Copyright © 2026 Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> built to be cloned and composted under the GNU AGPL. Long live open source!",
+  "footer": "Contact: **contact(at)belensantamarina.com**. Copyright © {{year}} Belen Santamarina. This is an <a href=\"https://github.com/belensantamarina/belensantamarina\" target=\"_blank\" rel=\"noreferrer\">open source website</a> built to be cloned and composted under the GNU AGPL. Long live open source!",
   "i18n_string_social_action": "See all posts",
   "description": "Belen Santamarina is an Argentine artist based in London. Hair embroidered tapestry.",
   "menu": [
