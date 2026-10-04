@@ -60,20 +60,26 @@
           <a href="{{{current_language_about}}}">{{i18n_string_about}}</a>
         </li>
         <li>
-          <a href="{{{current_language_shows}}}">{{i18n_string_shows}}</a>
+          <a
+            href="mailto:contact@belensantamarina.com"
+            data-copied="{{i18n_string_contact_copied}}"
+            aria-live="polite"
+            >{{i18n_string_contact}}</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/belen.santamarina/"
+            target="_blank"
+            rel="noopener"
+            >Instagram</a
+          >
         </li>
       </ul>
-      <h4>{{{i18n_string_works}}}</h4>
       <ul>
         {{#nav_items}}
         <li><a href="{{{reference}}}">{{name}}</a></li>
         {{/nav_items}}
-      </ul>
-      <h4 lang="en-GB">Oldies but goodies</h4>
-      <ul>
-        {{#secondary_nav_items}}
-        <li><a href="{{{reference}}}">{{name}}</a></li>
-        {{/secondary_nav_items}}
       </ul>
       <h4>{{{i18n_string_social}}}</h4>
       <ul class="social">
@@ -92,30 +98,23 @@
       {{/name}} {{#hidden_body}}
       <section id="about">{{{hidden_body}}}</section>
       {{/hidden_body}} {{#gallery}}
-      <section
-        id="gallery"
-        data-nav="{{gallery_with_nav}}"
-        data-action="{{i18n_string_gallery_action}}"
-        class="{{#gallery_with_description}}descriptive{{/gallery_with_description}}"
-      >
+      <section id="gallery">
         <ul>
           {{#gallery_items}}
-          <li data-id="{{id}}">
+          <li>
             {{#work_link}}<a href="{{{work_link}}}"
               >{{/work_link}}
               <img
-                width="100%"
-                height="100%"
                 src="{{{source}}}"
-                alt="{{description}}"
                 srcset="{{{source_set}}}"
+                alt="{{description}}"
+                width="{{width}}"
+                height="{{height}}"
                 decoding="async"
-                loading="eager"
+                loading="{{loading}}"
               />
               {{#work_link}}</a
-            >{{/work_link}} {{#gallery_with_description}}
-            <p>{{description}}</p>
-            {{/gallery_with_description}}
+            >{{/work_link}}
           </li>
           {{/gallery_items}}
         </ul>

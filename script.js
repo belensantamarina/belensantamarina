@@ -13,66 +13,31 @@ navButton.addEventListener('click', () => {
 });
 
 /********************************/
-/*						GALLERY						*/
+/*           CONTACT            */
 /********************************/
 
-let autoPlayInterval;
+const contactLink = document.querySelector('nav a[data-copied]');
+if (contactLink && navigator.clipboard) {
+  const contactText = contactLink.textContent;
+  const contactEmail = contactLink.href.replace('mailto:', '');
+  let contactTimeout;
 
-const galleryContainer = document.getElementById('gallery');
-if (galleryContainer) {
-  const withNavigation = Boolean(galleryContainer.dataset.nav);
-  const imageContainers = galleryContainer.querySelectorAll('li');
-
-  const selectImage = (imageContainer) => {
-    if (galleryContainer.dataset.selected) {
-      imageContainers[galleryContainer.dataset.selected].classList.toggle(
-        'active',
-      );
-    }
-    imageContainer.classList.toggle('active');
-
-    if (withNavigation) {
-      const imageButtons = galleryContainer.querySelectorAll('button');
-      if (galleryContainer.dataset.selected) {
-        imageButtons[galleryContainer.dataset.selected].classList.toggle(
-          'active',
-        );
-      }
-      imageButtons[imageContainer.dataset.id].classList.toggle('active');
-    }
-    galleryContainer.dataset.selected = imageContainer.dataset.id;
-  };
-
-  if (withNavigation) {
-    const generateButtonTitle = (index) =>
-      `${galleryContainer.dataset.action} ${index + 1}`;
-    const navigationContainer = document.createElement('div');
-
-    imageContainers.forEach((imageContainer, index) => {
-      const imageButton = document.createElement('button');
-      imageButton.style.backgroundImage = `url('${imageContainer
-        .getElementsByTagName('img')[0]
-        .getAttribute('src')}')`;
-      imageButton.addEventListener('click', (event) => {
-        clearInterval(autoPlayInterval);
-        selectImage(imageContainers[index]);
+  contactLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    navigator.clipboard
+      .writeText(contactEmail)
+      .then(() => {
+        contactLink.textContent = `${contactEmail} ${contactLink.dataset.copied}`;
+        contactLink.classList.add('copied');
+        clearTimeout(contactTimeout);
+        contactTimeout = setTimeout(() => {
+          contactLink.textContent = contactText;
+          contactLink.classList.remove('copied');
+        }, 3000);
+      })
+      .catch(() => {
+        window.location.href = contactLink.href;
       });
-      imageButton.title = generateButtonTitle(index);
-      navigationContainer.appendChild(imageButton);
-    });
-
-    galleryContainer.appendChild(navigationContainer);
-  }
-
-  selectImage(imageContainers[0]);
-
-  window.addEventListener('load', () => {
-    autoPlayInterval = window.setInterval(() => {
-      const currentId = Number(galleryContainer.dataset.selected);
-      const nextId =
-        imageContainers.length - 1 >= currentId + 1 ? currentId + 1 : 0;
-      selectImage(imageContainers[nextId]);
-    }, 3000);
   });
 }
 

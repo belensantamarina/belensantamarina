@@ -10,6 +10,7 @@ const {
   prepareDirectory,
 } = require('./utils/filesHandler');
 const { DOMAIN, LANGUAGES, IMAGE_RESOLUTIONS } = require('./utils/constants');
+const { readWebpSize } = require('./utils/imageSize');
 
 const showdownConverter = new showdown.Converter();
 
@@ -18,24 +19,30 @@ const renderLanguage = async ({
   index,
   social,
   about,
-  shows,
   route,
   link,
   abbreviation,
 }) => {
   const renderedLinks = [];
 
-  const parseGalleryItem = (galleryItem) => {
+  const parseGalleryItem = (galleryItem, galleryItemIndex) => {
     const fileName = galleryItem.file.split('.')[0];
     const sourceSet = IMAGE_RESOLUTIONS.map(({ tag }) =>
       tag
         ? `/media/${fileName}${tag}.webp ${tag.replace('@', '')}`
         : `/media/${fileName}.webp`,
     );
+    const imageSize = readWebpSize(`static${sourceSet[0]}`);
+    if (!imageSize) {
+      console.warn(`Could not read image size of ${sourceSet[0]}`);
+    }
     let galleryItemResult = {
       source_set: sourceSet,
       source: sourceSet[0],
       description: galleryItem.description,
+      width: imageSize ? imageSize.width : '',
+      height: imageSize ? imageSize.height : '',
+      loading: galleryItemIndex === 0 ? 'eager' : 'lazy',
     };
     if (galleryItem.work) {
       galleryItemResult.work_link = `/${route}/${galleryItem.work}.html`;
@@ -55,9 +62,12 @@ const renderLanguage = async ({
   );
 
   const navItems = websiteConstants.menu.map(parseMenuItem);
-  const secondaryNavItems = websiteConstants.secondary_menu.map(parseMenuItem);
 
-  const websiteFooter = showdownConverter.makeHtml(websiteConstants.footer);
+  const websiteFooter = showdownConverter.makeHtml(
+    mustache.render(websiteConstants.footer, {
+      year: new Date().getFullYear(),
+    }),
+  );
   const otherLanguages = LANGUAGES.filter(
     (otherLanguage) => otherLanguage.language !== language,
   ).map((otherLanguage) => ({
@@ -74,21 +84,18 @@ const renderLanguage = async ({
     footer: websiteFooter,
     description: websiteConstants.description,
     nav_items: navItems,
-    secondary_nav_items: secondaryNavItems,
     i18n_string_menu: websiteConstants.i18n_string_menu,
-    i18n_string_gallery_action: websiteConstants.i18n_string_gallery_action,
     i18n_string_social: websiteConstants.i18n_string_social,
     i18n_string_social_action: websiteConstants.i18n_string_social_action,
     i18n_string_about: websiteConstants.i18n_string_about,
-    i18n_string_shows: websiteConstants.i18n_string_shows,
-    i18n_string_works: websiteConstants.i18n_string_works,
+    i18n_string_contact: websiteConstants.i18n_string_contact,
+    i18n_string_contact_copied: websiteConstants.i18n_string_contact_copied,
     about: websiteConstants.about,
     i18n_string_current_language: link,
     current_language_abbr: abbreviation,
     current_language_index: index,
     current_language_social: social,
     current_language_about: about,
-    current_language_shows: shows,
     other_languages: otherLanguages,
     meta_url: `${DOMAIN}${index}`,
   };
@@ -99,10 +106,7 @@ const renderLanguage = async ({
     let pageConstants = await readFile(`content/${route}/${fileName}`, true);
 
     const galleryItems = pageConstants.gallery
-      ? pageConstants.gallery.map((galleryItem, galleryItemIndex) => ({
-          ...parseGalleryItem(galleryItem),
-          id: galleryItemIndex,
-        }))
+      ? pageConstants.gallery.map(parseGalleryItem)
       : [];
 
     const pageBody = showdownConverter.makeHtml(pageConstants.body);
@@ -115,7 +119,6 @@ const renderLanguage = async ({
       name: pageConstants.name,
       gallery: galleryItems.length > 0,
       gallery_items: galleryItems,
-      gallery_with_nav: true,
       meta_url: `${DOMAIN}${pagePath}`,
       meta_image:
         galleryItems.length > 0 ? `${DOMAIN}${galleryItems[0].source}` : '',
@@ -176,63 +179,18 @@ const renderLanguage = async ({
   });
 
   ////
-  // SHOWS
-  ////
-
-  const showsGalleryItems = websiteConstants.shows_gallery.map(
-    (galleryItem, galleryItemIndex) => ({
-      ...parseGalleryItem(galleryItem),
-      id: galleryItemIndex,
-    }),
-  );
-
-  const showsData = {
-    ...websiteData,
-    html_title: `${websiteData.title}: ${websiteData.i18n_string_shows}`,
-    meta_url: `${DOMAIN}${shows}`,
-    name: websiteData.i18n_string_shows,
-    gallery: showsGalleryItems.length > 0,
-    gallery_items: showsGalleryItems,
-    gallery_with_nav: true,
-    gallery_with_description: true,
-    description:
-      showsGalleryItems.length > 0
-        ? showsGalleryItems[0].description
-        : websiteConstants.description,
-    meta_image:
-      showsGalleryItems.length > 0
-        ? `${DOMAIN}${showsGalleryItems[0].source}`
-        : '',
-  };
-
-  const showsOutput = mustache.render(baseTemplate, showsData);
-  await writeFile(`build${shows}`, showsOutput);
-
-  renderedLinks.push({
-    url: shows,
-    changefreq: 'yearly',
-    priority: 0.85,
-  });
-
-  ////
   // HOMEPAGE
   ////
 
-  const homeGalleryItems = websiteConstants.gallery.map(
-    (galleryItem, galleryItemIndex) => ({
-      ...parseGalleryItem(galleryItem),
-      id: galleryItemIndex,
-    }),
-  );
+  const homeImage = websiteConstants.image
+    ? parseGalleryItem(websiteConstants.image, 0)
+    : null;
 
   const homeData = {
     ...websiteData,
-    gallery: homeGalleryItems.length > 0,
-    gallery_items: homeGalleryItems,
-    meta_image:
-      homeGalleryItems.length > 0
-        ? `${DOMAIN}${homeGalleryItems[0].source}`
-        : '',
+    gallery: Boolean(homeImage),
+    gallery_items: homeImage ? [homeImage] : [],
+    meta_image: homeImage ? `${DOMAIN}${homeImage.source}` : '',
     hidden_body: aboutBody,
   };
 
