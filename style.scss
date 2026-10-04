@@ -178,6 +178,10 @@ nav {
             content: '';
             margin-right: 0;
           }
+          &.copied {
+            color: gray;
+            text-decoration: none;
+          }
         }
       }
     }

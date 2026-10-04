@@ -13,6 +13,35 @@ navButton.addEventListener('click', () => {
 });
 
 /********************************/
+/*           CONTACT            */
+/********************************/
+
+const contactLink = document.querySelector('nav a[data-copied]');
+if (contactLink && navigator.clipboard) {
+  const contactText = contactLink.textContent;
+  const contactEmail = contactLink.href.replace('mailto:', '');
+  let contactTimeout;
+
+  contactLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    navigator.clipboard
+      .writeText(contactEmail)
+      .then(() => {
+        contactLink.textContent = `${contactEmail} ${contactLink.dataset.copied}`;
+        contactLink.classList.add('copied');
+        clearTimeout(contactTimeout);
+        contactTimeout = setTimeout(() => {
+          contactLink.textContent = contactText;
+          contactLink.classList.remove('copied');
+        }, 3000);
+      })
+      .catch(() => {
+        window.location.href = contactLink.href;
+      });
+  });
+}
+
+/********************************/
 /*            SOCIAL            */
 /********************************/
 
